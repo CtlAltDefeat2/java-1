@@ -13,9 +13,12 @@ public class student17 {
         ex3();
         ex4();
         ex5();
-
+        ex6();
+//        ex7();
+//        ex8();
+//        ex9();
+//        ex10();
     }
-
     private static void ex1() {
         System.out.println("Ex. 1");
         addNumbers(new ArrayList<>());
@@ -71,17 +74,54 @@ public class student17 {
         int[] arr = {1, 2, 3, 5, 6, 9, 11};
         int N = arr.length;
         findMissingNumbers(arr, N);
-
     }
     private static void findMissingNumbers(int arr[], int N){
         int diff = arr[0] - 0;
         for (int i = 0; i < N; i++){
             if(arr[i] - i != diff)
                 while (diff < arr[i] - i){
-                    System.out.print((i + diff) + ", ");
+                    System.out.print((i + diff) + ". ");
                     diff++;
-
                 }
         }
     }
+    private static void ex6(){
+        System.out.println(" ");
+        System.out.println("Ex. 6");
+        int[] ints = {0,1,1,1,0,0,1,0,0,1,0,0,0};
+        int n = ints.length;
+        sortNum(ints, n);
+        print(ints, n);
+    }
+    private static void sortNum(int arr[], int n){
+        int count = 0;
+        for(int i = 0; i < n; i++){
+            if(arr[i] == 0)
+                count++;
+        }
+        for(int i = 0; i < count; i++)
+            arr[i] = 0;
+        for(int i = count; i < n; i++)
+            arr[i] = 1;
+    }
+    static void print(int arr[], int n)
+    {
+        System.out.print("Array after segregation is: ");
+        for (int i = 0; i < n; i++)
+            System.out.print(arr[i] + " ");
+    }
+    private static void ex7(){
+        System.out.println("Ex. 7");
+    }
+    private static void ex8(){
+        System.out.println("Ex. 8");
+    }
+    private static void ex9(){
+        System.out.println("Ex. 9");
+    }
+    private static void ex10(){
+        System.out.println("Ex. 10");
+    }
+
+
 }
