@@ -12,44 +12,40 @@ public class student8 {
 
     // EX 1
     private static void ex1() {
-
-        var output = addNumbers(null);
-        System.out.println(output);
-    }
-
-    private static Integer addNumbers(ArrayList<Integer> numlist) {
-
         int[] ints = {1, 2, 3};
-        int sum = 0;
+        var sum = 0;
+        var numList = new ArrayList<Integer>();
         for (int i = 0; i < ints.length; i++) {
+            numList.add(ints[i]);
             sum = sum + ints[i];
         }
-        return sum;
+
+        System.out.println(numList);
+        System.out.println(sum);
+
     }
 
     // EX 2
     private static void ex2() {
         int[] ints = {1, 2, 3};
+        var sum = 0;
+        var avg = 0;
 
-        var output = avgNumbers(null);
-        System.out.println(output);
-    }
-
-    private static Float avgNumbers(ArrayList<Integer> numlist) {
-
-        int[] ints = {1, 2, 3};
-        int sum = 0;
-        Float avg = Float.valueOf(0);
-
+        var numList = new ArrayList<Integer>();
         for (int i = 0; i < ints.length; i++) {
+            numList.add(ints[i]);
             sum = sum + ints[i];
-            avg = Float.valueOf(sum / ints.length);
+            avg = sum / ints.length;
         }
-        return avg;
+
+        System.out.println(numList);
+        System.out.println(avg);
+
     }
 
+    // EX 3
     private static void ex3() {
-        System.out.println("Ex. 3");
+
     }
 
     private static void ex4() {
