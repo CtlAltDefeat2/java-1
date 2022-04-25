@@ -21,10 +21,9 @@ public class student9 {
 
     // TODO: Implement this function.
     private static Integer addNumbers(ArrayList<Integer> numlist) {
-        int[] ints = {1, 2, 3};
-        int sum = 0;
-        for (int i = 0; i < ints.length; i++) {
-            sum = sum + ints[i];
+       int sum = 0;
+       for (int i = 0; i < numlist.size(); i++) {
+           // sum = sum + ints[i];
         }
         return sum;
 
