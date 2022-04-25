@@ -10,6 +10,7 @@ public class student17 {
         ex1();
         ex2();
         ex3();
+        ex4();
 
     }
 
@@ -46,6 +47,17 @@ public class student17 {
         int[] arr = {1, 2, 3};
         int[] result = IntStream.of(arr).map(i -> i * 2).toArray();
         System.out.println("Doubled every Int in an Array: " + Arrays.toString( result));
+    }
+
+    private static void ex4() {
+        System.out.println("Ex. 4");
+        createList(5);
+    }
+    private static void createList(Integer maxNumber){
+        ArrayList<Integer> list = new ArrayList<Integer>(maxNumber);
+        System.out.println("ArrayList with the maxNumber: " + maxNumber);
+
+
 
     }
 
