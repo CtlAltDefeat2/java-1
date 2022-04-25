@@ -64,7 +64,6 @@ public class student7 {
     private static void Double(ArrayList<Integer> numList) {
         for (int i = 0; i < numList.size(); i++) {
             int temp = numList.get(i);
-
             numList.set(i, (temp*2));
         }
         System.out.println(numList);
