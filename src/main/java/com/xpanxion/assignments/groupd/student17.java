@@ -2,12 +2,14 @@ package com.xpanxion.assignments.groupd;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.stream.IntStream;
 
 public class student17 {
     public static void main(String[] args) {
         ex1();
         ex2();
+        ex3();
 
     }
 
@@ -36,8 +38,15 @@ public class student17 {
         System.out.println("The average of the Array is: " + sum / arr.length);
         return null;
     }
-
     private static void ex3() {
         System.out.println("Ex. 3");
+        multiply();
     }
+    private static void multiply() {
+        int[] arr = {1, 2, 3};
+        int[] result = IntStream.of(arr).map(i -> i * 2).toArray();
+        System.out.println("Doubled every Int in an Array: " + Arrays.toString( result));
+
+    }
+
 }
