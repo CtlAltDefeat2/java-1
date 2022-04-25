@@ -7,6 +7,10 @@ public class student5 {
     public static void ex1() {
         System.out.println("Ex. 1");
     }
+    private static Float avgNumbers(ArrayList<Integer> numList) {
+        // TODO: Implement this function.
+        return 0;
+    }
     public static void ex2() {
         System.out.println("Ex. 2");
     }
