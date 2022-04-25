@@ -1,19 +1,37 @@
 package com.xpanxion.assignments.groupf;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class student9 {
     public static void main(String[] args) {
         ex1();
     }
 
     private static void ex1() {
-        System.out.println("Donna");
+        int[] ints = {1, 2, 3};
+        // Declare array.
+        var numList = new ArrayList<Integer>(ints.length);
+        for (int i : ints) {
+            numList.add(i);
+        }
+        var sum = addNumbers(numList);
+        System.out.println("The sum is " + sum);
     }
 
-    private static void ex2() {
-        System.out.println("Ex. 2");
-    }
+    // TODO: Implement this function.
+    private static Integer addNumbers(ArrayList<Integer> numlist) {
+        int[] ints = {1, 2, 3};
+        int sum = 0;
+        for (int i = 0; i < ints.length; i++) {
+            sum = sum + ints[i];
+        }
+        return sum;
 
-    private static void ex3() {
-        System.out.println("Ex. 3");
+        //System.out.println("arrayList");
     }
 }
+
+
+
+
