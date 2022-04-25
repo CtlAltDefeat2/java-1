@@ -7,6 +7,7 @@ public class student22 {
     public static void main(String[] args) {
         addNumbers();
         avgNumbers();
+        doubleNumbers();
     }
 
    private static void addNumbers(){
@@ -29,6 +30,19 @@ public class student22 {
         }
         System.out.println(avgOfInts);
 
+    }
+    private static void doubleNumbers() {
+        int[] ints = {1, 2, 3};
+        var myArray = new ArrayList<Integer>();
+        int sumOfInts = 0;
+        int doubleNum = 0;
+        for (int i = 0; i < ints.length; i++) {
+            doubleNum = ints[i] * 2;
+            myArray.add(doubleNum);
+
+
+        }
+        System.out.println(myArray);
     }
     private static void ex1() {
         System.out.println("Ex. 1");
