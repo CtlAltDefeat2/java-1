@@ -2,7 +2,7 @@ package com.xpanxion.assignments.groupd;
 
 public class student19 {
     public static void main(String[] args) {
-        ex1();
+        System.out.println("Hello My name is Raji Mallina");
     }
 
     private static void ex1() {
