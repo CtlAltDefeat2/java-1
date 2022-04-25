@@ -14,7 +14,7 @@ public class student11 {
         numList.add(i);
     }
     var sum = addNumbers(numList);
-        System.out.println("The sum is" + sum);
+        System.out.println("The sum is" + sum );
     }
 private static Integer addNumbers(ArrayList<Integer> numList) {
     int sum = 0;
