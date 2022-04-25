@@ -1,5 +1,6 @@
 package com.xpanxion.assignments.groupd;
 
+import java.security.spec.RSAOtherPrimeInfo;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -11,6 +12,7 @@ public class student17 {
         ex2();
         ex3();
         ex4();
+        ex5();
 
     }
 
@@ -54,11 +56,32 @@ public class student17 {
         createList(5);
     }
     private static void createList(Integer maxNumber){
-        ArrayList<Integer> list = new ArrayList<Integer>(maxNumber);
-        System.out.println("ArrayList with the maxNumber: " + maxNumber);
-
-
+        int input = 5;
+        int count = 0;
+        var list = new ArrayList<>();
+        for(int i = 0; i < maxNumber; i++){
+            count++;
+            list.add(count);
+        }
+        System.out.println("Creating a list from a maxNumber: " + list);
+    }
+    private static void ex5(){
+        System.out.println("Ex. 5");
+        System.out.println("The missing numbers are: ");
+        int[] arr = {1, 2, 3, 5, 6, 9, 11};
+        int N = arr.length;
+        findMissingNumbers(arr, N);
 
     }
+    private static void findMissingNumbers(int arr[], int N){
+        int diff = arr[0] - 0;
+        for (int i = 0; i < N; i++){
+            if(arr[i] - i != diff)
+                while (diff < arr[i] - i){
+                    System.out.print((i + diff) + ", ");
+                    diff++;
 
+                }
+        }
+    }
 }
