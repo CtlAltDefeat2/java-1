@@ -4,6 +4,7 @@ import java.security.spec.RSAOtherPrimeInfo;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 import java.util.stream.IntStream;
 
 public class student17 {
@@ -14,7 +15,7 @@ public class student17 {
         ex4();
         ex5();
         ex6();
-//        ex7();
+        ex7();
 //        ex8();
 //        ex9();
 //        ex10();
@@ -70,23 +71,24 @@ public class student17 {
     }
     private static void ex5(){
         System.out.println("Ex. 5");
-        System.out.println("The missing numbers are: ");
         int[] arr = {1, 2, 3, 5, 6, 9, 11};
         int N = arr.length;
         findMissingNumbers(arr, N);
+
     }
     private static void findMissingNumbers(int arr[], int N){
+        var list = new ArrayList<>();
         int diff = arr[0] - 0;
         for (int i = 0; i < N; i++){
             if(arr[i] - i != diff)
                 while (diff < arr[i] - i){
-                    System.out.print((i + diff) + ". ");
+                    list.add(i + diff);
                     diff++;
                 }
         }
+        System.out.println("The missing numbems are: " + list);
     }
     private static void ex6(){
-        System.out.println(" ");
         System.out.println("Ex. 6");
         int[] ints = {0,1,1,1,0,0,1,0,0,1,0,0,0};
         int n = ints.length;
@@ -104,14 +106,27 @@ public class student17 {
         for(int i = count; i < n; i++)
             arr[i] = 1;
     }
-    static void print(int arr[], int n)
-    {
+    static void print(int arr[], int n) {
         System.out.print("Array after segregation is: ");
         for (int i = 0; i < n; i++)
             System.out.print(arr[i] + " ");
     }
     private static void ex7(){
+        System.out.println("");
         System.out.println("Ex. 7");
+        randomNumber();
+    }
+
+    private static void randomNumber(){
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
+        list.add(6);
+        Random r = new Random();
+        System.out.println("Random Number is: " + list.get(r.nextInt(list.size())));
     }
     private static void ex8(){
         System.out.println("Ex. 8");
