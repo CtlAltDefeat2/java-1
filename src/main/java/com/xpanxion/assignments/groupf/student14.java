@@ -13,28 +13,42 @@ public class student14 {
 
         ArrayList<Integer> numList = new ArrayList<>();//declare new array list
         //Implement function
-        for (int i: ints){
+        for (int i : ints) {
             numList.add(i);
         }
-             var sum = addNumbers(numList);
+        var sum = addNumbers(numList);
         System.out.println("The sum is " + sum);
     }
 
     private static Integer addNumbers(ArrayList<Integer> numList) {
-        // implementing function
-        int[] ints = {1, 2, 3}; //declare array
-        int sum = 0;
-        for (int i=0; i< ints.length; i++){
-            sum = sum + ints[i];
-                }
+        // implementing numList function
+     int sum = 0;
+       for (int i = 0; i < numList.size(); i++) {
+            sum += numList.get(i);
+        }
         return sum;
     }
-}
-//        private static void ex2 () {
-//            System.out.println("Ex. 2");
-//        }
-//
-//        private static void ex3 () {
-//            System.out.println("Ex. 3");
-//        }
-  //
+
+    private static void ex2() {
+        int[] ints = {1, 2, 3};
+        ArrayList<Integer> numList = new ArrayList<>();//declare new array list
+
+        for (int i : ints) {
+            numList.add(i);
+        }
+
+        //Convert int to integer to use function in array probably need a foreach function
+        var average = avgNumbers(numList);
+        System.out.println("Ex. 2");
+    }
+
+    private static Float avgNumbers(ArrayList<Integer> numList) {
+        // TODO: Implement this function.
+        return ?;
+
+//}
+////
+////        private static void ex3 () {
+////            System.out.println("Ex. 3");
+////        }
+//  //
