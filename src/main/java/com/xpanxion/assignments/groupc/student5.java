@@ -2,11 +2,15 @@ package com.xpanxion.assignments.groupc;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+import static java.math.BigInteger.*;
 
 public class student5 {
     public static void main(String[] args) {
         //ex1();
-        ex2();
+        //ex2();
+        ex3();
     }
     public static void ex1() {
         var array = new ArrayList<Integer>();
@@ -37,7 +41,19 @@ public class student5 {
         return avg;
     }
     public static void ex3() {
+        var array3 = new ArrayList<Integer>();
         System.out.println("Ex. 3");
+        System.out.println(dblNumbers(array3));
+    }
+    private static String dblNumbers(ArrayList<Integer> dblArray) {
+        int[] ints = {1, 2, 3};
+        dblArray = new ArrayList<>();
+        int[] intsDoubled = IntStream.of(ints).map(e -> e * 2).toArray();
+        for (int i = 0; i < intsDoubled.length; i++) {
+            dblArray.add(intsDoubled[i]);
+        }
+        String finalArray = dblArray.toString();
+        return finalArray;
     }
     public static void ex4() {
         System.out.println("Ex. 4");
