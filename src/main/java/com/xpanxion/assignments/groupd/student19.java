@@ -9,7 +9,8 @@ public class student19 {
     public static void main(String[] args) {
 
         //ex1();
-        ex2();
+        //ex2();
+        ex3();
 
     }
 
@@ -52,19 +53,24 @@ public class student19 {
             }
            f = sum / numList.size();
             return f;
+    }
+        private static void ex3() {
+            int[] ints = {1, 2, 3};
+            ArrayList<Integer> num = new ArrayList<Integer>();
 
+            for (int i = 0; i < ints.length; i++) {
+                num.add(ints[i]);
+            }
+            Doubles(num);
 
         }
-
-
-
-
-
-
-
-    private static void ex3() {
-
-
-        System.out.println("Ex. 3");
+    private static void Doubles (ArrayList<Integer> numList) {
+        double d = 0;
+        int sum = 0;
+        for(int i=0; i< numList.size();i++) {
+            int temp = numList.get(i);
+            numList.set(i,(temp*2));
+        }
+        System.out.println(numList);
     }
 }
