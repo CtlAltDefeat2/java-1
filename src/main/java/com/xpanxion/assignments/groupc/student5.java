@@ -1,19 +1,27 @@
 package com.xpanxion.assignments.groupc;
 
+import java.util.*;
+
 public class student5 {
     public static void main(String[] args) {
-        ex1()
+        ex1();
     }
     public static void ex1() {
+        var array = new ArrayList<Integer>();
         System.out.println("Ex. 1");
+        System.out.println(addNumbers(array));
     }
-    private static Float avgNumbers(ArrayList<Integer> numList) {
-        // TODO: Implement this function.
-        return 0;
+    public static Integer addNumbers(ArrayList<Integer> numList) {
+        int[] ints = {1, 2, 3};
+        int sum = 0;
+        List<Integer> array = Arrays.stream(ints).boxed().toList();
+        int intSum = Arrays.stream(ints).sum();
+        return intSum;
     }
     public static void ex2() {
         System.out.println("Ex. 2");
     }
+
     public static void ex3() {
         System.out.println("Ex. 3");
     }
