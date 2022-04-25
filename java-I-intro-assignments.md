@@ -6,12 +6,13 @@ Consider the following array:
 
 ```java
 int[] ints = {1, 2, 3};
+
 ```
 
 Implement the following function, which returns the sum of all the numbers in the array.
 
 ```java
-private static Integer addNumbers(ArrayList<Integer> numList) {
+private static Integer addNumbers (ArrayList<Integer> numList) {
     // TODO: Implement this function.
     return 0; 
 }
