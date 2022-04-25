@@ -1,4 +1,4 @@
-package com.xpanxion.assignments.groupb;
+package com.xpanxion.assignments.groupc;
 
 public class student6 {
     public static void main(String[] args) {
@@ -6,7 +6,7 @@ public class student6 {
     }
 
     private static void ex1() {
-        System.out.println("Ex. 1");
+        System.out.println("DH");
     }
 
     private static void ex2() {
