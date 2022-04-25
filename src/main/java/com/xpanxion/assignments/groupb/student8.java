@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class student8 {
     public static void main(String[] args) {
-        ex3();
+        ex5();
 
     }
 
@@ -64,12 +64,30 @@ public class student8 {
 
     }
 
-    private static void ex4() {
-        System.out.println("Ex. 3");
+    private static void ex4(Integer maxNumber) {
+
+        var numList = new ArrayList<Integer>(maxNumber);
+        for (int i = 0; i < maxNumber; i++) {
+            numList.add(i + 1);
+        }
+
+        System.out.println(numList);
+
     }
 
     private static void ex5() {
-        System.out.println("Ex. 3");
+        int[] ints = {1, 2, 3, 5, 6, 9, 11};
+        var missingNumbers = new ArrayList<Integer>(ints.length - 1);
+
+        for (int i = 1; i < ints[ints.length-1] + 1; i++) {
+            while {
+
+            }
+            //System.out.println(i);
+        }
+
+        //System.out.println(missingNumbers);
+        //System.out.println(ints[ints.length - 1]);
     }
 
     private static void ex6() {
