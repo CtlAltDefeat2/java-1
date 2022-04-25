@@ -13,7 +13,7 @@ public class student16 {
         arrayList.add(ints [i]);
 
         }
-        System.out.println(addNumbers(arrayList));
+        System.out.println(average(arrayList));
     }
     private static Integer addNumbers(ArrayList<Integer> numList)  {
         int sum =0;
@@ -22,9 +22,24 @@ public class student16 {
         }
         return sum;
     }
-
+//EX 2
     private static void ex2() {
-        System.out.println("Ex. 2");
+        int[] ints = {1, 2, 3};
+        ArrayList aL = new ArrayList( );
+        for (float i = average(aL); i < ints.length; i++) {
+
+
+        }
+        System.out.println(average(aL));
+    }
+    private static Float average(ArrayList<Integer> numList)  {
+        float avg =0;
+        int sum = 0;
+        for (int i = 0; i < numList.size(); i++) {
+            sum += numList.get(i);
+        }
+        avg = sum / numList.size();
+        return avg;
     }
 
     private static void ex3() {
