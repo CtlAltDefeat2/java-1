@@ -10,12 +10,13 @@ public class student5 {
     public static void main(String[] args) {
         //ex1();
         //ex2();
-        ex3();
+        //ex3();
+        ex4();
     }
     public static void ex1() {
         var array = new ArrayList<Integer>();
         System.out.println("Ex. 1");
-        System.out.println(addNumbers(array));
+        System.out.print(addNumbers(array));
     }
     public static Integer addNumbers(ArrayList<Integer> numList) {
         int[] ints = {1, 2, 3};
@@ -26,7 +27,7 @@ public class student5 {
     public static void ex2() {
         var array2 = new ArrayList<Integer>();
         System.out.println("Ex. 2");
-        System.out.println(avgNumbers(array2));
+        System.out.print(avgNumbers(array2));
     }
     private static Float avgNumbers(ArrayList<Integer> avgArray) {
         int[] ints = {1, 2, 3};
@@ -40,10 +41,10 @@ public class student5 {
         avg = sum / avgArray.size();
         return avg;
     }
-    public static void ex3() {
+    private static void ex3() {
         var array3 = new ArrayList<Integer>();
         System.out.println("Ex. 3");
-        System.out.println(dblNumbers(array3));
+        System.out.print(dblNumbers(array3));
     }
     private static String dblNumbers(ArrayList<Integer> dblArray) {
         int[] ints = {1, 2, 3};
