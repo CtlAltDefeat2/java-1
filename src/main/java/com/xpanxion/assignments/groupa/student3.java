@@ -6,7 +6,7 @@ public class student3 {
     }
 
     private static void ex1() {
-        System.out.println("Ex. 1");
+        System.out.println("Brian");
     }
 
     private static void ex2() {
