@@ -5,7 +5,9 @@ import java.util.List;
 
 public class student11 {
     public static void main(String[] args) {
-    ex1();
+
+        ex1();
+        ex2();
     }
     private static void ex1() {
     int[] ints = {1, 2, 3};
@@ -30,13 +32,47 @@ private static Integer addNumbers(ArrayList<Integer> numList) {
 
 
 
+
     private static void ex2() {
-        System.out.println("Ex. 2");
+        ArrayList<Integer> numList = new ArrayList<>(); //declare new array list
+        //convert int to integer
+        int[] ints = {1, 2, 3, 4};
+        //var newList = new ArrayList<Integer>();
+        for (int i : ints) {
+            numList.add(i);
+        }
+        //take sum of list
+        var r  = avgNumbers(numList);
+
+        System.out.println(r);
+
+    }
+    private static Float avgNumbers(ArrayList<Integer> numList) {
+        Float retVal = 0F;
+        var sum = addNumbers(numList);
+        float Length = numList.size();
+
+        float average = sum / Length;
+
+        return average;
+        }
+
+
+
+
     }
 
-    private static void ex3() {
-        System.out.println("Ex. 3");
-    }
 
 
-    }
+
+
+
+
+//
+//
+//    private static void ex3() {
+//        System.out.println("Ex. 3");
+//    }
+//
+//
+//    }
