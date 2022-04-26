@@ -50,19 +50,18 @@ This function doubles every number in numList;
 Write a function with the following signature:
 
 ```java
-private static void createList(Integer maxNumber)
-```
+ 
 
-This function returns an ArrayList of Integers no greater than `maxNumber`.
+This function returns an NumbArrayList of Integers no greater than `maxer`.
 
-Example:
+[Example:
 ```java
 createList(5);
 ```
 
 Output:
 ```java
-[1,2,3,4,5]
+1,2,3,4,5]
 ```
 
 # Ex. 5

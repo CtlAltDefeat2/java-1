@@ -6,71 +6,75 @@ import java.util.Scanner;
 
 public class student19 {
 
-    public static void main(String[] args) {
+   public static void main (String[] args) {
 
-        //ex1();
-        //ex2();
-        ex3();
+       ex1();
+       ex2();
+       ex3();
 
-    }
+   }
+        private static void ex1(){
+      int[] ints = {1, 2, 3};
+            var newList = new ArrayList<Integer>();
+            for (int i = 0; i< ints.length; i++) {
 
-    private static void ex1(){
-        int[] ints = {1, 2, 3};
-        ArrayList<Integer> num = new ArrayList<Integer> ();
-
-        for( int i = 0; i < ints.length; i++) {
-            num.add(ints[i]);
-        }
-        System.out.println(addNumbers(num));
+                newList.add(ints[i]);
+            }
+            System.out.println(addNumbers(newList));
     }
 
 
     private static Integer addNumbers(ArrayList<Integer> numList) {
-        // TODO: Implement this function.
+
         int sum = 0;
-        for( int i = 0; i < numList.size(); i++ ){
+       for( int i = 0; i < numList.size(); i++ ){
             sum += numList.get(i);
         }
         return (sum);
     }
 
 
-        private static void ex2() {
-            int[] ints = {1, 2, 3};
-            ArrayList<Integer> num = new ArrayList<Integer>();
+       private static void ex2() {
+           int[] ints = {1, 2, 3};
+          ArrayList<Integer> num = new ArrayList<Integer>();
 
-            for (int i = 0; i < ints.length; i++) {
-                num.add(ints[i]);
-            }
-            System.out.println(avgNumbers(num));
+          for (int i = 0; i < ints.length; i++) {
+               num.add(ints[i]);
+           }
+           System.out.println(avgNumbers(num));
         }
-        private static Float avgNumbers(ArrayList<Integer> numList){
-            // TODO: Implement this function.
-            float f = 0;
-            int sum = 0;
+       private static Float avgNumbers(ArrayList<Integer> numList){
+
+          float f = 0;
+           int sum = 0;
             for(int i=0; i< numList.size();i++) {
-                sum += numList.get(i);
+               sum += numList.get(i);
             }
            f = sum / numList.size();
             return f;
     }
-        private static void ex3() {
-            int[] ints = {1, 2, 3};
+       private static void ex3() {
+           int[] ints = {1, 2, 3};
             ArrayList<Integer> num = new ArrayList<Integer>();
 
-            for (int i = 0; i < ints.length; i++) {
-                num.add(ints[i]);
+           for (int i = 0; i < ints.length; i++) {
+               num.add(ints[i]);
             }
-            Doubles(num);
+           Doubles(num);
 
-        }
+       }
     private static void Doubles (ArrayList<Integer> numList) {
-        double d = 0;
+      double d = 0;
         int sum = 0;
         for(int i=0; i< numList.size();i++) {
-            int temp = numList.get(i);
-            numList.set(i,(temp*2));
+          int temp = numList.get(i);
+           numList.set(i,(temp*2));
         }
-        System.out.println(numList);
+       System.out.println(numList);
+   }
+
     }
-}
+
+
+
+
