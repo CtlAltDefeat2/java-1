@@ -12,11 +12,11 @@ public class student23{
     }
 
     private static void Ex1(){
-        int[] ints = {1,2,3};
+        int[] ints = {1,2,3,4};
         var newList = new ArrayList<Integer>();
-        // TODO: convert ints to ArrayList
-
-
+        for (int i : ints) {
+            newList.add(i);
+        }
         var result = addNumbers(newList);
         System.out.println(result);
     }
