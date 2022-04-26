@@ -6,22 +6,25 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
+
 public class student21 {
     public static void main(String[] args) {
 
         ex1();
+        ex2();
     }
 
     private static void ex1() {
         // here..
         int[] ints = {1, 2, 3, 4, 5};
-       //creates new ArrayList object for Integers call numList
+        //creates new ArrayList object for Integers call numList
         var numList = new ArrayList<Integer>();
         //enhanced for loop adds all elements of the original array to the numList arraylist
-       for(int number:ints){
-           numList.add(number);
-       }
-       //result equals the addNumbers method with the numList array as the parameter being passed in
+        for (int number : ints) {
+            numList.add(number);
+        }
+        //result equals the addNumbers method with the numList array as the parameter being passed in
         var result = addNumbers(numList);
         System.out.println(result);
 
@@ -29,7 +32,13 @@ public class student21 {
 
 
     private static void ex2() {
-        System.out.println("Ex. 2");
+        int[] ints = {1, 2, 3, 4, 5};
+        var numList = new ArrayList<Integer>();
+        for (int number : ints) {
+            numList.add(number);
+        }
+        var result = avgNumbers(numList);
+        System.out.println("The average is " + result);
     }
 
     private static void ex3() {
@@ -41,11 +50,22 @@ public class student21 {
     //
 
     //This function goes through the ArrayList and adds all the integers together
-    private static Integer addNumbers(ArrayList<Integer> numList){
+    private static Integer addNumbers(ArrayList<Integer> numList) {
         int total = 0;
-        for(int number:numList){
+        for (int number : numList) {
             total += number;
         }
         return total;
+    }
+
+    private static Float avgNumbers(ArrayList<Integer> numList) {
+        int total = 0;
+
+
+        for (int number : numList) {
+            total += number;
+        }
+        float avg = Float.valueOf((total / numList.size()));
+        return avg;
     }
 }
