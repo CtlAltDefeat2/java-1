@@ -1,12 +1,12 @@
 package com.xpanxion.assignments.groupf;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class student14 {
     public static void main(String[] args) {
         ex1();
         ex2();
+        ex3();
     }
 
     //vars, loops, ifs, functions
@@ -60,6 +60,28 @@ public class student14 {
 
 
     private static void ex3() {
-        System.out.println("Ex. 3");
+        ArrayList<Integer> numList = new ArrayList<>();//declare new array list
+        //convert int to integer
+        int[] ints = {1, 2, 3, 4};
+        //add the numbers to the numList
+        for (int i : ints) {
+            numList.add(i);
+        }
+            doubleNumbers(numList);
+
     }
-}
+        private static void doubleNumbers (ArrayList < Integer > numList) {
+
+            for (int i = 0; i < numList.size(); i++) {
+
+                int timesTwo = numList.get(i);
+                numList.set(i, (timesTwo * 2));
+            }
+            System.out.println(numList);//print list
+
+        }
+
+    }
+
+
+
