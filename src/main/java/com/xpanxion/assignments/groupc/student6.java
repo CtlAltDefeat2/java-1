@@ -1,5 +1,6 @@
 package com.xpanxion.assignments.groupc;
 
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -8,49 +9,55 @@ public class student6 {
         ex1();
         ex2();
         ex3();
+
+        // temp space
+
+/*
+        var list = new ArrayList<Integer>();
+        list.add(1);
+        list.set(0, 5150);
+
+
+        System.out.println(list.get(0));
+*/
+
     }
 
     private static void ex1() {
         int[] ints = {1, 2, 3};
-        var intList = new ArrayList<Integer>(ints.length);
+        var numList = new ArrayList<Integer>(ints.length);
         int sum = 0;
         for (int i : ints)
         {
-            intList.add(i);
+            numList.add(i);
         }
-        System.out.println(addNumbers(intList));
+        System.out.println(addNumbers(numList));
     }
     private static void ex2() {
         int[] ints = {1, 2, 3};
-        var intList = new ArrayList<Integer>(ints.length);
+        var numList = new ArrayList<Integer>(ints.length);
         int sum  = 0;
         for (int i : ints)
         {
-            intList.add(i);
+            numList.add(i);
         }
-        System.out.println(avgNumbers(intList));
+        System.out.println(avgNumbers(numList));
     }
 
     private static void ex3() {
         int[] ints = {1, 2, 3};
-        var intList = new ArrayList<Double>(ints.length);
-        int sum = 0;
-        for (int i : ints)
+        var numList = new ArrayList<Integer>(ints.length);
+        for (int i = 0; i < ints.length; i++)
         {
-            intList.add(i);
+            numList.add(ints[i]);
         }
-        System.out.println(double(intList));
+        doubled(numList);
     }
-
-    private static void doubleNum(ArrayList<Integer> numList) {
-        int[] ints = {1, 2, 3};
-        ArrayList<Integer> doubleArray = ints.stream().map
-
-
-
-
-
-
+    private static void doubled(ArrayList<Integer> numList) {
+        for (int i = 0; i < numList.size(); i++) {
+            numList.set(i, numList.get(i) * 2);
+        }
+        System.out.println(numList);
     }
 
     private static Float avgNumbers(ArrayList<Integer> numList) {
