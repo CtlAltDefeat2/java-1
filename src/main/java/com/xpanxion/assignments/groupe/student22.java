@@ -1,60 +1,32 @@
 package com.xpanxion.assignments.groupe;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Scanner;
 
 public class student22 {
     public static void main(String[] args) {
-        addNumbers();
-        avgNumbers();
-        doubleNumbers();
-    }
 
-   private static void addNumbers(){
-        int[] ints = {1,2,3};
-       int sumOfInts = 0;
-        for(int i = 0; i < ints.length; i++) {
-             sumOfInts += ints[i];
-
-         }
-       System.out.println(sumOfInts);
-   }
-    private static void avgNumbers(){
-      int[] ints = {1,2,3};
-        int sumOfInts = 0;
-        float avgOfInts = 0;
-        for(int i = 0; i < ints.length; i++) {
-            sumOfInts += ints[i];
-            avgOfInts = sumOfInts / 2;
-
+            ex1();
         }
-        System.out.println(avgOfInts);
-
-    }
-    private static void doubleNumbers() {
-        int[] ints = {1, 2, 3};
-        var myArray = new ArrayList<Integer>();
-        int sumOfInts = 0;
-        int doubleNum = 0;
-        for (int i = 0; i < ints.length; i++) {
-            doubleNum = ints[i] * 2;
-            myArray.add(doubleNum);
-
-
+        private static void ex1() {
+            int[] ints = {1, 2, 3};
+            var newList = new ArrayList<Integer>();
+            // TODO: convert ints to newList.
+            for(int i : ints){
+                newList.add(i);
+            }
+            var result = addNumbers(newList);
+            System.out.println(result);
         }
-        System.out.println(myArray);
+        //
+        // My functions
+        //
+        private static Integer addNumbers(ArrayList<Integer> numList) {
+            // TODO: Implement this function
+            Integer retVal = 0;
+             for(int i : numList){
+                 retVal += i;
+             }
+            return retVal;
+        }
     }
-    private static void ex1() {
-        System.out.println("Ex. 1");
-    }
-
-
-    private static void ex2() {
-        System.out.println("Ex. 2");
-    }
-
-    private static void ex3() {
-        System.out.println("Ex. 3");
-    }
-
-}
