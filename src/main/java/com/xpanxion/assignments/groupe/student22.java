@@ -6,8 +6,9 @@ import java.util.Scanner;
 public class student22 {
     public static void main(String[] args) {
 
-            ex1();
-            ex2();
+//            ex1();
+//            ex2();
+            ex3();
         }
         private static void ex1() {
             int[] ints = {1, 2, 3};
@@ -51,5 +52,28 @@ public class student22 {
 //            myVal += i;
  //           returnVal = Float.valueOf(myVal)/numList.toArray().length;
         }
+    private static void ex3() {
+        int[] ints = {1, 2, 3};
+        var newList = new ArrayList<Integer>();
+        // TODO: convert ints to newList.
+        for (int i : ints) {
+            newList.add(i);
+        }
+        doubleNumber(newList);
+        System.out.println(newList);
+    }
+
+
+    private static void doubleNumber(ArrayList<Integer> numList){
+
+        for(int i = 0; i < numList.size(); i++)
+        numList.set(i, numList.get(i) *2);
+
+
+//        for(int i : numList){
+//            //retVal1 = i *2 ;
+//            numList.add(retVal1);
+//        }
+    }
 
     }
