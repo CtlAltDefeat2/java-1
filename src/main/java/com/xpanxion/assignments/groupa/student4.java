@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static java.util.stream.Collectors.toList;
+
 public class student4 {
     public static void main(String[] args) {
         ex1();
@@ -33,19 +35,30 @@ public class student4 {
 
 
     private static void ex2() {
-        List<Integer> list = Arrays.asList(1, 2, 3, 4);
+        List<Integer> list = Arrays.asList(1, 2, 3, 4); // list of arrays
         double sum = 0;
-        for (int i : list) {
+        for (int i : list) { // for each int of the list i'm going to do the following
             sum += i;
         }
         double average = sum / list.size();
 
-        System.out.println("Average = " + average);
+        System.out.println("the Average is = " + average);
     }
 
 
 
     private static void ex3() {
+        List<Integer> list = Arrays.asList(1,2,3,4);
+
+        List<Integer> doubleArrayListNumbers = list.stream()
+                .map(i -> i*2)
+                .collect(toList());
+
+        System.out.println("Double values of ArrayList Integers: "+doubleArrayListNumbers);
+
+    }
+
+    private static void ex4() {
 
     }
 }
