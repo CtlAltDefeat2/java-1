@@ -6,8 +6,10 @@ import java.util.Arrays;
 public class student14 {
     public static void main(String[] args) {
         ex1();
+        ex2();
     }
 
+    //vars, loops, ifs, functions
     private static void ex1() {
         int[] ints = {1, 2, 3}; //declare array
 
@@ -22,33 +24,42 @@ public class student14 {
 
     private static Integer addNumbers(ArrayList<Integer> numList) {
         // implementing numList function
-     int sum = 0;
-       for (int i = 0; i < numList.size(); i++) {
+        int sum = 0;
+        for (int i = 0; i < numList.size(); i++) {
             sum += numList.get(i);
         }
         return sum;
     }
 
-    private static void ex2() {
-        int[] ints = {1, 2, 3};
-        ArrayList<Integer> numList = new ArrayList<>();//declare new array list
 
+    private static void ex2() {
+        ArrayList<Integer> numList = new ArrayList<>();//declare new array list
+        //convert int to integer
+        int[] ints = {1, 2, 3, 4};
+        //var newList = new ArrayList<Integer>();
         for (int i : ints) {
             numList.add(i);
         }
 
-        //Convert int to integer to use function in array probably need a foreach function
-        var average = avgNumbers(numList);
-        System.out.println("Ex. 2");
+        //take sum of list
+        var r = avgNumbers(numList);
+
+        System.out.println(r);
     }
 
     private static Float avgNumbers(ArrayList<Integer> numList) {
-        // TODO: Implement this function.
-        return ?;
+        Float retVal = 0F;
+        var sum = addNumbers(numList);
+        float length = numList.size();
 
-//}
-////
-////        private static void ex3 () {
-////            System.out.println("Ex. 3");
-////        }
-//  //
+        float average = sum / length;
+
+        return average;
+
+    }
+
+
+    private static void ex3() {
+        System.out.println("Ex. 3");
+    }
+}
