@@ -62,23 +62,24 @@ public class student8 {
     // EX 3
     private static void ex3() {
         int[] ints = {1, 2, 3};
-        var numList = new ArrayList<Integer>();
+        var newList = new ArrayList<Integer>();
 
         for (int i = 0; i < ints.length; i++) {
-            numList.add(ints[i]);
-            doubleNumbers(numList);
+            newList.add(ints[i]);
         }
 
-        System.out.println(numList);
+        var result = doubleNumbers(newList);
+        System.out.println(result);
 
     }
 
     private static ArrayList<Integer> doubleNumbers(ArrayList<Integer> numList) {
-        for (int j = 0; j < (numList.size()); j++) {
-            numList.get(j * 2);
+        var doubledNumbers = new ArrayList<Integer>();
+        for (int i = 0; i < numList.size(); i++) {
+            doubledNumbers.add(numList.get(i) * 2);
         }
 
-        return numList;
+        return doubledNumbers;
 
     }
 
