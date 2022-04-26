@@ -27,13 +27,12 @@ public class student17 {
     private static Integer addNumbers(ArrayList<Integer> numList) {
         int[] ints = {1, 2, 3};
         int sum = 0;
-        var list1 = new ArrayList<Integer>();
+        var list = new ArrayList<Integer>();
         for (int i = 0; i < ints.length; i++){
-            list1.add(ints[i]);
-            sum += list1.get(i);
+            list.add(ints[i]);
+            sum += list.get(i);
         }
         System.out.println("Sum of all numbers in Array: " + sum);
-
         return 0;
     }
     private static void ex2() {
@@ -45,14 +44,13 @@ public class student17 {
         int[] ints = {1, 2, 3};
         float avg = 0;
         int sum = 0;
-        var list2 = new ArrayList<Integer>();
+        var list = new ArrayList<Integer>();
         for (int i = 0; i < ints.length; i++){
-            list2.add(ints[i]);
-            sum += list2.get(i);
+            list.add(ints[i]);
+            sum += list.get(i);
         }
         avg = sum/ints.length;
         System.out.println("The Average value is: " + avg);
-
         return avg;
     }
     private static void ex3() {
@@ -64,7 +62,6 @@ public class student17 {
         int[] result = IntStream.of(arr).map(i -> i * 2).toArray();
         System.out.println("Doubled every Int in an Array: " + Arrays.toString( result));
     }
-
     private static void ex4() {
         System.out.println("Ex. 4");
         createList(5);
@@ -84,7 +81,6 @@ public class student17 {
         int[] arr = {1, 2, 3, 5, 6, 9, 11};
         int N = arr.length;
         findMissingNumbers(arr, N);
-
     }
     private static void findMissingNumbers(int arr[], int N){
         var list = new ArrayList<>();
@@ -126,15 +122,8 @@ public class student17 {
         System.out.println("Ex. 7");
         randomNumber();
     }
-
     private static void randomNumber(){
-        ArrayList<Integer> list = new ArrayList<>();
-        list.add(1);
-        list.add(2);
-        list.add(3);
-        list.add(4);
-        list.add(5);
-        list.add(6);
+        ArrayList<Integer> list = new ArrayList<>(Arrays.asList(1,2,3,4,5,6));
         Random r = new Random();
         System.out.println("Random Number is: " + list.get(r.nextInt(list.size())));
     }
