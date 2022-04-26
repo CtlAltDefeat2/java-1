@@ -14,17 +14,26 @@ public class student1 {
         //ex2();
         //ex3();
     }
+
     private static void ex1() {
 
 
-        int[] numbs = { 1, 2, 3 };
+        int[] numbs = {1, 2, 3};
 
         // Convert int[] array to ArrayList<Integer>
 
         var numList = IntStream.of(numbs).boxed().collect(Collectors.toList());
         System.out.println(numList);
 
+        private static Integer addNumbers(ArrayList<Integer> numList) {
+            Integer retVal = 0;
+            for (Integer i : numList) {   // for each integer "i" in this numList
+                retVal = retVal + i;      //retVal += i;
+            }
+            return retVal;
+        }
 
+    }
 
 
 
@@ -56,14 +65,6 @@ public class student1 {
     private static void ex3() {
         System.out.println("Ex. 3");
     }
-
-    private static Integer addNumbers(ArrayList<Integer> numList) {
-        Integer retVal = 0;
-        for (Integer i : numList) { // foreach
-            retVal += i;
-        }
-        return retVal;
-    }
-
 }
+
 
