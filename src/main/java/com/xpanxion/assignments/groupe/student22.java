@@ -13,7 +13,6 @@ public class student22 {
         private static void ex1() {
             int[] ints = {1, 2, 3};
             var newList = new ArrayList<Integer>();
-            // TODO: convert ints to newList.
             for(int i : ints){
                 newList.add(i);
             }
@@ -24,7 +23,6 @@ public class student22 {
         // My functions
         //
         private static Integer addNumbers(ArrayList<Integer> numList) {
-            // TODO: Implement this function
             Integer retVal = 0;
              for(int i : numList){
                  retVal += i;
@@ -34,7 +32,6 @@ public class student22 {
     private static void ex2() {
         int[] ints = {1, 2, 3, 4};
         var renewList = new ArrayList<Integer>();
-        // TODO: convert ints to newList.
         for(int i : ints){
             renewList.add(i);
         }
@@ -55,7 +52,6 @@ public class student22 {
     private static void ex3() {
         int[] ints = {1, 2, 3};
         var newList = new ArrayList<Integer>();
-        // TODO: convert ints to newList.
         for (int i : ints) {
             newList.add(i);
         }
