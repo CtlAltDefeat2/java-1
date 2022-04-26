@@ -5,11 +5,13 @@ public class student3 {
         ex1();
     }
 
-    private static void ex1() {
-        System.out.println("Brian");
+    private static void ex1() {System.out.println("Ex. 1");
+        int[] ints = {1, 2, 3};
     }
-
-    private static void ex2() {
+    private static Integer addNumbers(ArrayList<Integer> numList) {
+        // TODO: Implement this function.
+        return 0;
+        private static void ex2() {
         System.out.println("Ex. 2");
     }
 
