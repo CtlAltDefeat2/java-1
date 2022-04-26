@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class student8 {
     public static void main(String[] args) {
-        ex4();
+        ex5();
 
     }
 
@@ -104,18 +104,22 @@ public class student8 {
 
     // EX 5
     private static void ex5() {
-//        int[] ints = {1, 2, 3, 5, 6, 9, 11};
-//        var missingNumbers = new ArrayList<Integer>(ints.length - 1);
-//
-//        for (int i = 1; i < ints[ints.length-1] + 1; i++) {
-//            while {
-//
-//            }
-//            //System.out.println(i);
-//        }
+        int[] ints = {1, 2, 3, 5, 6, 9, 11};
+        var missingNumbers = new ArrayList<Integer>();
 
-        //System.out.println(missingNumbers);
-        //System.out.println(ints[ints.length - 1]);
+        for (int i = 0; i < ints[ints.length-1]; i++) {
+            int next = ints[i + 1];
+            int current = ints[i];
+            if ((next - current) > 1) {
+                missingNumbers.add(current + 1);
+            }
+        }
+        System.out.println(missingNumbers);
+        //System.out.println(ints[ints.length-1]);
+
+
+       //System.out.println(missingNumbers);
+       //System.out.println(ints[ints.length - 1]);
     }
 
     private static void ex6() {
