@@ -4,6 +4,7 @@ import java.awt.image.AreaAveragingScaleFilter;
 import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Random;
 import java.util.Scanner;
 
 public class student12 {
@@ -11,90 +12,95 @@ public class student12 {
 
 
     public static void main(String[] args) {
+
         ex1();
         ex2();
         ex3();
         ex4();
         ex5();
         ex6();
+        ex7();
+//        ex8();
+//        ex9();
+//        ex10();
 
 
     }
 
     private static void ex1() {
         System.out.println("Ex. 1");
-        addNumbers(new ArrayList<>());
-    }
-    private static Integer addNumbers(ArrayList<Integer> numList) {
         int[] ints = {1, 2, 3};
-        int sum = 0;
         var list1 = new ArrayList<Integer>();
-        for (int i = 0; i < ints.length; i++){
+        for (int i = 0; i < ints.length; i++) {
             list1.add(ints[i]);
+        }
+        addNumbers(list1);
+    }
+    private static Integer addNumbers(ArrayList<Integer> list1) {
+        //int[] ints = {1, 2, 3};
+        int sum = 0;
+        for (int i = 0; i < list1.size(); i++){
             sum += list1.get(i);
         }
         System.out.println("Sum of all numbers in Array: " + sum);
 
-        return 0;
+        return sum;
     }
 
     private static void ex2() {
         System.out.println("Ex. 2");
-        avgNumbers(new ArrayList<>());
-    }
-    private static Float avgNumbers(ArrayList<Integer> numList) {
-        // TODO: Implement this function.
         int[] ints = {1, 2, 3};
+        var list2 = new ArrayList<Integer>();
+        for (int i = 0; i < ints.length; i++) {
+            list2.add(ints[i]);
+        }
+        avgNumbers(list2);
+        System.out.println("The average of the values is: " + avgNumbers(list2));
+    }
+    private static Float avgNumbers(ArrayList<Integer> list2) {
+        // TODO: Implement this function.
         float avg = 0;
         int sum = 0;
-        var list2 = new ArrayList<Integer>();
-        for (int i = 0; i < ints.length; i++){
-            list2.add(ints[i]);
+        for (int i = 0; i < list2.size(); i++){
             sum += list2.get(i);
         }
-        avg = sum/ints.length;
-        System.out.println("The Average value is: " + avg);
-
+        avg = sum/list2.size();
+        //System.out.println("The Average value is: " + list2.size());
         return avg;
     }
 
     private static void ex3() {
         System.out.println("Ex. 3");
-        doubler(new ArrayList<>());
-    }
-
-    private static void doubler(ArrayList<Integer> numList){
         int[] ints = {1, 2, 3};
-        var doubledNums = new ArrayList<Integer>();
-        //var doubled = 2;
         var list3 = new ArrayList<Integer>();
-        for (int i = 0; i < ints.length; i++) {
-            doubledNums.add(ints[i] * 2);
-
+        for (int i = 0; i < ints.length; i++){
+            list3.add(ints[i]);
         }
-        System.out.println(doubledNums);
+        doubler(list3);
     }
+
+    private static void doubler(ArrayList<Integer> list3){
+        for (int i = 0; i < list3.size(); i++) {
+            list3.set(i, list3.get(i) * 2);
+        }
+        System.out.println(list3);
+    }
+
     private static void ex4() {
         System.out.println("Ex. 4");
         createList(5);
-
     }
-
     private static void createList(int maxNumber){
-        int input = 5;
         int count = 0;
         var list4 = new ArrayList<>();
-
-
         for (int i = 0; i < maxNumber; i++){
             count++;
             list4.add(count);
-
+            //this could be done with i+1 as well
         }
         System.out.println(list4);
-
-
     }
+
     private static void ex5() {
         System.out.println("Ex. 5");
         int[] ints = {1, 2, 3, 5, 6, 9, 11};
@@ -132,11 +138,8 @@ public class student12 {
         System.out.println("Ex. 6");
         int[] ints = {0,1,1,1,0,0,1,0,0,1,0,0,0};
         sorting(ints);
-
-
     }
     private static void sorting(int[] ints ){
-
         int count0 = 0;
         int count1 = 0;
         var list6Zeros = new ArrayList<>();
@@ -145,7 +148,6 @@ public class student12 {
             if (ints[i] == 0) {
                 list6Zeros.add(0);
                 count0++;
-
             }
             else if (ints[i] == 1){
                 list6Ones.add(1);
@@ -155,12 +157,35 @@ public class student12 {
         var list6 = new ArrayList<>();
         list6Zeros.addAll(list6Ones);
         list6.addAll(list6Zeros);
-
         System.out.println("These numbers sorted are: " + list6);
-
-
-
-
+    }
+    private static void ex7() {
+        System.out.println("Ex. 7");
+        var list7 = new ArrayList<>();
+        Random rand = new Random();
+        var listLength = rand.nextInt(80);
+        //Randomly selects a list size between 1 and 80
+        for (int i = 0; i < listLength; i++){
+            list7.add(i + 1);
+            //starts array with a value of 1 (0,1)
+        }
+        randomReturn(list7);
+    }
+    private static void randomReturn(ArrayList<Object> list7){
+        Random rand = new Random();
+        //sets new random function
+        int index = rand.nextInt(list7.size());
+        //selects the next number after a random number along list7's length
+        System.out.println("Random List Length is: "+ list7.size());
+        System.out.println("Random Element is: " + index);
+    }
+    private static void ex8() {
+        System.out.println("Ex. 8");
+    }private static void ex9() {
+        System.out.println("Ex. 9");
+    }
+    private static void ex10() {
+        System.out.println("Ex. 10");
     }
 }
 
