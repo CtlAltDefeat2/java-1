@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class student9 {
     public static void main(String[] args) {
-        ex1(); ex2();
+        ex1(); ex2(); ex3();
     }
     private static void ex1() {
         int[] ints = {1, 2, 3};
@@ -49,9 +49,28 @@ public class student9 {
 
         return average;
     }
+    private static void ex3() {
+        // Create an array list.
+        ArrayList<Integer> numList = new ArrayList<>();
+        int[] ints = {1, 2, 3};
+        // Create a for each loop to add integers.
+        for (int i : ints) {
+            numList.add(i);
+        }
+        doubleNumbers(numList);
+    }
+    // Write a function with the following signature.
+    private static void doubleNumbers (ArrayList <Integer> numList) {
+            // Create a for loop through each integer.
+            for (int i = 0; i < numList.size(); i++) {
+            // Double every number in numList.
+                int timesTwo = numList.get(i);
+                numList.set(i, (timesTwo * 2));
+            }
+            // Print out the results.
+            System.out.println(numList);
+        }
 }
-//System.out.println("The sum is " + sum);
-//System.out.println("The average is: ");
 
 
 
