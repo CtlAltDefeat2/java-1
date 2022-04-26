@@ -1,90 +1,117 @@
 package com.xpanxion.assignments.groupb;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class student8 {
     public static void main(String[] args) {
-        ex5();
+        ex4();
 
     }
 
     // EX 1
     private static void ex1() {
         int[] ints = {1, 2, 3};
-        var sum = 0;
-        var numList = new ArrayList<Integer>();
-        for (int i = 0; i < ints.length; i++) {
-            numList.add(ints[i]);
-        }
 
+        var newList = new ArrayList<Integer>();
+        for (int i = 0; i < ints.length; i++) {
+            newList.add(ints[i]);
+        }
+        var result = addNumbers(newList);
+
+        System.out.println(result);
+
+    }
+    private static Integer addNumbers(ArrayList<Integer> numList) {
+        var sum = 0;
         for (int i = 0; i < numList.size(); i++) {
             sum = sum + numList.get(i);
         }
-
-        System.out.println(numList);
-        System.out.println(sum);
-
+        return sum;
     }
+
 
     // EX 2
     private static void ex2() {
         int[] ints = {1, 2, 3};
-        var sum = 0;
-        var avg = 0;
 
         var numList = new ArrayList<Integer>();
         for (int i = 0; i < ints.length; i++) {
             numList.add(ints[i]);
         }
+
+        var result = avgNumbers(numList);
+        System.out.println(result);
+
+    }
+
+    private static Float avgNumbers(ArrayList<Integer> numList) {
+        var sum = 0;
+        var avg = 0;
 
         for (int i = 0; i < numList.size(); i++) {
             sum = sum + numList.get(i);
             avg = sum / numList.size();
         }
-
-        System.out.println(numList);
-        System.out.println(avg);
-
+        return (float) avg;
     }
 
     // EX 3
     private static void ex3() {
-
         int[] ints = {1, 2, 3};
-
         var numList = new ArrayList<Integer>();
+
         for (int i = 0; i < ints.length; i++) {
-            numList.add(ints[i] * 2);
+            numList.add(ints[i]);
+            doubleNumbers(numList);
         }
 
-        System.out.println(Arrays.toString(ints));
         System.out.println(numList);
 
     }
 
-    private static void ex4(Integer maxNumber) {
+    private static ArrayList<Integer> doubleNumbers(ArrayList<Integer> numList) {
+        for (int j = 0; j < (numList.size()); j++) {
+            numList.get(j * 2);
+        }
 
+        return numList;
+
+    }
+
+    // EX 4
+    private static void ex4() {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the max numbers you'd like in an array: ");
+        var maxNumber = scanner.nextLine();
+
+        var result = createList(Integer.valueOf(maxNumber));
+        System.out.println(result);
+
+    }
+    private static ArrayList<Integer> createList(Integer maxNumber) {
         var numList = new ArrayList<Integer>(maxNumber);
         for (int i = 0; i < maxNumber; i++) {
             numList.add(i + 1);
         }
-
-        System.out.println(numList);
-
+        return numList;
     }
 
+    // EX 5
     private static void ex5() {
-        int[] ints = {1, 2, 3, 5, 6, 9, 11};
-        var missingNumbers = new ArrayList<Integer>(ints.length - 1);
-
-        for (int i = 1; i < ints[ints.length-1] + 1; i++) {
-            while {
-
-            }
-            //System.out.println(i);
-        }
+//        int[] ints = {1, 2, 3, 5, 6, 9, 11};
+//        var missingNumbers = new ArrayList<Integer>(ints.length - 1);
+//
+//        for (int i = 1; i < ints[ints.length-1] + 1; i++) {
+//            while {
+//
+//            }
+//            //System.out.println(i);
+//        }
 
         //System.out.println(missingNumbers);
         //System.out.println(ints[ints.length - 1]);
