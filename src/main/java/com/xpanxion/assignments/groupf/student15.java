@@ -9,6 +9,7 @@ import java.util.stream.IntStream;
         public static void main(String[] args) {
             ex1();
             ex2();
+            ex3();
         }
 
         private static void ex1() {
@@ -46,15 +47,31 @@ import java.util.stream.IntStream;
             Float retVal = 0F;
             var sum = addNumbers(numList);
 
-            float length=numList.size();
-            float average = sum/length;
+            float length = numList.size();
+            float average = sum / length;
             return average;
+        }
 
-                }}
+        private static void ex3() {
+            ArrayList<Integer> numList = new ArrayList<>();//declare new array list
+            //convert int to integer
+            int[] ints = {1, 2, 3, 4};
+            //add the numbers to the numList
+            for (int i : ints) {
+                numList.add(i);
+            }
+            doubleNumbers(numList);
 
+        }
+        private static void doubleNumbers (ArrayList < Integer > numList) {
 
-//    private static void ex3() {
-//        System.out.println("Ex. 3");
-//    }
-//}//
-////
+            for (int i = 0; i < numList.size(); i++) {
+
+                int timesTwo = numList.get(i);
+                numList.set(i, (timesTwo * 2));
+            }
+            System.out.println(numList);//print list
+
+        }
+
+    }
