@@ -43,12 +43,13 @@ public class student22 {
 
 
         private static Float avgNumbers(ArrayList<Integer> numList) {
-        int myVal = 0;
-        Float returnVal = 0.0f;
-        for( float i : numList){
-            myVal += i;
-            returnVal = Float.valueOf(myVal)/numList.toArray().length;
+           var returnVal = addNumbers(numList);
+            return Float.valueOf(returnVal)/numList.toArray().length;
+//        int myVal = 0;
+//        Float returnVal = 0.0f;
+//        for( float i : numList){
+//            myVal += i;
+ //           returnVal = Float.valueOf(myVal)/numList.toArray().length;
         }
-        return returnVal;
-    }
+
     }
