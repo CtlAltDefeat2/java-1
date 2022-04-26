@@ -76,5 +76,6 @@ public class student24 {
         }
         System.out.println("List of integer until maxNumber are " + list);
     }
+
 }
 
