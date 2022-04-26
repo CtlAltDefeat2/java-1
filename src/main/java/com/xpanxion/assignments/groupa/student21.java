@@ -77,7 +77,7 @@ public class student21 {
     }
 
     private static void doubleNumbers(ArrayList<Integer>numList){ // 1,2,3,4,5. Need to use numlist.get(i) cause if
-        // we use regular i it will do 0*2, 1*2, 2*2, etc. the for loop is just a COUNTER.
+        // we use regular i it will use the int i = 0; instead and do 0*2, 1*2, 2*2, etc. the for loop is just a COUNTER.
         for (int i=0; i<numList.size(); i++){
             numList.set(i, numList.get(i) * 2);
         }
