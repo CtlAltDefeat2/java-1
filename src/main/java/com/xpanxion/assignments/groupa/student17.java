@@ -1,11 +1,10 @@
-package com.xpanxion.assignments.groupd;
+package com.xpanxion.assignments.groupa;
 
-import java.security.spec.RSAOtherPrimeInfo;
+
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Random;
-import java.util.stream.IntStream;
+
 
 public class student17 {
     public static void main(String[] args) {
@@ -22,18 +21,19 @@ public class student17 {
     }
     private static void ex1() {
         System.out.println("Ex. 1");
-        addNumbers(new ArrayList<>());
-    }
-    private static Integer addNumbers(ArrayList<Integer> numList) {
         int[] ints = {1, 2, 3};
-        int sum = 0;
         var list = new ArrayList<Integer>();
         for (int i = 0; i < ints.length; i++){
             list.add(ints[i]);
-            sum += list.get(i);
         }
-        System.out.println("Sum of all numbers in Array: " + sum);
-        return 0;
+        System.out.println("The sum of the array is: " + addNumbers(list));
+    }
+    private static Integer addNumbers(ArrayList<Integer> numList) {
+        int sum = 0;
+        for (int i = 0; i < numList.size(); i++){
+            sum += numList.get(i);
+        }
+        return sum;
     }
     private static void ex2() {
         System.out.println("Ex. 2");

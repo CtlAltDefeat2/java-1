@@ -1,5 +1,9 @@
 package com.xpanxion.assignments.groupa;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Random;
+
 public class student2 {
     public static void main(String[] args) {
         ex1();
@@ -16,4 +20,5 @@ public class student2 {
     private static void ex3() {
         System.out.println("Ex. 3");
     }
+
 }
