@@ -44,7 +44,7 @@ public class student17 {
         int[] ints = {1, 2, 3};
         float avg = 0;
         int sum = 0;
-        var list = new ArrayList<Integer>();
+        var list = (new ArrayList<Integer>());
         for (int i = 0; i < ints.length; i++){
             list.add(ints[i]);
             sum += list.get(i);
@@ -55,12 +55,16 @@ public class student17 {
     }
     private static void ex3() {
         System.out.println("Ex. 3");
-        multiply();
+        multiply(new ArrayList<>());
     }
-    private static void multiply() {
+    private static void multiply(ArrayList<Integer> numList) {
         int[] arr = {1, 2, 3};
-        int[] result = IntStream.of(arr).map(i -> i * 2).toArray();
-        System.out.println("Doubled every Int in an Array: " + Arrays.toString( result));
+        var doubleNum = new ArrayList<Integer>();
+        var list = new ArrayList<Integer>();
+        for (int i = 0; i < arr.length; i++){
+            doubleNum.add(arr[i] * 2);
+        }
+        System.out.println("Doubled every Int in an Array: " + doubleNum);
     }
     private static void ex4() {
         System.out.println("Ex. 4");
