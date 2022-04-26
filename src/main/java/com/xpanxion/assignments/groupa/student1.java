@@ -16,28 +16,35 @@ public class student1 {
     }
 
     private static void ex1() {
-
-
-        int[] numbs = {1, 2, 3};
-
-        // Convert int[] array to ArrayList<Integer>
-
-        var numList = IntStream.of(numbs).boxed().collect(Collectors.toList());
-        System.out.println(numList);
-
-        private static Integer addNumbers(ArrayList<Integer> numList) {
-            Integer retVal = 0;
-            for (Integer i : numList) {   // for each integer "i" in this numList
-                retVal = retVal + i;      //retVal += i;
-            }
-            return retVal;
+        int[] nums = {1, 2, 3};
+        var numList = new ArrayList<Integer>();
+        for (int i: nums) {
+            numList.add(i);
         }
-
+        var r = addNumbers(numList);
+        System.out.println(r);
     }
 
+    private static Integer addNumbers(ArrayList<Integer> numList) {
+        Integer retVal = 0;
+        for (Integer i : numList) {   // for each integer "i" in this numList
+            retVal = retVal + i;      //retVal += i;
+        }
+        return retVal;
+    }
+
+    private static void ex2() {
+        System.out.println("Ex. 2");
+    }
+
+    private static void ex3() {
+        System.out.println("Ex. 3");
+    }
+}
 
 
-        /*var list = new ArrayList<Integer>();
+
+     /*var list = new ArrayList<Integer>();
         list.add(1);
         list.add(2);
         list.add(3);
@@ -56,15 +63,3 @@ public class student1 {
 //            sum = sum + value;   //0+1=1, 1+2=3, 3+3=6
 //        }
 //        System.out.println("Sum of Array:" + sum);
-    }
-
-    private static void ex2() {
-        System.out.println("Ex. 2");
-    }
-
-    private static void ex3() {
-        System.out.println("Ex. 3");
-    }
-}
-
-
