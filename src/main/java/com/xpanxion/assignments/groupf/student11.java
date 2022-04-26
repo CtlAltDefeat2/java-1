@@ -1,5 +1,6 @@
 package com.xpanxion.assignments.groupf;
 
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -60,19 +61,29 @@ private static Integer addNumbers(ArrayList<Integer> numList) {
 
 
 
-    }
 
 
 
+        private static void ex3() {
+        ArrayList<Integer> numList = new ArrayList<>(); //declare new array list
+            //convert int to integer
+            int[] ints = {1, 2, 3, 4};
+            //add the number to the numList
+            for (int i : ints) {
+                numList.add(i);
+            }
+            doubleNumbers(numList);
+        }
+        private static void doubleNumbers (ArrayList < Integer > numList) {
+
+        for (int i = 0; i < numList.size(); i++) {
+
+        int temp = numList.get(i);
+
+        numList.set(i, (temp * 2));
+            }
+            System.out.println(numList); //print list
+    }}
 
 
 
-
-//
-//
-//    private static void ex3() {
-//        System.out.println("Ex. 3");
-//    }
-//
-//
-//    }
