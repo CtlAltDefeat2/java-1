@@ -13,6 +13,7 @@ public class student21 {
 
         ex1();
         ex2();
+        ex3();
     }
 
     private static void ex1() {
@@ -42,7 +43,13 @@ public class student21 {
     }
 
     private static void ex3() {
-        System.out.println("Ex. 3");
+        int[] ints = {1, 2, 3, 4, 5};
+        var numList = new ArrayList<Integer>();
+        for (int number : ints) {
+            numList.add(number);
+        }
+        doubleNumbers(numList);
+
     }
 
     //
@@ -68,4 +75,13 @@ public class student21 {
         float avg = Float.valueOf((total / numList.size()));
         return avg;
     }
+
+    private static void doubleNumbers(ArrayList<Integer>numList){ // 1,2,3,4,5. Need to use numlist.get(i) cause if
+        // we use regular i it will do 0*2, 1*2, 2*2, etc. the for loop is just a COUNTER.
+        for (int i=0; i<numList.size(); i++){
+            numList.set(i, numList.get(i) * 2);
+        }
+        System.out.println(numList);
+    }
+
 }
