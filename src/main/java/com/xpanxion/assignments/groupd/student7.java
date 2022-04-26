@@ -13,9 +13,9 @@ public class student7 {
     }
     private static void ex1() {
         int[] ints = {1, 2, 3};
-        ArrayList<Integer> num = new ArrayList<Integer>() ;
-        for (int i = 0; i < ints.length; i++) {
-            num.add(ints[i]);
+        var num = new ArrayList<Integer>() ;
+        for (Integer i :ints) {
+            num.add(i);
         }
         System.out.println("Ex. 1");
         System.out.println(addNumbers(num));
@@ -23,8 +23,8 @@ public class student7 {
     private static void ex2() {
         int[] ints = {1, 2, 3};
         ArrayList<Integer> num = new ArrayList<Integer>() ;
-        for (int i = 0; i < ints.length; i++) {
-            num.add(ints[i]);
+        for (Integer i : ints) {
+            num.add(i);
         }
         System.out.println("Ex. 2");
         System.out.println(avgNumbers(num));
@@ -32,41 +32,35 @@ public class student7 {
     private static void ex3() {
         int[] ints = {1, 2, 3};
         ArrayList<Integer> num = new ArrayList<Integer>() ;
-        for (int i = 0; i < ints.length; i++) {
-            num.add(ints[i]);
+        for (int i :ints) {
+            num.add(i);
         }
         System.out.println("Ex. 3");
-        Double(num);
+        doubleNumber(num);
     }
-
-
-
     private static Integer addNumbers(ArrayList<Integer> numList) {
         int sum = 0;
-        for (int i = 0; i < numList.size(); i++) {
-            sum += numList.get(i);
+        for (int i : numList) {
+            sum += i;
         }
-        // TODO: Implement this function.
         return sum;
     }
 
     private static Float avgNumbers(ArrayList<Integer> numList) {//ex2 get the average
-        // TODO: Implement this function.
+
         int sum = 0;
         float avg ;
-        for (int i = 0; i < numList.size(); i++) {
-            sum += numList.get(i);
+        for (int i : numList) {
+            sum += i;
         }
         avg = sum/numList.size();
         return avg;
     }
-
-    private static void Double(ArrayList<Integer> numList) {
+    private static void doubleNumber(ArrayList<Integer> numList) {
         for (int i = 0; i < numList.size(); i++) {
             int temp = numList.get(i);
             numList.set(i, (temp*2));
         }
         System.out.println(numList);
-
     }
 }
