@@ -1,12 +1,14 @@
 package com.xpanxion.assignments.groupe;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class student23 {
     public static void main(String[] args) {
-        Ex1();
-        Ex2();
-        Ex3();
+//        Ex1();
+//        Ex2();
+//        Ex3();
+        Ex4();
     }
 
     private static void Ex1() {
@@ -39,6 +41,16 @@ public class student23 {
         System.out.println(result);
     }
 
+    private static void Ex4(){
+        Integer maxNum = 0;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a value for the length of the array to be created");
+        maxNum = Integer.parseInt(scanner.next());
+        var r= createList(maxNum);
+        System.out.println(r);
+    }
+
+
     private static Integer addNumbers(ArrayList<Integer> numList) {
         Integer retVal = 0;
         for (Integer i : numList) {
@@ -56,6 +68,14 @@ public class student23 {
     private static ArrayList<Integer> doubleArray(ArrayList<Integer> numList) {
         for (int i = 0; i < numList.size(); i++) {
             numList.set(i, numList.get(i) * 2);
+        }
+        return numList;
+    }
+
+    private static ArrayList<Integer> createList(Integer maxNumber){
+        var numList = new ArrayList<Integer>();
+        for(int i = 0; i <maxNumber; i++){
+            numList.add(i+1);
         }
         return numList;
     }
