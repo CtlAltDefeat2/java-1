@@ -19,8 +19,8 @@ public class student0 {
         for (int i: ints) {
             tempList.add(i);
         }
-        var r = addNumbers(tempList);
-        System.out.println(r);
+        var result = addNumbers(tempList);
+        System.out.println(result);
     }
 
     //
