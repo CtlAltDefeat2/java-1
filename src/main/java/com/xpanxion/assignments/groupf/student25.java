@@ -10,6 +10,7 @@ public class student25 {
 
         ex1();
         ex2();
+        ex3();
     }
 
     private static void ex1() {
@@ -55,11 +56,26 @@ public class student25 {
 
         return average;
     }
-}
+
+    private static void ex3() {
+        // Write a function with the following signature:
+        //This function doubles every number in numList;
+        int[] ints = {1, 2, 3, 4};
+        // Define an ArrayList of integers.
+        var numList = new ArrayList<Integer>();
+        for (int i : ints) {
+            numList.add(i);
+
+        }
+        doubleNumbers(numList);
+    }
+        private static void doubleNumbers (ArrayList < Integer > numList) {
+            for (int i = 0; i < numList.size(); i++){
+                int double1 = numList.get(i);
+                numList.set(i,(double1*2));
+            }
+            System.out.println(numList);
+        }
+    }
 
 
-
-//    private static void ex3() {
-//        System.out.println("Ex. 3");
-//    }
-//}}
