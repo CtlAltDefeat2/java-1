@@ -15,8 +15,8 @@ public class student5 {
     }
     public static void ex1() {
         var array = new ArrayList<Integer>();
-        System.out.println("Ex. 1");
-        System.out.print(addNumbers(array));
+        System.out.print("Ex. 1    ");
+        System.out.println(addNumbers(array));
     }
     public static Integer addNumbers(ArrayList<Integer> numList) {
         int[] ints = {1, 2, 3};
@@ -26,8 +26,8 @@ public class student5 {
     }
     public static void ex2() {
         var array2 = new ArrayList<Integer>();
-        System.out.println("Ex. 2");
-        System.out.print(avgNumbers(array2));
+        System.out.print("Ex. 2    ");
+        System.out.println(avgNumbers(array2));
     }
     private static Float avgNumbers(ArrayList<Integer> avgArray) {
         int[] ints = {1, 2, 3};
@@ -43,8 +43,8 @@ public class student5 {
     }
     private static void ex3() {
         var array3 = new ArrayList<Integer>();
-        System.out.println("Ex. 3");
-        System.out.print(dblNumbers(array3));
+        System.out.print("Ex. 3    ");
+        System.out.println(dblNumbers(array3));
     }
     private static String dblNumbers(ArrayList<Integer> dblArray) {
         int[] ints = {1, 2, 3};
@@ -53,11 +53,19 @@ public class student5 {
         for (int i = 0; i < intsDoubled.length; i++) {
             dblArray.add(intsDoubled[i]);
         }
-        String finalArray = dblArray.toString();
-        return finalArray;
+        //String finalArray = dblArray.toString();
+        return dblArray.toString();
     }
     public static void ex4() {
-        System.out.println("Ex. 4");
+        System.out.print("Ex. 4    ");
+        createList(16);
+    }
+    private static void createList(Integer maxNumber) {
+        var array4 = new ArrayList<Integer>();
+        for (int i = 0; i < maxNumber; i++) {
+            array4.add(i + 1);
+        }
+        System.out.println(array4);
     }
     public static void ex5() {
         System.out.println("Ex. 5");
