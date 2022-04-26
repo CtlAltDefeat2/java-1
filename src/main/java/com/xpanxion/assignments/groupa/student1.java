@@ -11,7 +11,7 @@ public class student1 {
 
     public static void main(String[] args) {
         ex1();
-        //ex2();
+        ex2();
         //ex3();
     }
 
@@ -34,7 +34,19 @@ public class student1 {
     }
 
     private static void ex2() {
-        System.out.println("Ex. 2");
+        int[] nums = {1, 2, 3};
+        var numList = new ArrayList<Integer>();
+        for (int i : nums) {
+            numList.add(i);
+        }
+        var r = avgNumbers(numList);
+        System.out.println("Average:" + r);
+    }
+    private static Float avgNumbers(ArrayList<Integer> numList) {
+        var sum = addNumbers(numList);
+    Float length= Float.valueOf(numList.size());
+    Float average = sum/length;
+    return average;
     }
 
     private static void ex3() {
