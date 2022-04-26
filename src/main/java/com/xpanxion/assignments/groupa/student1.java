@@ -1,7 +1,10 @@
 package com.xpanxion.assignments.groupa;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 
 public class student1 {
@@ -12,19 +15,26 @@ public class student1 {
         //ex3();
     }
     private static void ex1() {
-        int[] array = {1, 2, 3}; // n = 3, n-1 = 2
+
+
+        int[] numbs = { 1, 2, 3 };
 
         // Convert int[] array to ArrayList<Integer>
 
+        var numList = IntStream.of(numbs).boxed().collect(Collectors.toList());
+        System.out.println(numList);
 
 
-        var list = new ArrayList<Integer>();
+
+
+
+        /*var list = new ArrayList<Integer>();
         list.add(1);
         list.add(2);
         list.add(3);
 
         var r = addNumbers(list);
-        System.out.println(r);
+        System.out.println(r);*/
 
 //        int sum = 0;
 //            /*for(int i=0; i<=array.length-1; i++);   //0 1 2  //a.length =3, a.length-1=2
