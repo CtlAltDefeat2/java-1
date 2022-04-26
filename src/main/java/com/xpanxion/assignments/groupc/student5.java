@@ -8,21 +8,28 @@ import static java.math.BigInteger.*;
 
 public class student5 {
     public static void main(String[] args) {
-        //ex1();
-        //ex2();
-        //ex3();
+        ex1();
+        ex2();
+        ex3();
         ex4();
+        ex5();
     }
     public static void ex1() {
+        int[] ints = {1, 2, 3};
         var array = new ArrayList<Integer>();
+        for (int i = 0; i < ints.length; i++) {
+            array.add(i);
+        }
+        var result = addNumbers(array);
         System.out.print("Ex. 1    ");
-        System.out.println(addNumbers(array));
+        System.out.println(result);
     }
     public static Integer addNumbers(ArrayList<Integer> numList) {
-        int[] ints = {1, 2, 3};
-        List<Integer> array = Arrays.stream(ints).boxed().toList();
-        int intSum = Arrays.stream(ints).sum();
-        return intSum;
+        Integer returnValue = 0;
+        for (Integer i: numList) {
+            returnValue += i;
+        }
+        return returnValue;
     }
     public static void ex2() {
         var array2 = new ArrayList<Integer>();
@@ -68,10 +75,10 @@ public class student5 {
         System.out.println(array4);
     }
     public static void ex5() {
-        System.out.println("Ex. 5");
+        System.out.print("Ex. 5    ");
     }
     public static void ex6() {
-        System.out.println("Ex. 6");
+        System.out.print("Ex. 6");
     }
     public static void ex7() {
         System.out.println("Ex. 7");
