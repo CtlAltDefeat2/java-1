@@ -29,7 +29,7 @@ public class student0 {
 
     private static Integer addNumbers(ArrayList<Integer> numList) {
         Integer retval = 0;
-        for(Integer i: numList) {
+        for (Integer i: numList) {
             retval += i;
         }
         return retval;
