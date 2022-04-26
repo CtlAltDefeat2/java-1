@@ -1,6 +1,5 @@
 package com.xpanxion.assignments.groupb;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class student24 {
@@ -8,6 +7,8 @@ public class student24 {
 
         ex1();
         ex2();
+        ex3();
+        ex4();
     }
     //EXERCISE NUMBER 1
     private static void ex1() {
@@ -26,7 +27,7 @@ public class student24 {
        }
        return sum;
     }
-//EXERCISE NUMBER 2
+    //EXERCISE NUMBER 2
    private static void ex2(){
        int[] ints = {1,2,3};
        var numList = new ArrayList<Integer>();
@@ -36,7 +37,7 @@ public class student24 {
        var average = average(numList);
        System.out.println("The average is " + average);
    }
-    public static Float average(ArrayList<Integer> numList){
+    private static Float average(ArrayList<Integer> numList){
         float average = 0;
         int sum =0;
         for(int i=0; i< numList.size(); i++){
@@ -44,6 +45,36 @@ public class student24 {
         }
         average = sum/numList.size();
         return average;
+    }
+
+    //EXERCISE NUMBER 3
+    private static void ex3() {
+        int[] ints = {1, 2, 3};
+        var numList = new ArrayList<Integer>();
+        for(int i: ints){
+            numList.add(i);
+        }
+        multiple(numList);
+    }
+
+    private static void multiple(ArrayList<Integer> numList){
+        for(int i=0; i<numList.size();i++){
+            int multiply = numList.get(i) *2;
+            numList.set(i,multiply);
+        }
+        System.out.println("Doubles are " + numList);
+    }
+
+    //EXERCISE NUMBER 4
+    private static void ex4(){
+         createList(5);
+    }
+    private static void createList(Integer maxNumber){
+        var list = new ArrayList<Integer>();
+        for(int i=1; i<=maxNumber;i++){
+            list.add(i);
+        }
+        System.out.println("List of integer until maxNumber are " + list);
     }
 }
 
