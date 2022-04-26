@@ -25,10 +25,15 @@ public class student17 {
         addNumbers(new ArrayList<>());
     }
     private static Integer addNumbers(ArrayList<Integer> numList) {
-        // TODO: Implement this function.
-        int[] arr = {1, 2, 3};
-        int sum = IntStream.of(arr).sum();
-        System.out.println("The sum of the Array is: " + sum);
+        int[] ints = {1, 2, 3};
+        int sum = 0;
+        var list1 = new ArrayList<Integer>();
+        for (int i = 0; i < ints.length; i++){
+            list1.add(ints[i]);
+            sum += list1.get(i);
+        }
+        System.out.println("Sum of all numbers in Array: " + sum);
+
         return 0;
     }
     private static void ex2() {
@@ -37,13 +42,18 @@ public class student17 {
     }
     private static Float avgNumbers(ArrayList<Integer> numList) {
         // TODO: Implement this function.
-        int[] arr = {1, 2, 3};
+        int[] ints = {1, 2, 3};
+        float avg = 0;
         int sum = 0;
-        for(int i=0; i<arr.length; i++){
-            sum = sum + arr[i];
+        var list2 = new ArrayList<Integer>();
+        for (int i = 0; i < ints.length; i++){
+            list2.add(ints[i]);
+            sum += list2.get(i);
         }
-        System.out.println("The average of the Array is: " + sum / arr.length);
-        return null;
+        avg = sum/ints.length;
+        System.out.println("The Average value is: " + avg);
+
+        return avg;
     }
     private static void ex3() {
         System.out.println("Ex. 3");
