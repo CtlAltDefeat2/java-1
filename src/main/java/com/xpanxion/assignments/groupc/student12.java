@@ -34,16 +34,14 @@ public class student12 {
         for (int i = 0; i < ints.length; i++) {
             list1.add(ints[i]);
         }
-        addNumbers(list1);
+        var result = addNumbers(list1);
+        System.out.println("Sum of all numbers in Array: " + result);
     }
     private static Integer addNumbers(ArrayList<Integer> list1) {
-        //int[] ints = {1, 2, 3};
         int sum = 0;
         for (int i = 0; i < list1.size(); i++){
             sum += list1.get(i);
         }
-        System.out.println("Sum of all numbers in Array: " + sum);
-
         return sum;
     }
 
