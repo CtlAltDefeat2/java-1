@@ -16,62 +16,66 @@ public class student17 {
         ex6();
         ex7();
 //        ex8();
-//        ex9();
+        ex9();
 //        ex10();
     }
     private static void ex1() {
         System.out.println("Ex. 1");
         int[] ints = {1, 2, 3};
         var list = new ArrayList<Integer>();
-        for (int i = 0; i < ints.length; i++){
-            list.add(ints[i]);
+        for (int i = 0; i < ints.length; i++) {
+            int anInt = ints[i];
+            list.add(anInt);
         }
         System.out.println("The sum of the array is: " + addNumbers(list));
     }
     private static Integer addNumbers(ArrayList<Integer> numList) {
         int sum = 0;
-        for (int i = 0; i < numList.size(); i++){
-            sum += numList.get(i);
+        for (int i = 0; i < numList.size(); i++) {
+            Integer integer = numList.get(i);
+            sum += integer;
         }
         return sum;
     }
     private static void ex2() {
         System.out.println("Ex. 2");
-        avgNumbers(new ArrayList<>());
-    }
-    private static Float avgNumbers(ArrayList<Integer> numList) {
-        // TODO: Implement this function.
         int[] ints = {1, 2, 3};
+        var list = new ArrayList<Integer>();
+        for (int anInt : ints) {
+            list.add(anInt);
+        }
+        avgNumbers(list);
+        System.out.println("The average value is: " + avgNumbers(list));
+    }
+    private static Float avgNumbers(ArrayList<Integer> list2) {
+        // TODO: Implement this function.
         float avg = 0;
         int sum = 0;
-        var list = (new ArrayList<Integer>());
-        for (int i = 0; i < ints.length; i++){
-            list.add(ints[i]);
-            sum += list.get(i);
+        for (Integer integer : list2) {
+            sum += integer;
         }
-        avg = sum/ints.length;
-        System.out.println("The Average value is: " + avg);
+        avg = sum/list2.size();
         return avg;
     }
     private static void ex3() {
         System.out.println("Ex. 3");
-        multiply(new ArrayList<>());
-    }
-    private static void multiply(ArrayList<Integer> numList) {
-        int[] arr = {1, 2, 3};
-        var doubleNum = new ArrayList<Integer>();
+        int[] ints = {1, 2, 3};
         var list = new ArrayList<Integer>();
-        for (int i = 0; i < arr.length; i++){
-            doubleNum.add(arr[i] * 2);
+        for (int i = 0; i < ints.length; i++) {
+            int anInt = ints[i];
+            list.add(anInt);
         }
-        System.out.println("Doubled every Int in an Array: " + doubleNum);
+        multiply(list);
+    }
+    private static void multiply(ArrayList<Integer> list) {
+        list.replaceAll(integer -> integer * 2);
+        System.out.println("This is the doubled Array: " + list);
     }
     private static void ex4() {
         System.out.println("Ex. 4");
-        createList(5);
+        createList(6);
     }
     private static void createList(Integer maxNumber){
-        int input = 5;
         int count = 0;
         var list = new ArrayList<>();
         for(int i = 0; i < maxNumber; i++){
@@ -88,7 +92,7 @@ public class student17 {
     }
     private static void findMissingNumbers(int arr[], int N){
         var list = new ArrayList<>();
-        int diff = arr[0] - 0;
+        int diff = arr[0];
         for (int i = 0; i < N; i++){
             if(arr[i] - i != diff)
                 while (diff < arr[i] - i){
@@ -96,7 +100,7 @@ public class student17 {
                     diff++;
                 }
         }
-        System.out.println("The missing numbems are: " + list);
+        System.out.println("The missing numbers are: " + list);
     }
     private static void ex6(){
         System.out.println("Ex. 6");
@@ -136,6 +140,20 @@ public class student17 {
     }
     private static void ex9(){
         System.out.println("Ex. 9");
+        var result = evenOrOdd();
+        if (result % 2 == 0)
+            System.out.println("The sum of the array is Even");
+        else
+            System.out.println("The sum of the array is Odd");
+    }
+    private static int evenOrOdd(){
+        ArrayList<Integer> list = new ArrayList<>(Arrays.asList(1,2,3,4,5));
+        int result = 0;
+        for (int i = 0; i < list.size(); i++) {
+            Integer integer = list.get(i);
+            result += integer;
+        }
+        return result;
     }
     private static void ex10(){
         System.out.println("Ex. 10");
