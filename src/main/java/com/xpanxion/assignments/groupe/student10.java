@@ -10,6 +10,7 @@ public class student10 {
         ex1();
         ex2();
         ex3();
+        ex4();
     }
 
     private static void ex1() {
@@ -63,5 +64,10 @@ public class student10 {
             list3.set(i, list3.get(i) * 2);
         }
         System.out.println(list3);
+    }
+
+
+    private static void ex4() {
+
     }
 }
