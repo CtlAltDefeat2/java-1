@@ -249,37 +249,50 @@ public class student12 {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Please enter a new password: ");
         var password = scanner.nextLine();
-        passVerify(password);
-
-    }
-
-    private  static void passVerify( String password){
-        //var passCount = new StringTokenizer(password);
-        var count = 0;
-        boolean passValid = false;
-
-        for (int i = 0; i < password.length(); i++) {
-            boolean checkLetter = Character.isLetter(password.charAt(i));
-            boolean countNumbers = Character.isDigit(password.charAt(i));
-            if (countNumbers){
-                count++;
-            }
-            if (password.length() < 10) {
-                passValid = false;
-            }
-            else if (!checkLetter){
-                passValid = false;
-            }
-            else if (count < 2) {
-                passValid = false;
-            }
-            else {
-                passValid = true;
-            }
+        if (passVerify(password)) {
+            System.out.println("Password is valid");
         }
-        System.out.println("This password is: " + passValid);
+        else {
+            System.out.println("Password is not valid");
+        }
+
     }
+
+    private  static boolean passVerify(String password) {
+        if (password.length() < 10) {
+            return false;
+        }
+        var charCount = 0;
+        var numCount = 0;
+        for (int i = 0; i < password.length(); i++) {
+            char charAtI = password.charAt(i);
+            if (areNums(charAtI)) {
+                numCount++;
+            }
+            else if (areLetters(charAtI)) {
+                charCount++;
+            }
+            else return false;
+
+        }
+        return (charCount >= 2 && numCount >= 2);
+        //returns if both charCount and numCount are greater than 2
+    }
+    private static boolean areNums(char ch) {
+        ch = Character.toUpperCase(ch);
+        return (ch >= 'A' && ch <= 'Z');
+    }
+    public static boolean areLetters (char ch) {
+        return (ch >=  0 && ch <= 9);
+
+    }
+
+
+
+
+
 }
+
 
 
 
