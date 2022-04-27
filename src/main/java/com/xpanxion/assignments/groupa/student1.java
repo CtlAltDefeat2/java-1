@@ -10,10 +10,11 @@ import java.util.stream.IntStream;
 public class student1 {
 
     public static void main(String[] args) {
-        ex1();
-        ex2();
-        //ex3();
-        ex4();
+        //ex1();
+        //ex2();
+        ex3();
+        //ex4();
+        ex5();
     }
 
     private static void ex1() {
@@ -50,22 +51,38 @@ public class student1 {
     }
 
     private static void ex3() {
-        System.out.println("Ex. 3");
+        int[] ints = {10, 20, 30, 40};
+        var newList = new ArrayList<Integer>();
+        for (int i : ints) {
+            newList.add(i);
+        }
+        var result = doubleArray(newList);
+        System.out.println(result);
     }
+    private static ArrayList<Integer> doubleArray(ArrayList<Integer> numList) {
+        for (int i = 0; i < numList.size(); i++) {
+            numList.set(i, numList.get(i) * 2);
+        }
+            return numList;
+        }
 
-    private static void ex4() {
-        var list = createList(5);
-        System.out.println(list);
-    }
-    private static ArrayList<Integer> createList(Integer maxNumber) {
+        private static void ex4 () {
+            var list = createList(5);
+            System.out.println(list);
+        }
+        private static ArrayList<Integer> createList (Integer maxNumber){
 
-    ArrayList<Integer> numList = new ArrayList<>();
-    for (int i=1; i<= maxNumber; ++i) {
-        numList.add(i);
+            ArrayList<Integer> numList = new ArrayList<>();
+            for (int i = 1; i <= maxNumber; ++i) {
+                numList.add(i);
+            }
+            return numList;
+        }
+
+        private static void ex5 () {
+
+        }
     }
-    return numList;
-    }
-}
 
 
 
