@@ -1,7 +1,9 @@
 package com.xpanxion.assignments.groupa;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 
@@ -13,7 +15,8 @@ public class student21 {
 //        ex3();
 //        ex4();
 //        ex5();
-          ex6();
+//          ex6();
+          ex7();
     }
 
     private static void ex1() {
@@ -73,9 +76,23 @@ public class student21 {
 //        the primitive array first and then convert it and print it after.
         reArrange(ints);
         System.out.println(convertArray(ints));
+    }
 
 
+    private static void ex7(){
+        var list = new ArrayList<Integer>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
+        list.add(6);
+        list.add(7);
+        list.add(8);
+        list.add(9);
+        list.add(10);
 
+        System.out.println(returnRandomNumber(list));
     }
 
     private static String convertArray(int[] ints) { // Helper functions
@@ -147,6 +164,13 @@ public class student21 {
         Arrays.sort(ints);
 
         return (ints);
+    }
+
+    public static int returnRandomNumber(ArrayList<Integer>list){
+        Random random = new Random();
+        int rand = random.nextInt(10);
+        int number = list.get(rand);
+        return number;
     }
 
 }
