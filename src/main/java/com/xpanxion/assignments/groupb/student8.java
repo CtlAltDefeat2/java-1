@@ -4,11 +4,12 @@ import org.w3c.dom.ls.LSOutput;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 public class student8 {
     public static void main(String[] args) {
-        ex6();
+        ex7();
 
     }
 
@@ -123,6 +124,7 @@ public class student8 {
        //System.out.println(ints.length - 1);
     }
 
+    // EX 6
     private static void ex6() {
 
         int[] ints = {0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0};
@@ -135,5 +137,18 @@ public class student8 {
         String joinedArray = String.join("", strings);
         System.out.println(joinedArray);
 
+    }
+
+    // EX 7
+    private static void ex7() {
+        var list = new int[5];
+        Random random = new Random();
+        var array = new ArrayList<Integer>(5);
+        for (int i = 0; i < list.length; i++) {
+            list[i] = random.nextInt(1, 20);
+            array.add(list[i]);
+        }
+        System.out.println(array);
+        System.out.println(array.get(random.nextInt(array.size())));
     }
 }
