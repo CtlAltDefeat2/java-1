@@ -137,7 +137,6 @@ public class student12 {
         sorting(ints);
     }
     private static void sorting(int[] ints ){
-
         var list6Zeros = new ArrayList<>();
         var list6Ones = new ArrayList<>();
         for (int i = 0; i < ints.length; i++){
@@ -165,16 +164,14 @@ public class student12 {
         }
         randomReturn(list7);
     }
-    private static void randomReturn(ArrayList<Integer> list7){
+    private static void randomReturn(ArrayList<Integer> list7) {
         Random rand = new Random();
         //sets new random function
         int index = rand.nextInt(list7.size());
         //selects the next number after a random number along list7's length
-        System.out.println("Random List Length is: "+ list7.size());
+        System.out.println("Random List Length is: " + list7.size());
         System.out.println("Random Element is: " + index);
     }
-
-
     private static void ex8() {
         System.out.println("Ex. 8");
         var list8 = new ArrayList<Integer>();
@@ -221,7 +218,6 @@ public class student12 {
         }
     }
 
-
     private static void ex9() {
         System.out.println("Ex. 9");
         Random rand = new Random();
@@ -250,6 +246,38 @@ public class student12 {
     }
     private static void ex10() {
         System.out.println("Ex. 10");
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Please enter a new password: ");
+        var password = scanner.nextLine();
+        passVerify(password);
+
+    }
+
+    private  static void passVerify( String password){
+        //var passCount = new StringTokenizer(password);
+        var count = 0;
+        boolean passValid = false;
+
+        for (int i = 0; i < password.length(); i++) {
+            boolean checkLetter = Character.isLetter(password.charAt(i));
+            boolean countNumbers = Character.isDigit(password.charAt(i));
+            if (countNumbers){
+                count++;
+            }
+            if (password.length() < 10) {
+                passValid = false;
+            }
+            else if (!checkLetter){
+                passValid = false;
+            }
+            else if (count < 2) {
+                passValid = false;
+            }
+            else {
+                passValid = true;
+            }
+        }
+        System.out.println("This password is: " + passValid);
     }
 }
 
