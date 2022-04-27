@@ -1,5 +1,6 @@
 package com.xpanxion.assignments.groupf;
 
+import java.sql.ClientInfoStatus;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.stream.Collectors;
@@ -11,6 +12,7 @@ import java.util.stream.IntStream;
             ex2();
             ex3();
             ex4();
+            ex5();
         }
 
         private static void ex1() {
@@ -75,13 +77,11 @@ import java.util.stream.IntStream;
             System.out.println(numList);//print list
 
         }
-
          private static void ex4() {
             var list = createList(5);
             System.out.println(list);
         }
         private static ArrayList<Integer> createList(Integer maxNumber) {
-
             // create List
             // for loop to determine the type of numbers in list
             ArrayList<Integer> numList = new ArrayList<>();
@@ -89,4 +89,33 @@ import java.util.stream.IntStream;
                 numList.add(i);
             }
          return numList;
-    }}
+    }
+
+        private static void ex5() {
+
+            int[] ints = {1, 2, 3, 5, 6, 9, 11};
+            ArrayList<Integer> numList = new ArrayList<>();
+            for (int i=0; i<ints.length;i++){
+                numList.add(ints[i]);
+            }
+            System.out.println(findMissingNumbers(numList));
+        }
+
+        private static ArrayList<Integer> findMissingNumbers(ArrayList<Integer>numList){
+        var missingNumbers = new ArrayList<Integer>();
+        int firstNumber=numList.get(0);
+        int lastNumber = numList.get(numList.size()-1);
+        for(int i = firstNumber; i<lastNumber; i++) {
+            if(!numList.contains(i)) {
+                missingNumbers.add(i);
+            }
+        }
+        return missingNumbers;
+
+        }
+    }
+// define new array list
+// identify first number and last number
+// last index for list
+// for loop to loop through numbers in array
+// some statement to show what is NOT contained in the
