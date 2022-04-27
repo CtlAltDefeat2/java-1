@@ -10,6 +10,7 @@ import java.util.stream.IntStream;
             ex1();
             ex2();
             ex3();
+            ex4();
         }
 
         private static void ex1() {
@@ -63,7 +64,8 @@ import java.util.stream.IntStream;
             doubleNumbers(numList);
 
         }
-        private static void doubleNumbers (ArrayList < Integer > numList) {
+
+        private static void doubleNumbers(ArrayList<Integer> numList) {
 
             for (int i = 0; i < numList.size(); i++) {
 
@@ -74,4 +76,17 @@ import java.util.stream.IntStream;
 
         }
 
-    }
+         private static void ex4() {
+            var list = createList(5);
+            System.out.println(list);
+        }
+        private static ArrayList<Integer> createList(Integer maxNumber) {
+
+            // create List
+            // for loop to determine the type of numbers in list
+            ArrayList<Integer> numList = new ArrayList<>();
+            for (int i = 1; i <= maxNumber; ++i) {
+                numList.add(i);
+            }
+         return numList;
+    }}
