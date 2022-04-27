@@ -4,11 +4,12 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class student26 {
     public static void main(String[] args) {
 
-        ex2();
+        ex4();
 
     }
 
@@ -69,6 +70,65 @@ public class student26 {
 
 
         private static void ex3() {
-        System.out.println("Ex. 3");
+
+
+            int[] list = {1, 2, 3};
+
+            var listnew = new ArrayList<Integer>();
+
+            for (int i : list) {
+                listnew.add(i);
+            }
+
+            System.out.println(listnew);
+
+            doublenumber(listnew);
+            System.out.println("The numbers doubled are: " +listnew);
+
     }
+
+
+    private static void doublenumber(ArrayList<Integer> numList) {
+
+
+
+        for ( int i = 0; i < numList.size(); i ++) {
+
+            numList.set(i, numList.get(i)*2);
+        }
+    }
+
+
+
+    private static void ex4() {
+
+
+        Scanner enter = new Scanner (System.in);
+        System.out.print("Max value:");
+        int number = enter.nextInt();
+
+        createList(number);
+        System.out.println(number);
+
+    }
+
+
+
+    private static void createList(Integer maxNumber) {
+
+        var arraylist = new ArrayList<>();
+
+
+        for(int i = 1; i <= maxNumber; i++) {
+            arraylist.add(i);
+        }
+
+        System.out.println(arraylist);
+    }
+
+    private static void ex5() {
+
+
+    }
+
 }
