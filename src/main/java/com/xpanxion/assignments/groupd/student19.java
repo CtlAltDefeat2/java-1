@@ -1,4 +1,6 @@
 package com.xpanxion.assignments.groupd;
+import javax.swing.*;
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -11,7 +13,8 @@ public class student19 {
         //ex2();
         // ex3();
         //ex4();
-        ex5();
+        //ex5();
+        ex6();
     }
 
 
@@ -116,11 +119,28 @@ public class student19 {
                 missNum.add(i);
             }
         }
-            return missNum;
-        }
+        return missNum;
     }
 
+    private static void ex6() {
+        int[] ints = {0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0};
+        ArrayList<Integer> numList = new ArrayList<Integer>();
+        for (int i : ints) {
+            numList.add(i);
+        }
+        System.out.println(SortOrder(numList));
+    }
 
+    private static String SortOrder(ArrayList<Integer> numList) {
+        var SortOrder = new ArrayList<Integer>();
+        String str;
+        Collections.sort(numList);
+
+        str = numList.toString();
+        return str;
+    }
+
+}
 
 
 
