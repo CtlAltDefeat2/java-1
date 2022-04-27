@@ -1,39 +1,45 @@
 package com.xpanxion.assignments.groupe;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class student22 {
     public static void main(String[] args) {
-      Scanner input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 //            ex1();
 //            ex2();
-            //ex3();
-              ex4();
+//            ex3();
+//            ex4();
+//            ex5();
+              ex6();
+    }
+
+    private static void ex1() {
+        int[] ints = {1, 2, 3};
+        var newList = new ArrayList<Integer>();
+        for (int i : ints) {
+            newList.add(i);
         }
-        private static void ex1() {
-            int[] ints = {1, 2, 3};
-            var newList = new ArrayList<Integer>();
-            for(int i : ints){
-                newList.add(i);
-            }
-            var result = addNumbers(newList);
-            System.out.println(result);
+        var result = addNumbers(newList);
+        System.out.println(result);
+    }
+
+    //
+    // My functions
+    //
+    private static Integer addNumbers(ArrayList<Integer> numList) {
+        Integer retVal = 0;
+        for (int i : numList) {
+            retVal += i;
         }
-        //
-        // My functions
-        //
-        private static Integer addNumbers(ArrayList<Integer> numList) {
-            Integer retVal = 0;
-             for(int i : numList){
-                 retVal += i;
-             }
-            return retVal;
-        }
+        return retVal;
+    }
+
     private static void ex2() {
         int[] ints = {1, 2, 3, 4};
         var renewList = new ArrayList<Integer>();
-        for(int i : ints){
+        for (int i : ints) {
             renewList.add(i);
         }
         var result = avgNumbers(renewList);
@@ -41,15 +47,16 @@ public class student22 {
     }
 
 
-        private static Float avgNumbers(ArrayList<Integer> numList) {
-           var returnVal = addNumbers(numList);
-            return Float.valueOf(returnVal)/numList.toArray().length;
+    private static Float avgNumbers(ArrayList<Integer> numList) {
+        var returnVal = addNumbers(numList);
+        return Float.valueOf(returnVal) / numList.toArray().length;
 //        int myVal = 0;
 //        Float returnVal = 0.0f;
 //        for( float i : numList){
 //            myVal += i;
- //           returnVal = Float.valueOf(myVal)/numList.toArray().length;
-        }
+        //           returnVal = Float.valueOf(myVal)/numList.toArray().length;
+    }
+
     private static void ex3() {
         int[] ints = {1, 2, 3};
         var newList = new ArrayList<Integer>();
@@ -61,10 +68,10 @@ public class student22 {
     }
 
 
-    private static void doubleNumber(ArrayList<Integer> numList){
+    private static void doubleNumber(ArrayList<Integer> numList) {
 
-        for(int i = 0; i < numList.size(); i++)
-        numList.set(i, numList.get(i) *2);
+        for (int i = 0; i < numList.size(); i++)
+            numList.set(i, numList.get(i) * 2);
 
 
 //        for(int i : numList){
@@ -73,22 +80,72 @@ public class student22 {
 //        }
     }
 
-    private static void ex4(){
+    private static void ex4() {
         Scanner input = new Scanner(System.in);
-        System.out.println( "enter max Number");
+        System.out.println("enter max Number");
         int maxNumber = input.nextInt();
         createList(maxNumber);
     }
-    private static void createList(Integer maxNumber){
-       // Scanner input = new Scanner(System.in);
-       // System.out.println( "enter max Number");
-       // maxNumber = input.nextInt();
+
+    private static void createList(Integer maxNumber) {
+        // Scanner input = new Scanner(System.in);
+        // System.out.println( "enter max Number");
+        // maxNumber = input.nextInt();
         var myArrayList = new ArrayList<>();
-        for(int i = 0; i <= maxNumber; i++) {
+        for (int i = 0; i <= maxNumber; i++) {
             myArrayList.add(i);
         }
-            System.out.println(myArrayList);
-        }
+        System.out.println(myArrayList);
     }
 
-    //}
+    private static void ex5() {
+        int[] ints = {1, 2, 3, 5, 6, 9, 11};
+
+
+        var newList = new ArrayList<Integer>();
+        for (int i = 0; i < ints.length; i++) {
+            newList.add(i);
+        }
+        missingNumber(newList);
+    }//System.out.println(newList);
+
+    private static void missingNumber(ArrayList<Integer> numList) {
+        var myArrayList = new ArrayList<Integer>();
+
+        //    for(int i : numList) {
+        for (int i : numList) {
+            for (int j = 0; j != i; j++) {
+                myArrayList.add(j);
+            }
+        }
+            System.out.println(myArrayList);
+
+    }
+    private static void ex6() {
+        Integer[] ints = {0,1,1,1,0,0,1,0,0,1,0,0,0};
+        var myArray = new ArrayList<Integer>();
+        for(int i : ints){
+            myArray.add(i);
+        }
+        System.out.println(createZerosAndOnes(myArray));
+    }
+
+    private static String createZerosAndOnes(ArrayList<Integer> numList) {
+        String myZeros = "";
+        String myOnes = "";
+        String zerosAndOnes = "";
+        for (int i : numList) {
+            if (i == 0) {
+                myZeros += "0";
+            } else {
+                myOnes += "1";
+            }
+            zerosAndOnes = myZeros+myOnes;
+        }
+//        zerosAndOnes = myZeros + myOnes;
+        return zerosAndOnes;
+    }
+}
+
+
+
