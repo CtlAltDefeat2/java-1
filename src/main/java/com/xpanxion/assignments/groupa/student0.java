@@ -1,6 +1,10 @@
 package com.xpanxion.assignments.groupa;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class student0 {
 
@@ -10,7 +14,14 @@ public class student0 {
     // vars, loops, ifs, functions  <=============== We are here
 
     public static void main(String[] args) {
-        ex1();
+        //ex1();
+
+        int[] ints = {1,2,3,4};
+        int[] ints2 = {1,4};
+        var s2 = Arrays.stream(ints).boxed().collect(Collectors.toSet());
+        var s1 = Arrays.stream(ints2).boxed().collect(Collectors.toSet());
+        s2.removeAll(s1);
+        System.out.println(s2);
     }
 
     private static void ex1() {
