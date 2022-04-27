@@ -2,14 +2,12 @@ package com.xpanxion.assignments.groupb;
 
 import org.w3c.dom.ls.LSOutput;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Random;
-import java.util.Scanner;
+import java.math.BigDecimal;
+import java.util.*;
 
 public class student8 {
     public static void main(String[] args) {
-        ex7();
+        ex9();
 
     }
 
@@ -151,4 +149,55 @@ public class student8 {
         System.out.println(array);
         System.out.println(array.get(random.nextInt(array.size())));
     }
+
+    //EX 8 - NOT DONE
+    private static void ex8() {
+        var cart = new ArrayList<BigDecimal>();
+        Random random = new Random();
+        Scanner scanner = new Scanner(System.in);
+        var totalUnderTen = 0;
+        var totalTen = 0;
+        var salesTax = .10;
+        var totalSHBetweenTenTwenty = 0;
+        var totalBetweenTenTwenty = 0;
+        var totalOverTwenty = 0;
+        var cartRawCost = 0;
+        var total = 0;
+
+        System.out.println("How many orders are under $10?: ");
+        int underTen = Integer.parseInt(scanner.next());
+        for (int i = 0; i < underTen; i++) {
+            cart.add(BigDecimal.valueOf(random.nextInt(1, 10)));
+            totalUnderTen = underTen * 5;
+            totalTen += 10;
+        }
+
+
+        System.out.println("How many orders are OVER $10 but UNDER $20?: ");
+        int betweenTenTwenty = Integer.parseInt(scanner.next());
+        for (int i = 0; i < betweenTenTwenty; i++) {
+            cart.add(BigDecimal.valueOf(random.nextInt(10, 20)));
+            totalSHBetweenTenTwenty = betweenTenTwenty * 4;
+
+        }
+
+        System.out.println("How many orders are OVER $20?: ");
+        int overTwenty = Integer.parseInt(scanner.next());
+        for (int i = 0; i < overTwenty; i++) {
+            cart.add(BigDecimal.valueOf(random.nextInt(20, 100)));
+        }
+
+
+//        var totalCostBeforeTax = totalUnderTen + totalSHBetweenTenTwenty;
+//        var totalCostShipAndHandleAfterTax = totalCostBeforeTax * salesTax;
+        System.out.println(cart);
+//        System.out.println("Total Cost: $" + totalCost);
+
+    }
+
+
+    private static void ex9() {
+
+    }
+
 }
