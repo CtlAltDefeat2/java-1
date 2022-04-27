@@ -1,5 +1,8 @@
 package com.xpanxion.assignments.groupc;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.text.NumberFormat;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -15,6 +18,7 @@ public class student5 {
         ex5();
         ex6();
         ex7();
+        ex8();
     }
     public static void ex1() {
         int[] ints1 = {1, 2, 3};
@@ -125,7 +129,39 @@ public class student5 {
         System.out.println(arrayRand.get(randNum.nextInt(arrayRand.size())));
     }
     public static void ex8() {
-        System.out.print("Ex. 8    ");
+        var array8 = new ArrayList<Integer>();
+        var randomNumber = new Random();
+        var maxCartItems = 8;
+        for (int i = 0; i < maxCartItems; i++) {
+            Integer randomPrice = randomNumber.nextInt(1,50);
+            array8.add(randomPrice);
+        }
+        var totalPrice = calculateFinalCart(array8);
+        System.out.print("Ex. 8    " + array8 + "    " + totalPrice);
+        System.out.println("    Cart Total Price  =  $ " + totalPrice.setScale(2, RoundingMode.HALF_EVEN));
+    }
+    public static BigDecimal calculateFinalCart(ArrayList<Integer> cartPrices){
+        double cartSubtotal = 0;
+        final double SALES_TAX = 1.10;
+        final double SHIP_N_HAND_UNDER_10 = 5.00;
+        final double SHIP_N_HAND_10_TO_20 = 4.00;
+        cartSubtotal = addNumbers(cartPrices);
+        var subtotal = new BigDecimal(cartSubtotal);
+        var salesTax = new BigDecimal(SALES_TAX);
+        var postTaxSubtotal = subtotal.multiply(salesTax);
+        if (postTaxSubtotal.doubleValue() <= 10.00){
+            BigDecimal shipNHand = new BigDecimal(SHIP_N_HAND_UNDER_10);
+            BigDecimal total = postTaxSubtotal.add(shipNHand);
+            return total;
+        } else if (postTaxSubtotal.doubleValue() > 10.00 && postTaxSubtotal.doubleValue() <= 20.00){
+            BigDecimal shipNHand = new BigDecimal(SHIP_N_HAND_10_TO_20);
+            BigDecimal total = postTaxSubtotal.add(shipNHand);
+            return total;
+        } else if (postTaxSubtotal.doubleValue() > 20.00) {
+            BigDecimal total = postTaxSubtotal;
+            return total;
+        }
+        return postTaxSubtotal;
     }
     public static void ex9() {
         System.out.print("Ex. 9    ");
