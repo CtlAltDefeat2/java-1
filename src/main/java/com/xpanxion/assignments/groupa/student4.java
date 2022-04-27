@@ -2,6 +2,7 @@ package com.xpanxion.assignments.groupa;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static java.util.stream.Collectors.toList;
@@ -11,6 +12,7 @@ public class student4 {
         ex1();
         ex2();
         ex3();
+        ex4();
     }
 
     private static Integer addNumbers(ArrayList<Integer> numList) { // 1,2,3,4
@@ -48,9 +50,9 @@ public class student4 {
 
 
     private static void ex3() {
-        List<Integer> list = Arrays.asList(1,2,3,4);
+        List<Integer> list = Arrays.asList(1,2,3,4); // List of Arrays
 
-        List<Integer> doubleArrayListNumbers = list.stream()
+        List<Integer> doubleArrayListNumbers = list.stream() // formule to double each number in the Array
                 .map(i -> i*2)
                 .collect(toList());
 
@@ -59,6 +61,14 @@ public class student4 {
     }
 
     private static void ex4() {
+        int maxNumber = 5;
 
     }
-}
+
+    private static void createlist(int maxNumber) {
+
+
+    }
+
+    }
+
