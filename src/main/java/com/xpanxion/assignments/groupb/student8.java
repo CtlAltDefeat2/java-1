@@ -7,7 +7,7 @@ import java.util.*;
 
 public class student8 {
     public static void main(String[] args) {
-        ex9();
+        ex10();
 
     }
 
@@ -196,7 +196,60 @@ public class student8 {
     }
 
 
+    // EX 9
     private static void ex9() {
+
+        var list = new ArrayList<Integer>();
+        Random random = new Random();
+        var listSize = 10;
+        for (int i = 0; i < listSize; i++) {
+            list.add(random.nextInt(1, 100));
+        }
+
+        for (int i = 0; i < list.size(); i++) {
+            if ((list.get(i) % 2) == 0) {
+                System.out.println(list.get(i) + " Even");
+            }
+            if ((list.get(i) % 2) == 1) {
+                System.out.println(list.get(i) + " Odd");
+            }
+        }
+        //System.out.println(list);
+
+    }
+
+    private static void ex10() {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter Password: ");
+        var pass = scanner.nextLine();
+        Boolean valid;
+
+        String[] password = pass.split("");
+        if (!pass.matches(".*\\d.*")) {
+            valid = false;
+        }
+        if (password.length < 10) {
+            valid = false;
+        }
+        if (pass.matches(".*\\p{Punct}.*")) {
+            valid = false;
+        }
+        else {
+            valid = true;
+        }
+
+        if (!valid) {
+            System.out.println("False");
+            System.out.println("Please enter a valid password (must have at least" +
+                    "10 characters, two digits, and not" +
+                    "containing any non digit or letter characters.");
+
+        }
+        if (valid) {
+            System.out.println("True");
+            System.out.println("Your password is: " + pass);
+        }
 
     }
 
