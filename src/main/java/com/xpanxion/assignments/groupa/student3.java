@@ -5,6 +5,7 @@ import java.util.stream.*;
 public class student3 {
     public static void main(String[] args) {
         ex1();
+        ex2();
     }
 
     private static void ex1() {
@@ -29,12 +30,24 @@ public class student3 {
             return sum;
         }
 
-
-
-
+    private static void ex2() {
+            System.out.println("Ex. 2");
+            int[] ints = {1, 2, 3};
+            int length = ints.length;
+            int sum = 0;
+            for (int i = 0; i <ints.length; i++) {
+                sum += ints[i];
+            }
+            double average = sum / length;
+            System.out.println("Average of the array is:" +average);
+        }
 
 
     private static void ex3() {
         System.out.println("Ex. 3");
+        {
+        }
     }
 }
+
+
