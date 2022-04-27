@@ -14,6 +14,7 @@ public class student5 {
         ex4();
         ex5();
         ex6();
+        ex7();
     }
     public static void ex1() {
         int[] ints1 = {1, 2, 3};
@@ -103,14 +104,25 @@ public class student5 {
 //    }
     public static void ex6() {
         int[] ints6 = {0,1,1,1,0,0,1,0,0,1,0,0,0};
-        Arrays.sort(ints6);
-        var sortedInts = Arrays.stream(ints6).sorted().toArray();
         System.out.print("Ex. 6    ");
-        System.out.println(Arrays.toString(ints6));
-
+        sortArray(ints6);
+    }
+    public static void sortArray(int[] arrayToSort){
+        var sortedInts = Arrays.stream(arrayToSort).sorted().toArray();
+        System.out.println(Arrays.toString(sortedInts));
     }
     public static void ex7() {
+        int[] ints7 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16};
+        var array7 = new ArrayList<Integer>();
+        for (int i: ints7) {
+            array7.add(i);
+        }
         System.out.print("Ex. 7    ");
+        randomNumFromArray(array7);
+    }
+    public static void randomNumFromArray(ArrayList<Integer> arrayRand){
+        Random randNum = new Random();
+        System.out.println(arrayRand.get(randNum.nextInt(arrayRand.size())));
     }
     public static void ex8() {
         System.out.print("Ex. 8    ");
