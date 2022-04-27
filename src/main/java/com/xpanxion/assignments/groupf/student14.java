@@ -10,7 +10,8 @@ public class student14 {
 //        ex1();
 //        ex2();
 //        ex3();
-        ex4();
+//        ex4();
+        ex5();
     }
 
     //vars, loops, ifs, functions
@@ -101,9 +102,24 @@ public class student14 {
         return numList;
     }
 
+    private static void ex5() {
+        int[] ints = {1, 2, 3, 5, 6, 9, 11};
+        ArrayList<Integer> numList = new ArrayList<>();
+        for (int i = 0; i < ints.length; i++) {
+            numList.add(ints[i]);
+        }
+        System.out.println(findMissingNumbers(numList));
+    }
+
+    private static ArrayList<Integer> findMissingNumbers(ArrayList<Integer> numList) {
+        var missingNumbers = new ArrayList<Integer>();
+        int firstNumber = numList.get(0);
+        int lastNumber = numList.get(numList.size() - 1);
+        for (int i = firstNumber; i < lastNumber; i++) {
+            if (!numList.contains(i)) {
+                missingNumbers.add(i);
+            }
+        }
+        return missingNumbers;
+    }
 }
-
-
-
-
-
