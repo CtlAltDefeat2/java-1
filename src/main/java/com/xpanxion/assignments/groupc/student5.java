@@ -2,12 +2,7 @@ package com.xpanxion.assignments.groupc;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.text.NumberFormat;
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-
-import static java.math.BigInteger.*;
 
 public class student5 {
     public static void main(String[] args) {
@@ -19,6 +14,7 @@ public class student5 {
         ex6();
         ex7();
         ex8();
+        ex9();
     }
     public static void ex1() {
         int[] ints1 = {1, 2, 3};
@@ -111,7 +107,7 @@ public class student5 {
         System.out.print("Ex. 6    ");
         sortArray(ints6);
     }
-    public static void sortArray(int[] arrayToSort){
+    public static void sortArray(int[] arrayToSort) {
         var sortedInts = Arrays.stream(arrayToSort).sorted().toArray();
         System.out.println(Arrays.toString(sortedInts));
     }
@@ -124,7 +120,7 @@ public class student5 {
         System.out.print("Ex. 7    ");
         randomNumFromArray(array7);
     }
-    public static void randomNumFromArray(ArrayList<Integer> arrayRand){
+    public static void randomNumFromArray(ArrayList<Integer> arrayRand) {
         Random randNum = new Random();
         System.out.println(arrayRand.get(randNum.nextInt(arrayRand.size())));
     }
@@ -133,14 +129,14 @@ public class student5 {
         var randomNumber = new Random();
         var maxCartItems = 8;
         for (int i = 0; i < maxCartItems; i++) {
-            Integer randomPrice = randomNumber.nextInt(1,50);
+            Integer randomPrice = randomNumber.nextInt(1,5);
             array8.add(randomPrice);
         }
         var totalPrice = calculateFinalCart(array8);
         System.out.print("Ex. 8    " + array8 + "    " + totalPrice);
-        System.out.println("    Cart Total Price  =  $ " + totalPrice.setScale(2, RoundingMode.HALF_EVEN));
+        System.out.println("    Cart Total Price  =  $ " + totalPrice.setScale(2, RoundingMode.HALF_UP));
     }
-    public static BigDecimal calculateFinalCart(ArrayList<Integer> cartPrices){
+    public static BigDecimal calculateFinalCart(ArrayList<Integer> cartPrices) {
         double cartSubtotal = 0;
         final double SALES_TAX = 1.10;
         final double SHIP_N_HAND_UNDER_10 = 5.00;
@@ -149,22 +145,44 @@ public class student5 {
         var subtotal = new BigDecimal(cartSubtotal);
         var salesTax = new BigDecimal(SALES_TAX);
         var postTaxSubtotal = subtotal.multiply(salesTax);
-        if (postTaxSubtotal.doubleValue() <= 10.00){
+        if (postTaxSubtotal.doubleValue() <= 10.00) {
             BigDecimal shipNHand = new BigDecimal(SHIP_N_HAND_UNDER_10);
             BigDecimal total = postTaxSubtotal.add(shipNHand);
             return total;
-        } else if (postTaxSubtotal.doubleValue() > 10.00 && postTaxSubtotal.doubleValue() <= 20.00){
+        }
+        else if (postTaxSubtotal.doubleValue() > 10.00 && postTaxSubtotal.doubleValue() <= 20.00) {
             BigDecimal shipNHand = new BigDecimal(SHIP_N_HAND_10_TO_20);
             BigDecimal total = postTaxSubtotal.add(shipNHand);
             return total;
-        } else if (postTaxSubtotal.doubleValue() > 20.00) {
+        }
+        else if (postTaxSubtotal.doubleValue() > 20.00) {
             BigDecimal total = postTaxSubtotal;
             return total;
         }
         return postTaxSubtotal;
     }
     public static void ex9() {
+        var array9 = new ArrayList<Integer>();
+        for (int i = 0; i < 8; i++) {
+            array9.add(randomNumbers());
+        }
         System.out.print("Ex. 9    ");
+        var result = checkArray(array9);
+        System.out.print(array9);
+        System.out.print("    " + result);
+    }
+    static int randomNumbers() {
+        Random r = new Random();
+        int randNum = r.nextInt(1, 100) + 1;
+        return randNum;
+    }
+    public static String checkArray(ArrayList<Integer> arraySumEval) {
+        var arraySum = addNumbers(arraySumEval);
+        if (arraySum % 2 == 0) {
+            return "ArrayList sum is Even.";
+        } else if (arraySum % 2 == 1) {
+            return "ArrayList sum is Odd.";
+        } return "";
     }
     public static void ex10() {
         System.out.print("Ex. 10   ");
