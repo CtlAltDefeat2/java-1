@@ -50,11 +50,17 @@ public class student10 {
         return avg;
     }
 
-    private static void ex3(){
+    private static void ex3() {
         int[] ints = {1, 2, 3};
-        var newList = new ArrayList<Integer>();
+        var list3 = new ArrayList<Integer>();
+        for (int i = 0; i < ints.length; i++) {
+            list3.add(ints[i]);
+        }
+        doubler(list3);
     }
+    private static void doubler(ArrayList<Integer> list3) {
+        for (int i = 0; i < list3.size(); i++) {
 
-
-   // private static void double(ArrayList<Integer> numList)
+        }
+    }
 }
