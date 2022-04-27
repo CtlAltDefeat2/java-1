@@ -13,11 +13,12 @@ public class student5 {
         ex3();
         ex4();
         ex5();
+        ex6();
     }
     public static void ex1() {
-        int[] ints = {1, 2, 3};
+        int[] ints1 = {1, 2, 3};
         var array = new ArrayList<Integer>();
-        for (int i: ints) {
+        for (int i: ints1) {
             array.add(i);
         }
         var result = addNumbers(array);
@@ -32,9 +33,9 @@ public class student5 {
         return returnValue;
     }
     public static void ex2() {
-        int[] ints = {1, 2, 3};
+        int[] ints2 = {1, 2, 3};
         var array2 = new ArrayList<Integer>();
-        for (int i: ints) {
+        for (int i: ints2) {
             array2.add(i);
         }
         var results2 = avgNumbers(array2);
@@ -51,9 +52,9 @@ public class student5 {
         return avg;
     }
     private static void ex3() {
-        int[] ints = {1, 2, 3};
+        int[] ints3 = {1, 2, 3};
         var array3 = new ArrayList<Integer>();
-        for (int i: ints) {
+        for (int i: ints3) {
             array3.add(i);
         }
         System.out.print("Ex. 3    ");
@@ -66,10 +67,8 @@ public class student5 {
         return dblArray;
     }
     public static void ex4() {
-        var scanner  = new Scanner(System.in);
         System.out.print("Ex. 4    ");
-        System.out.print("Please enter an integer from 1 to 50:  ");
-        int max = scanner.nextInt();
+        int max = 16;
         createList(max);
     }
     private static void createList(Integer maxNumber) {
@@ -80,10 +79,35 @@ public class student5 {
         System.out.println(array4);
     }
     public static void ex5() {
-        System.out.print("Ex. 5    ");
+//        int[] ints5 = {1, 2, 3, 5, 6, 9, 11};
+//        Integer missingInts = 0;
+//        int maxNumber = 11;
+//        var missingNumbers = findMissingNumbers(ints5, maxNumber);
+        System.out.println("Ex. 5    (In progress)");
+//        System.out.println(missingNumbers);
     }
+//    private static Integer findMissingNumbers(int[] ints5, Integer maxNumber) {
+//
+//        int xorArray = ints5[0];
+//        //XOR of elements of the array
+//        for(int i=1; i<=maxNumber-1; i++) {
+//            xorArray = xorArray ^ i;
+//        }
+//        int xorAll = ints5[0];
+//        //XOR of elements of the array
+//        for(int i=1; i<=maxNumber+1; i++) {
+//            xorAll = xorAll ^ i;
+//        }
+//        int missingInts = xorArray ^ xorAll;
+//        return missingInts;
+//    }
     public static void ex6() {
+        int[] ints6 = {0,1,1,1,0,0,1,0,0,1,0,0,0};
+        Arrays.sort(ints6);
+        var sortedInts = Arrays.stream(ints6).sorted().toArray();
         System.out.print("Ex. 6    ");
+        System.out.println(Arrays.toString(ints6));
+
     }
     public static void ex7() {
         System.out.print("Ex. 7    ");
