@@ -7,8 +7,11 @@ import java.util.List;
 public class student11 {
     public static void main(String[] args) {
 
-        ex1();
-        ex2();
+    //    ex1();
+     //   ex2();
+    //    ex3();
+          ex4();
+
     }
     private static void ex1() {
     int[] ints = {1, 2, 3};
@@ -83,7 +86,17 @@ private static Integer addNumbers(ArrayList<Integer> numList) {
         numList.set(i, (temp * 2));
             }
             System.out.println(numList); //print list
-    }}
+    }
 
+    private static void ex4() {
+        var list = createList(5);
+        System.out.println(list);
+    }
+        private static ArrayList<Integer> createList(Integer maxNumber) {
 
-
+                    ArrayList<Integer> numList = new ArrayList<>();
+            for (int i = 1; i <= maxNumber; ++i) {
+                numList.add(i);
+            }
+            return numList;
+            }}
