@@ -1,9 +1,7 @@
 package com.xpanxion.assignments.groupb;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Random;
-import java.util.Scanner;
 
 public class student24 {
     public static void main(String[] args) {
