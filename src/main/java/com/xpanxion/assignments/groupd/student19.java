@@ -7,9 +7,11 @@ import java.util.Scanner;
 public class student19 {
 
    public static void main (String[] args) {
-      ex1();
+     ex1();
       ex2();
       ex3();
+      ex4();
+      //ex5();
    }
 
 
@@ -80,8 +82,34 @@ public class student19 {
 
        return doubleList;
    }
+    private static void ex4() {
+
+        System.out.println(maxArray(4));
+    }
+
+    private static ArrayList<Integer> maxArray (int maxValue) {
+        var maxList = new ArrayList<Integer>();
+        for (int i = 1; i <= maxValue; i++) {
+            maxList.add(i);
+        }
+        return maxList;
+    }
+   // private static void ex5() {
+      //  int[] ints = {1, 2, 3, 5, 6, 9, 11};
+      //  ArrayList<Integer> missingNumbers = new ArrayList<Integer>();
+//missingNumbers =
+       // for (int i : ints) {
+          //  missingNumbers.add(i);
+       // }
+
+       // System.out.println(missingNumbers);
+
+
 
     }
+//}
+
+
 
 
 
