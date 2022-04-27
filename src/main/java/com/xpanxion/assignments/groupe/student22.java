@@ -5,10 +5,11 @@ import java.util.Scanner;
 
 public class student22 {
     public static void main(String[] args) {
-
+      Scanner input = new Scanner(System.in);
 //            ex1();
 //            ex2();
-            ex3();
+            //ex3();
+              ex4();
         }
         private static void ex1() {
             int[] ints = {1, 2, 3};
@@ -72,4 +73,23 @@ public class student22 {
 //        }
     }
 
+    private static void ex4(){
+        Scanner input = new Scanner(System.in);
+        System.out.println( "enter max Number");
+        int maxNumber = input.nextInt();
+        var newList = new ArrayList<Integer>();
+        createList(maxNumber);
     }
+    private static void createList(Integer maxNumber){
+       // Scanner input = new Scanner(System.in);
+       // System.out.println( "enter max Number");
+       // maxNumber = input.nextInt();
+        var myArrayList = new ArrayList<>();
+        for(int i = 0; i <= maxNumber; i++) {
+            myArrayList.add(i);
+        }
+            System.out.println(myArrayList);
+        }
+    }
+
+    //}
