@@ -77,7 +77,6 @@ public class student22 {
         Scanner input = new Scanner(System.in);
         System.out.println( "enter max Number");
         int maxNumber = input.nextInt();
-        var newList = new ArrayList<Integer>();
         createList(maxNumber);
     }
     private static void createList(Integer maxNumber){
