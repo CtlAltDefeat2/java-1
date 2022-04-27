@@ -1,12 +1,16 @@
 package com.xpanxion.assignments.groupf;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class student14 {
     public static void main(String[] args) {
-        ex1();
-        ex2();
-        ex3();
+//        ex1();
+//        ex2();
+//        ex3();
+        ex4();
     }
 
     //vars, loops, ifs, functions
@@ -67,21 +71,39 @@ public class student14 {
         for (int i : ints) {
             numList.add(i);
         }
-            doubleNumbers(numList);
+        doubleNumbers(numList);
 
     }
-        private static void doubleNumbers (ArrayList < Integer > numList) {
 
-            for (int i = 0; i < numList.size(); i++) {
+    private static void doubleNumbers(ArrayList<Integer> numList) {
 
-                int timesTwo = numList.get(i);
-                numList.set(i, (timesTwo * 2));
-            }
-            System.out.println(numList);//print list
+        for (int i = 0; i < numList.size(); i++) {
 
+            int timesTwo = numList.get(i);
+            numList.set(i, (timesTwo * 2));
         }
+        System.out.println(numList);//print list
 
     }
+
+    private static void ex4() {
+        var list = createList(5);
+        System.out.println(list);
+    }
+
+    private static ArrayList<Integer> createList(Integer maxNumber) {
+//create list
+//for loop to determine the type of numbers in list
+        ArrayList<Integer> numList = new ArrayList<>();
+        for (int i = 1; i <= maxNumber; ++i) {
+            numList.add(i);
+        }
+        return numList;
+    }
+
+}
+
+
 
 
 
