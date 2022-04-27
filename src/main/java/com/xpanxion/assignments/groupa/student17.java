@@ -143,14 +143,11 @@ public class student17 {
         BigDecimal tax = new BigDecimal(1.1);
         BigDecimal postTax = cart.multiply(tax);
         NumberFormat n = NumberFormat.getCurrencyInstance(Locale.US);
-        //double money = total.doubleValue();
-        //BigDecimal is immutable
         if (postTax.doubleValue() < 10 ){
             BigDecimal shipping = new BigDecimal(5);
             BigDecimal total = postTax.add(shipping);
             double money = total.doubleValue();
             String s = n.format(money);
-            //BigDecimal cartTotal = new BigDecimal(s);
             return s;
         }
         else if (postTax.doubleValue() > 10 && postTax.doubleValue() < 20){
@@ -158,22 +155,15 @@ public class student17 {
             BigDecimal total = postTax.add(shipping);
             double money = total.doubleValue();
             String s = n.format(money);
-            //BigDecimal cartTotal = new BigDecimal(s);
             return s;
-
         }
         else{
             BigDecimal total = postTax;
-
             double money = total.doubleValue();
             String s = n.format(money);
-            //BigDecimal cartTotal = new BigDecimal(s);
             return s;
         }
     }
-
-
-
     private static void ex9(){
         System.out.println("Ex. 9");
         var result = evenOrOdd();
