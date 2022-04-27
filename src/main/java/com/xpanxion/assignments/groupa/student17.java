@@ -1,10 +1,7 @@
 package com.xpanxion.assignments.groupa;
 
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 
 public class student17 {
@@ -106,28 +103,16 @@ public class student17 {
     private static void ex6(){
         System.out.println("Ex. 6");
         int[] ints = {0,1,1,1,0,0,1,0,0,1,0,0,0};
-        int n = ints.length;
-        sortNum(ints, n);
-        print(ints, n);
+         int result = sort(ints);
+        System.out.println("The sorted Array is: " + result);;
     }
-    private static void sortNum(int arr[], int n){
-        int count = 0;
-        for(int i = 0; i < n; i++){
-            if(arr[i] == 0)
-                count++;
-        }
-        for(int i = 0; i < count; i++)
-            arr[i] = 0;
-        for(int i = count; i < n; i++)
-            arr[i] = 1;
-    }
-    static void print(int arr[], int n) {
-        System.out.print("Array after segregation is: ");
-        for (int i = 0; i < n; i++)
-            System.out.print(arr[i] + " ");
+    private static int sort(int[] ints){
+        int arr[] = new int[0];
+        Arrays.sort(ints);
+        System.out.println(Arrays.toString(ints));
+        return 0;
     }
     private static void ex7(){
-        System.out.println("");
         System.out.println("Ex. 7");
         randomNumber();
     }
@@ -136,9 +121,14 @@ public class student17 {
         Random r = new Random();
         System.out.println("Random Number is: " + list.get(r.nextInt(list.size())));
     }
-    private static void ex8(){
-        System.out.println("Ex. 8");
-    }
+//    private static void ex8(){
+//        System.out.println("Ex. 8");
+//        calculate();
+//    }
+//    private static void calculate(){
+//        ArrayList<BigDecimal> total = new ArrayList<BigDecimal>(Collection.);
+//
+//    }
     private static void ex9(){
         System.out.println("Ex. 9");
         var result = evenOrOdd();
