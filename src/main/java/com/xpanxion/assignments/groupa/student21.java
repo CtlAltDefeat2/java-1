@@ -1,21 +1,19 @@
 package com.xpanxion.assignments.groupa;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Collectors;
-
 
 
 public class student21 {
     public static void main(String[] args) {
 
-        ex1();
-        ex2();
-        ex3();
-        ex4();
+//        ex1();
+//        ex2();
+//        ex3();
+//        ex4();
+//        ex5();
+          ex6();
     }
 
     private static void ex1() {
@@ -62,6 +60,33 @@ public class student21 {
 
     }
 
+    private static void ex5(){
+        int[] ints = {1, 2, 3, 5, 6, 9, 11};
+
+       findMissingNumbers(ints);
+
+    }
+
+    private static void ex6(){
+        int[] ints = {0,1,1,1,0,0,1,0,0,1,0,0,0};
+//        Java will not print out primitive arrays, and for some reason I cannot arrange an arraylist. So I rearrange
+//        the primitive array first and then convert it and print it after.
+        reArrange(ints);
+        System.out.println(convertArray(ints));
+
+
+
+    }
+
+    private static String convertArray(int[] ints) { // Helper functions
+        ArrayList converted = new ArrayList<Integer>();
+        for(int i = 0; i < ints.length; i++){
+            converted.add(ints[i]);
+        }
+
+        return converted.toString();
+    }
+
     //
     // My functions
     //
@@ -102,6 +127,26 @@ public class student21 {
             numList.set(i,numList.get(i)+1);
         }
         System.out.println(numList);
+    }
+
+
+    public static void findMissingNumbers(int[] ints){
+        var missingNumbers = new ArrayList<Integer>();
+        for (int i=0; i<ints.length; i++){
+            if(ints[i] != i+1){
+                missingNumbers.add(i+1);
+            }
+        }
+
+
+        System.out.println(missingNumbers);
+    }
+
+    public static int[] reArrange(int[] ints){
+
+        Arrays.sort(ints);
+
+        return (ints);
     }
 
 }
