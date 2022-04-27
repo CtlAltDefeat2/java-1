@@ -4,6 +4,7 @@ package com.xpanxion.assignments.groupa;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 
 
 public class student17 {
@@ -17,7 +18,7 @@ public class student17 {
         ex7();
 //        ex8();
         ex9();
-//        ex10();
+        ex10();
     }
     private static void ex1() {
         System.out.println("Ex. 1");
@@ -157,7 +158,39 @@ public class student17 {
     }
     private static void ex10(){
         System.out.println("Ex. 10");
+        passwordCk();
     }
-
-
+    private static void passwordCk(){
+        Scanner input = new Scanner(System.in);
+        System.out.println(
+                        "1. A password must have at least ten characters.\n" +
+                        "2. A password consists of only letters and digits.\n" +
+                        "3. A password must contain at least two digits \n" +
+                        "Input a password (You are agreeing to the above Terms and Conditions.): ");
+        String string = input.nextLine();
+        if (isValid(string)){
+            System.out.println("Password is valid: " + string);
+        }
+        else
+            System.out.println("Not a valid password: " + string);
+    }
+    public static boolean isValid(String password){
+        if (password.length() < 10) return false;
+        int charCount = 0;
+        int numCount = 0;
+        for (int i = 0; i < password.length(); i++){
+            char charactor = password.charAt(i);
+            if(hasNum(charactor)) numCount++;
+            else if (hasLetter(charactor)) charCount++;
+            else return false;
+        }
+        return (charCount >= 2 && numCount >= 2);
+    }
+    public static boolean hasLetter(char ch) {
+        ch = Character.toUpperCase(ch);
+        return (ch >= 'A' && ch <= 'Z');
+    }
+    public static boolean hasNum(char ch) {
+        return (ch >= '0' && ch <= '9');
+    }
 }
