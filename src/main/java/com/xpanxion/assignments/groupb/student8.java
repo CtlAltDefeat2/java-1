@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class student8 {
     public static void main(String[] args) {
-        ex5();
+        ex6();
 
     }
 
@@ -102,27 +102,38 @@ public class student8 {
         return numList;
     }
 
-    // EX 5
+    // EX 5 - NOT DONE
     private static void ex5() {
         int[] ints = {1, 2, 3, 5, 6, 9, 11};
-        var missingNumbers = new ArrayList<Integer>();
+        var missingNumbers = new ArrayList<Integer>(11);
 
-        for (int i = 0; i < ints[ints.length-1]; i++) {
-            int next = ints[i + 1];
+        for (int i = 0; i < (ints.length); i++) {
+            int next = ints[i] + 1;
             int current = ints[i];
-            if ((next - current) > 1) {
-                missingNumbers.add(current + 1);
+            if (next != current) {
+                missingNumbers.add(next);
             }
+            //System.out.println(ints[i] + 1);
         }
         System.out.println(missingNumbers);
-        //System.out.println(ints[ints.length-1]);
+        //System.out.println(ints[i]);
 
 
        //System.out.println(missingNumbers);
-       //System.out.println(ints[ints.length - 1]);
+       //System.out.println(ints.length - 1);
     }
 
     private static void ex6() {
-        System.out.println("Ex. 3");
+
+        int[] ints = {0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0};
+        Arrays.sort(ints);
+        String sortedArray = Arrays.toString(ints);
+        String[] strings = new String[ints.length];
+        for (int i = 0; i < ints.length; i++) {
+            strings[i] = String.valueOf(ints[i]);
+        }
+        String joinedArray = String.join("", strings);
+        System.out.println(joinedArray);
+
     }
 }
