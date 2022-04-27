@@ -17,7 +17,7 @@ public class student5 {
     public static void ex1() {
         int[] ints = {1, 2, 3};
         var array = new ArrayList<Integer>();
-        for (int i = 0; i < ints.length; i++) {
+        for (int i: ints) {
             array.add(i);
         }
         var result = addNumbers(array);
@@ -32,40 +32,45 @@ public class student5 {
         return returnValue;
     }
     public static void ex2() {
+        int[] ints = {1, 2, 3};
         var array2 = new ArrayList<Integer>();
+        for (int i: ints) {
+            array2.add(i);
+        }
+        var results2 = avgNumbers(array2);
         System.out.print("Ex. 2    ");
-        System.out.println(avgNumbers(array2));
+        System.out.println(results2);
     }
     private static Float avgNumbers(ArrayList<Integer> avgArray) {
-        int[] ints = {1, 2, 3};
-        float avg = 0;
+        float avg;
         float sum = 0;
-        avgArray = new ArrayList<>();
-        for (int i = 0; i < ints.length; i++) {
-            avgArray.add(ints[i]);
+        for (int i = 0; i < avgArray.size(); i++) {
             sum += avgArray.get(i);
         }
         avg = sum / avgArray.size();
         return avg;
     }
     private static void ex3() {
+        int[] ints = {1, 2, 3};
         var array3 = new ArrayList<Integer>();
+        for (int i: ints) {
+            array3.add(i);
+        }
         System.out.print("Ex. 3    ");
         System.out.println(dblNumbers(array3));
     }
-    private static String dblNumbers(ArrayList<Integer> dblArray) {
-        int[] ints = {1, 2, 3};
-        dblArray = new ArrayList<>();
-        int[] intsDoubled = IntStream.of(ints).map(e -> e * 2).toArray();
-        for (int i = 0; i < intsDoubled.length; i++) {
-            dblArray.add(intsDoubled[i]);
+    private static ArrayList<Integer> dblNumbers(ArrayList<Integer> dblArray) {
+        for (int i = 0; i < dblArray.size(); i++) {
+            dblArray.set(i, dblArray.get(i) * 2);
         }
-        //String finalArray = dblArray.toString();
-        return dblArray.toString();
+        return dblArray;
     }
     public static void ex4() {
+        var scanner  = new Scanner(System.in);
         System.out.print("Ex. 4    ");
-        createList(16);
+        System.out.print("Please enter an integer from 1 to 50:  ");
+        int max = scanner.nextInt();
+        createList(max);
     }
     private static void createList(Integer maxNumber) {
         var array4 = new ArrayList<Integer>();
@@ -78,18 +83,18 @@ public class student5 {
         System.out.print("Ex. 5    ");
     }
     public static void ex6() {
-        System.out.print("Ex. 6");
+        System.out.print("Ex. 6    ");
     }
     public static void ex7() {
-        System.out.println("Ex. 7");
+        System.out.print("Ex. 7    ");
     }
     public static void ex8() {
-        System.out.println("Ex. 8");
+        System.out.print("Ex. 8    ");
     }
     public static void ex9() {
-        System.out.println("Ex. 9");
+        System.out.print("Ex. 9    ");
     }
     public static void ex10() {
-        System.out.println("Ex. 10");
+        System.out.print("Ex. 10   ");
     }
 }
