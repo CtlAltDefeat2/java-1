@@ -1,6 +1,8 @@
 package com.xpanxion.assignments.groupa;
 
 
+import java.math.BigDecimal;
+import java.text.NumberFormat;
 import java.util.*;
 
 
@@ -13,7 +15,7 @@ public class student17 {
         ex5();
         ex6();
         ex7();
-//        ex8();
+        ex8();
         ex9();
         ex10();
     }
@@ -86,9 +88,10 @@ public class student17 {
         System.out.println("Ex. 5");
         int[] arr = {1, 2, 3, 5, 6, 9, 11};
         int N = arr.length;
-        findMissingNumbers(arr, N);
+        var missingNumbers = findMissingNumbers(arr, N);
+        System.out.println("This are the missing numbers: " + missingNumbers);
     }
-    private static void findMissingNumbers(int arr[], int N){
+    private static ArrayList<Object> findMissingNumbers(int[] arr, int N){
         var list = new ArrayList<>();
         int diff = arr[0];
         for (int i = 0; i < N; i++){
@@ -98,18 +101,17 @@ public class student17 {
                     diff++;
                 }
         }
-        System.out.println("The missing numbers are: " + list);
+        return list;
     }
     private static void ex6(){
         System.out.println("Ex. 6");
         int[] ints = {0,1,1,1,0,0,1,0,0,1,0,0,0};
-         int result = sort(ints);
-        System.out.println("The sorted Array is: " + result);;
+         sort(ints);
     }
     private static int sort(int[] ints){
         int arr[] = new int[0];
         Arrays.sort(ints);
-        System.out.println(Arrays.toString(ints));
+        System.out.println("The sorted array is: " + Arrays.toString(ints));
         return 0;
     }
     private static void ex7(){
@@ -121,14 +123,57 @@ public class student17 {
         Random r = new Random();
         System.out.println("Random Number is: " + list.get(r.nextInt(list.size())));
     }
-//    private static void ex8(){
-//        System.out.println("Ex. 8");
-//        calculate();
-//    }
-//    private static void calculate(){
-//        ArrayList<BigDecimal> total = new ArrayList<BigDecimal>(Collection.);
-//
-//    }
+    private static void ex8(){
+        System.out.println("Ex. 8");
+        var list = new ArrayList<Integer>();
+        Random num = new Random();
+        var listLength = 10;
+        for (int i =0; i < listLength; i++){
+            Integer a = num.nextInt(100);
+            list.add(a);
+        }
+        var result = totalCost(list);
+        System.out.println("The shopping cart: " + list);
+        System.out.println("Shopping Cart total: " + result);
+    }
+    private static String totalCost(ArrayList<Integer> list){
+        double preTax = 0;
+        preTax = addNumbers(list);
+        BigDecimal cart = new BigDecimal(preTax);
+        BigDecimal tax = new BigDecimal(1.1);
+        BigDecimal postTax = cart.multiply(tax);
+        NumberFormat n = NumberFormat.getCurrencyInstance(Locale.US);
+        //double money = total.doubleValue();
+        //BigDecimal is immutable
+        if (postTax.doubleValue() < 10 ){
+            BigDecimal shipping = new BigDecimal(5);
+            BigDecimal total = postTax.add(shipping);
+            double money = total.doubleValue();
+            String s = n.format(money);
+            //BigDecimal cartTotal = new BigDecimal(s);
+            return s;
+        }
+        else if (postTax.doubleValue() > 10 && postTax.doubleValue() < 20){
+            BigDecimal shipping = new BigDecimal(4);
+            BigDecimal total = postTax.add(shipping);
+            double money = total.doubleValue();
+            String s = n.format(money);
+            //BigDecimal cartTotal = new BigDecimal(s);
+            return s;
+
+        }
+        else{
+            BigDecimal total = postTax;
+
+            double money = total.doubleValue();
+            String s = n.format(money);
+            //BigDecimal cartTotal = new BigDecimal(s);
+            return s;
+        }
+    }
+
+
+
     private static void ex9(){
         System.out.println("Ex. 9");
         var result = evenOrOdd();
