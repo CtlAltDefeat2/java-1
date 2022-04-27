@@ -11,6 +11,7 @@ public class student25 {
         ex1();
         ex2();
         ex3();
+        ex4();
     }
 
     private static void ex1() {
@@ -69,13 +70,28 @@ public class student25 {
         }
         doubleNumbers(numList);
     }
-        private static void doubleNumbers (ArrayList < Integer > numList) {
-            for (int i = 0; i < numList.size(); i++){
-                int double1 = numList.get(i);
-                numList.set(i,(double1*2));
-            }
-            System.out.println(numList);
+
+    private static void doubleNumbers(ArrayList<Integer> numList) {
+        for (int i = 0; i < numList.size(); i++) {
+            int double1 = numList.get(i);
+            numList.set(i, (double1 * 2));
         }
+        System.out.println(numList);
     }
+
+    private static void ex4() {
+
+     var list = createList(5);
+        System.out.println(list);
+
+    }
+    private static ArrayList<Integer>createList(Integer maxNumber){
+    ArrayList<Integer> numList = new ArrayList<>();
+    for (int i = 1; i <= maxNumber; ++i){
+    numList.add(i);
+        }
+        return numList;
+    }
+}
 
 
