@@ -98,7 +98,7 @@ Example:
 ```
 
 # Ex. 7
-Write a Java function that retuns a random number from `ArrayList` of type `Integer`.
+Write a Java function that retuns a random number from an `ArrayList` of type `Integer`.
 
 # Ex. 8
 Write a function that calculates the total cost of a shopping cart.  The items
@@ -113,7 +113,7 @@ The total cost is calculated by the following:
     - Free shipping and handling for orders > $20.00
 
 # Ex. 9
-Write a function that returns a `String` if an `ArrayList` of type `Integer` is even or odd.
+Write a function that returns a `String` if the total sum of numbers in `ArrayList` of type `Integer` is even or odd.
 
 Example:
 ```java
