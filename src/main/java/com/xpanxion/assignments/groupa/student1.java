@@ -13,18 +13,18 @@ public class student1 {
         ex1();
         ex2();
         //ex3();
+        ex4();
     }
 
     private static void ex1() {
         int[] nums = {1, 2, 3};
-        var numList = new ArrayList<Integer>();
+        ArrayList<Integer> numList = new ArrayList<Integer>();
         for (int i: nums) {
             numList.add(i);
         }
         var r = addNumbers(numList);
         System.out.println(r);
     }
-
     private static Integer addNumbers(ArrayList<Integer> numList) {
         Integer retVal = 0;
         for (Integer i : numList) {   // for each integer "i" in this numList
@@ -52,7 +52,21 @@ public class student1 {
     private static void ex3() {
         System.out.println("Ex. 3");
     }
+
+    private static void ex4() {
+        var list = createList(5);
+        System.out.println(list);
+    }
+    private static ArrayList<Integer> createList(Integer maxNumber) {
+
+    ArrayList<Integer> numList = new ArrayList<>();
+    for (int i=1; i<= maxNumber; ++i) {
+        numList.add(i);
+    }
+    return numList;
+    }
 }
+
 
 
 
