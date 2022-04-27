@@ -102,7 +102,7 @@ Write a Java function that retuns a random number from an `ArrayList` of type `I
 
 # Ex. 8
 Write a function that calculates the total cost of a shopping cart.  The items
-in the shopping cart are contained in an `ArrayList` of type `BigDecimal`.
+in the shopping cart are contained in an `ArrayList` of type `Float`.
 
 The total cost is calculated by the following:
 - Sum the cost of all the items in the `ArrayList`
