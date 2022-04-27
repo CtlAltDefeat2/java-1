@@ -1,8 +1,9 @@
 package com.xpanxion.assignments.groupc;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
+import java.net.Inet4Address;
+import java.util.*;
+
+//4-25-22 - 4-29-22 Java Intro Assignment
 
 public class student13 {
     public static void main(String[] args) {
@@ -11,6 +12,9 @@ public class student13 {
         ex3();
         ex4();
         ex5();
+        ex6();
+        ex7();
+        ex8();
     }
 
     // Ex. 1
@@ -18,17 +22,18 @@ public class student13 {
         int[] ints = {1, 2, 3};
         var numList = new ArrayList<Integer>();
 
-        for (int i = 0;i < ints.length; i++) {
+        for (int i = 0; i < ints.length; i++) {
             numList.add(ints[i]);
         }
         System.out.println("Ex. 1");
         var result = addNumbers(numList);
         System.out.println("Sum of the array: " + result);
     }
+
     private static Integer addNumbers(ArrayList<Integer> numList) {
         int sum = 0;
 
-        for (int i = 0;i < numList.size(); i++) {
+        for (int i = 0; i < numList.size(); i++) {
             sum = sum + numList.get(i);
         }
         return sum;
@@ -39,19 +44,19 @@ public class student13 {
         int[] ints = {1, 2, 3};
         var numList = new ArrayList<Integer>();
 
-        for (int i = 0;i < ints.length; i++) { 
-            numList.add(ints[i]);              
+        for (int i = 0; i < ints.length; i++) {
+            numList.add(ints[i]);
         }
         System.out.println("Ex. 2");
         var result = avgNumbers(numList);
-        System.out.println("Average of the array: "+ result);
+        System.out.println("Average of the array: " + result);
     }
 
     private static Float avgNumbers(ArrayList<Integer> numList) {
         int sum = 0;
 
-        for (int i = 0;i < numList.size(); i++) {
-             sum = sum + numList.get(i);
+        for (int i = 0; i < numList.size(); i++) {
+            sum = sum + numList.get(i);
         }
         var avgArray = (float) sum / numList.size();
         return avgArray;
@@ -62,22 +67,22 @@ public class student13 {
         int[] ints = {1, 2, 3};
         var numList = new ArrayList<Integer>();
 
-        for (int i = 0;i < ints.length; i++) {
-            numList.add(ints[i]);               
+        for (int i = 0; i < ints.length; i++) {
+            numList.add(ints[i]);
         }
         System.out.println("Ex. 3");
         doubleArray(numList);
     }
 
     private static void doubleArray(ArrayList<Integer> numList) {
-        for (int i = 0;i < numList.size(); i++) {
-            numList.set(i, 2*numList.get(i));
+        for (int i = 0; i < numList.size(); i++) {
+            numList.set(i, 2 * numList.get(i));
         }
         System.out.println("Double array list: " + numList);
     }
 
     // Ex. 4
-    private static void ex4(){
+    private static void ex4() {
         System.out.println("Ex. 4");
         System.out.print("Enter value to create list: ");
         Scanner sc = new Scanner(System.in);
@@ -85,10 +90,11 @@ public class student13 {
 
         createList(maxNum);
     }
+
     private static void createList(Integer maxNum) {
         ArrayList<Integer> newList = new ArrayList<Integer>();
         for (int i = 0; i < maxNum; i++) {
-            newList.add(i+1);
+            newList.add(i + 1);
         }
         System.out.println(newList);
     }
@@ -110,16 +116,87 @@ public class student13 {
         }
 
         for (int i = 0; i < numList.get(6); i++) {
-            numList2.add(i+1);
+            numList2.add(i + 1);
         }
         var missingNumList = numList2.removeAll(numList);
 
         return numList2;
     }
-    private static void ex6(){
-
-    }
 
     // Ex. 6
-    private static
+    private static void ex6() {
+        int[] ints = {0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0};
+        System.out.println("Ex. 6");
+        var numList = new ArrayList<Integer>();
+
+        for (int i = 0; i < ints.length; i++) {
+            numList.add(ints[i]);
+        }
+        System.out.println("The sorted array is: ");
+        sortArray(numList);
+    }
+
+    private static void sortArray(ArrayList<Integer> numList) {
+        Collections.sort(numList);
+        System.out.println(numList);
+    }
+
+    // Ex. 7
+    private static void ex7() {
+        int[] ints = {20, 46, 14, 156, 54, 79, 6, 48, 31};
+        var numList = new ArrayList<Integer>();
+
+        for (int i = 0; i < ints.length; i++) {
+            numList.add(ints[i]);
+        }
+        System.out.println("Ex. 7");
+        System.out.println("Random element from array: ");
+        randomNumber(numList);
+    }
+
+    private static void randomNumber(ArrayList<Integer> numList) {
+        Random randNum = new Random();
+        System.out.println(numList.get(randNum.nextInt(numList.size())));
+    }
+
+    // Ex. 8
+    private static void ex8() {
+        float[] ints = {4.99F, 10.99F};
+        var numList = new ArrayList<Float>();
+        System.out.println("Ex. 8");
+        System.out.println("Shopping cart total: ");
+        for (int i = 0; i < ints.length; i++) {
+            numList.add(ints[i]);
+        }
+        shoppingCartTotal(numList);
+    }
+
+    private static void shoppingCartTotal(ArrayList<Float> numList) {
+        float sum = 0;
+
+        for (int i = 0; i < numList.size(); i++) {
+            sum = sum + numList.get(i);
+        }
+        float sumSalesTax = sum + (sum * .1F);
+        if (sumSalesTax < 10F) {
+            float shipSum = sumSalesTax + 5F;
+            System.out.println(shipSum);
+        } else if (sumSalesTax > 10F && sumSalesTax < 20F) {
+            float shipSum = sumSalesTax + 4F;
+            System.out.println(shipSum);
+        } else {
+            float shipSum = sumSalesTax;
+            System.out.println(shipSum);
+        }
+    }
+
+    // Ex. 9
+    private static void ex9() {
+        System.out.println("Ex. 9");
+    }
+
+    // Ex. 10
+    private static void ex10() {
+        System.out.println("Ex. 10");
+    }
 }
