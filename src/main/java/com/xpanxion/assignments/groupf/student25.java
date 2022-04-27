@@ -12,6 +12,7 @@ public class student25 {
         ex2();
         ex3();
         ex4();
+        ex5();
     }
 
     private static void ex1() {
@@ -81,16 +82,38 @@ public class student25 {
 
     private static void ex4() {
 
-     var list = createList(5);
+        var list = createList(5);
         System.out.println(list);
 
     }
-    private static ArrayList<Integer>createList(Integer maxNumber){
-    ArrayList<Integer> numList = new ArrayList<>();
-    for (int i = 1; i <= maxNumber; ++i){
-    numList.add(i);
+
+    private static ArrayList<Integer> createList(Integer maxNumber) {
+        ArrayList<Integer> numList = new ArrayList<>();
+        for (int i = 1; i <= maxNumber; ++i) {
+            numList.add(i);
         }
         return numList;
+    }
+
+    private static void ex5() {
+        ////Write a function that returns the number of missing numbers from this array.
+        int[] ints = {1, 2, 3, 5, 6, 9, 11};
+        ArrayList<Integer> numList = new ArrayList<>();
+        for (int i=0; i < ints.length; i++){
+            numList.add(ints[i]);
+        }
+        System.out.println(findMissingNumbers(numList));
+    }
+        private static ArrayList findMissingNumbers(ArrayList<Integer> numList){
+        var missingNumbers = new ArrayList<Integer>();
+        int firstNumber = numList.get(0);
+        int lastNumber = numList.get(numList.size() - 1);
+        for (int i = firstNumber; i < lastNumber; i++){
+            if (!numList.contains(i)){
+                missingNumbers.add(i);
+            }
+        }
+         return missingNumbers;
     }
 }
 
