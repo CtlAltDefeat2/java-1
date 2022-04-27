@@ -19,9 +19,9 @@ public class student12 {
 //        ex5();
 //        ex6();
 //        ex7();
-        ex8();
+//        ex8();
 //        ex9();
-//        ex10();
+        ex10();
 
 
     }
@@ -137,18 +137,15 @@ public class student12 {
         sorting(ints);
     }
     private static void sorting(int[] ints ){
-        int count0 = 0;
-        int count1 = 0;
+
         var list6Zeros = new ArrayList<>();
         var list6Ones = new ArrayList<>();
         for (int i = 0; i < ints.length; i++){
             if (ints[i] == 0) {
                 list6Zeros.add(0);
-                count0++;
             }
             else if (ints[i] == 1){
                 list6Ones.add(1);
-                count1++;
             }
         }
         var list6 = new ArrayList<>();
@@ -158,7 +155,7 @@ public class student12 {
     }
     private static void ex7() {
         System.out.println("Ex. 7");
-        var list7 = new ArrayList<>();
+        var list7 = new ArrayList<Integer>();
         Random rand = new Random();
         var listLength = rand.nextInt(80);
         //Randomly selects a list size between 1 and 80
@@ -168,7 +165,7 @@ public class student12 {
         }
         randomReturn(list7);
     }
-    private static void randomReturn(ArrayList<Object> list7){
+    private static void randomReturn(ArrayList<Integer> list7){
         Random rand = new Random();
         //sets new random function
         int index = rand.nextInt(list7.size());
@@ -206,7 +203,6 @@ public class student12 {
             BigDecimal total = postTax.add(shipping);
             double money = total.doubleValue();
             String s = n.format(money);
-            //BigDecimal cartTotal = new BigDecimal(s);
             return s;
         }
         else if (postTax.doubleValue() > 10 && postTax.doubleValue() < 20){
@@ -214,16 +210,13 @@ public class student12 {
             BigDecimal total = postTax.add(shipping);
             double money = total.doubleValue();
             String s = n.format(money);
-            //BigDecimal cartTotal = new BigDecimal(s);
             return s;
 
         }
         else{
             BigDecimal total = postTax;
-
             double money = total.doubleValue();
             String s = n.format(money);
-            //BigDecimal cartTotal = new BigDecimal(s);
             return s;
         }
     }
@@ -231,6 +224,29 @@ public class student12 {
 
     private static void ex9() {
         System.out.println("Ex. 9");
+        Random rand = new Random();
+        var list9 = new ArrayList<Integer>();
+        int listLength = rand.nextInt(10);
+        for (int i = 0; i < listLength; i++){
+            list9.add(i + 1);
+        }
+        System.out.println("Array \'list9\': " + list9);
+        var result = checkArray(list9);
+        System.out.println("This Array is: " + result);
+
+    }
+
+    private static String checkArray(ArrayList<Integer> list9){
+        var num = list9.size();
+
+        if ( num % 2 == 0){
+            String odd = "Even";
+            return odd;
+        }
+        else {
+            String even = "Odd";
+            return even;
+        }
     }
     private static void ex10() {
         System.out.println("Ex. 10");
