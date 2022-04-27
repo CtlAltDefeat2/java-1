@@ -1,6 +1,7 @@
 package com.xpanxion.assignments.groupa;
 
-import java.lang.reflect.Array;
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
@@ -8,6 +9,8 @@ import java.util.Scanner;
 
 
 public class student21 {
+
+    private static final DecimalFormat df = new DecimalFormat("0.00");
     public static void main(String[] args) {
 
 //        ex1();
@@ -15,8 +18,9 @@ public class student21 {
 //        ex3();
 //        ex4();
 //        ex5();
-//          ex6();
-          ex7();
+//        ex6();
+//        ex7();
+          ex8();
     }
 
     private static void ex1() {
@@ -95,6 +99,30 @@ public class student21 {
         System.out.println(returnRandomNumber(list));
     }
 
+
+    public static void ex8(){
+
+        var shoppingCart = new ArrayList<Float>();
+        shoppingCart.add(new Float(12.99));
+        shoppingCart.add(new Float(1.99));
+        shoppingCart.add(new Float(3.99));
+        System.out.println("Your total before taxes is $" + beforeTaxesTotal(shoppingCart));
+
+        var grossTotal = beforeTaxesTotal(shoppingCart);
+
+        System.out.println("Total after sales tax: $" + df.format(afterSalesTax(grossTotal)));
+
+        var afterSales = (afterSalesTax(grossTotal));
+
+        var endTotal = shippingAndHandling(afterSales);
+
+        System.out.println("Your total cost after taxes plus shipping and handling is $" +df.format(endTotal));
+
+
+
+
+    }
+
     private static String convertArray(int[] ints) { // Helper functions
         ArrayList converted = new ArrayList<Integer>();
         for(int i = 0; i < ints.length; i++){
@@ -171,6 +199,41 @@ public class student21 {
         int rand = random.nextInt(10);
         int number = list.get(rand);
         return number;
+    }
+
+    public static Float beforeTaxesTotal(ArrayList<Float>shoppingCart){
+        Float total = 0.0f;
+
+        for (int i = 0; i < shoppingCart.size(); i++){
+            total += shoppingCart.get(i);
+        }
+
+
+
+        return total;
+    }
+
+    public static Float afterSalesTax (Float grossTotal){
+
+
+        Float totalAfterSales = grossTotal*1.1f;
+
+
+        return totalAfterSales;
+    }
+
+    public static Float shippingAndHandling (Float afterSales){
+
+       var finalTotal = afterSales;
+
+        if (finalTotal<10){
+            finalTotal = finalTotal+5;
+        }else if (finalTotal>10 && finalTotal<20){
+            finalTotal = finalTotal+4;
+        }else{
+            finalTotal=finalTotal;
+        }
+        return finalTotal;
     }
 
 }
