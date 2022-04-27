@@ -1,11 +1,10 @@
 package com.xpanxion.assignments.groupc;
 
 import java.awt.image.AreaAveragingScaleFilter;
+import java.math.BigDecimal;
 import java.sql.Array;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Random;
-import java.util.Scanner;
+import java.text.NumberFormat;
+import java.util.*;
 
 public class student12 {
 
@@ -13,14 +12,14 @@ public class student12 {
 
     public static void main(String[] args) {
 
-        ex1();
-        ex2();
-        ex3();
-        ex4();
-        ex5();
-        ex6();
-        ex7();
-//        ex8();
+//        ex1();
+//        ex2();
+//        ex3();
+//        ex4();
+//        ex5();
+//        ex6();
+//        ex7();
+        ex8();
 //        ex9();
 //        ex10();
 
@@ -177,9 +176,60 @@ public class student12 {
         System.out.println("Random List Length is: "+ list7.size());
         System.out.println("Random Element is: " + index);
     }
+
+
     private static void ex8() {
         System.out.println("Ex. 8");
-    }private static void ex9() {
+        var list8 = new ArrayList<Integer>();
+        Random rand = new Random();
+        var listLength = 10;
+        for (int i = 0; i < listLength; i++){
+            Integer r = rand.nextInt(100);
+            list8.add(r);
+        }
+        var result = cashOut(list8);
+        System.out.println(list8);
+        System.out.println("Cart Total: " + result);
+    }
+
+    public static String cashOut(ArrayList<Integer> list8){
+        double preTax = 0;
+        preTax = addNumbers(list8);
+        BigDecimal cart = new BigDecimal(preTax);
+        BigDecimal tax = new BigDecimal(1.1);
+        BigDecimal postTax = cart.multiply(tax);
+        NumberFormat n = NumberFormat.getCurrencyInstance(Locale.US);
+        //double money = total.doubleValue();
+        //BigDecimal is immutable
+        if (postTax.doubleValue() < 10 ){
+            BigDecimal shipping = new BigDecimal(5);
+            BigDecimal total = postTax.add(shipping);
+            double money = total.doubleValue();
+            String s = n.format(money);
+            //BigDecimal cartTotal = new BigDecimal(s);
+            return s;
+        }
+        else if (postTax.doubleValue() > 10 && postTax.doubleValue() < 20){
+            BigDecimal shipping = new BigDecimal(4);
+            BigDecimal total = postTax.add(shipping);
+            double money = total.doubleValue();
+            String s = n.format(money);
+            //BigDecimal cartTotal = new BigDecimal(s);
+            return s;
+
+        }
+        else{
+            BigDecimal total = postTax;
+
+            double money = total.doubleValue();
+            String s = n.format(money);
+            //BigDecimal cartTotal = new BigDecimal(s);
+            return s;
+        }
+    }
+
+
+    private static void ex9() {
         System.out.println("Ex. 9");
     }
     private static void ex10() {
