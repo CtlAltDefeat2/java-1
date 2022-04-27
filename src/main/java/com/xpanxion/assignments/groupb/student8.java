@@ -5,9 +5,11 @@ import org.w3c.dom.ls.LSOutput;
 import java.math.BigDecimal;
 import java.util.*;
 
+import static java.lang.Math.round;
+
 public class student8 {
     public static void main(String[] args) {
-        ex10();
+        ex8();
 
     }
 
@@ -150,33 +152,31 @@ public class student8 {
         System.out.println(array.get(random.nextInt(array.size())));
     }
 
-    //EX 8 - NOT DONE
+    //EX 8
     private static void ex8() {
-        var cart = new ArrayList<BigDecimal>();
+        var cart = new ArrayList<Float>();
         Random random = new Random();
         Scanner scanner = new Scanner(System.in);
         var totalUnderTen = 0;
-        var totalTen = 0;
-        var salesTax = .10;
+        var totalSHTen = 0;
         var totalSHBetweenTenTwenty = 0;
         var totalBetweenTenTwenty = 0;
         var totalOverTwenty = 0;
-        var cartRawCost = 0;
-        var total = 0;
+        float totalRaw = 0;
 
         System.out.println("How many orders are under $10?: ");
         int underTen = Integer.parseInt(scanner.next());
         for (int i = 0; i < underTen; i++) {
-            cart.add(BigDecimal.valueOf(random.nextInt(1, 10)));
+            cart.add((random.nextFloat(1, 10)));
             totalUnderTen = underTen * 5;
-            totalTen += 10;
+            totalSHTen += 10;
         }
 
 
         System.out.println("How many orders are OVER $10 but UNDER $20?: ");
         int betweenTenTwenty = Integer.parseInt(scanner.next());
         for (int i = 0; i < betweenTenTwenty; i++) {
-            cart.add(BigDecimal.valueOf(random.nextInt(10, 20)));
+            cart.add((random.nextFloat(10, 20)));
             totalSHBetweenTenTwenty = betweenTenTwenty * 4;
 
         }
@@ -184,14 +184,20 @@ public class student8 {
         System.out.println("How many orders are OVER $20?: ");
         int overTwenty = Integer.parseInt(scanner.next());
         for (int i = 0; i < overTwenty; i++) {
-            cart.add(BigDecimal.valueOf(random.nextInt(20, 100)));
+            cart.add((random.nextFloat(20, 100)));
         }
 
+        for (float i = 0; i < cart.size(); i++) {
+            totalRaw += cart.get((int) i);
+        }
 
-//        var totalCostBeforeTax = totalUnderTen + totalSHBetweenTenTwenty;
-//        var totalCostShipAndHandleAfterTax = totalCostBeforeTax * salesTax;
+        var totalSH = totalSHTen + totalSHBetweenTenTwenty;
+        var salesTax = .10 * totalRaw;
+        var total = totalSH + salesTax + totalRaw;
+        var totalRounded = Math.round(total*100.0)/100.0;
+        System.out.println("Item costs: ");
         System.out.println(cart);
-//        System.out.println("Total Cost: $" + totalCost);
+        System.out.println("Total Cost: $" + totalRounded);
 
     }
 
@@ -218,6 +224,7 @@ public class student8 {
 
     }
 
+    // EX 10
     private static void ex10() {
 
         Scanner scanner = new Scanner(System.in);
