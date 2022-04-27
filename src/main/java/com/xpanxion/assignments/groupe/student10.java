@@ -60,7 +60,8 @@ public class student10 {
     }
     private static void doubler(ArrayList<Integer> list3) {
         for (int i = 0; i < list3.size(); i++) {
-
+            list3.set(i, list3.get(i) * 2);
         }
+        System.out.println(list3);
     }
 }
