@@ -2,6 +2,8 @@ package com.xpanxion.assignments.groupe;
 
 import javax.swing.*;
 import java.util.ArrayList;
+import java.util.Random;
+import java.util.RandomAccess;
 import java.util.Scanner;
 
 public class student22 {
@@ -122,10 +124,11 @@ public class student22 {
 
     }
     private static void ex6() {
-        Integer[] ints = {0,1,1,1,0,0,1,0,0,1,0,0,0};
+        int[] ints = {0,1,1,1,0,0,1,0,0,1,0,0,0};
         var myArray = new ArrayList<Integer>();
         for(int i : ints){
             myArray.add(i);
+
         }
         System.out.println(createZerosAndOnes(myArray));
     }
