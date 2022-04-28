@@ -107,24 +107,17 @@ public class student8 {
     // EX 5 - NOT DONE
     private static void ex5() {
         int[] ints = {1, 2, 3, 5, 6, 9, 11};
-//        var missingNumbers = new ArrayList<Integer>(11);
-//
-//        for (int i = 0; i < (ints.length); i++) {
-//            int next = ints[i] + 1;
-//            int current = ints[i];
-//            if (next != current) {
-//                missingNumbers.add(next);
-//            }
-//            //System.out.println(ints[i] + 1);
-//        }
-        //System.out.println(missingNumbers);
-        //System.out.println(ints[i]);
-       //System.out.println(missingNumbers);
-       //System.out.println(ints.length - 1);
+        findMissingNumbers(ints);
 
-        ints.
-        System.out.println(nums.);
+
     }
+
+    private static void findMissingNumbers(int[] ints) {
+        for (int i = 0; i < ints.length; i++) {
+
+        }
+    }
+
 
     // EX 6
     private static void ex6() {
