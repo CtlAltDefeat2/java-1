@@ -10,7 +10,7 @@ import java.util.random.RandomGenerator;
 public class student26 {
     public static void main(String[] args) {
 
-        ex8();
+        ex6();
 
     }
 
@@ -134,10 +134,41 @@ public class student26 {
 
 
     private static void ex6() {
+        int[] ints = {0,1,1,1,0,0,1,0,0,1,0,0,0};
 
+        var listnew = new ArrayList<Integer>();
+        for ( int i : ints) {
+            listnew.add(i);
+        }
+
+        // sortNumbers(listnew);
+        System.out.println(sortNumbers(listnew));
 
     }
 
+    private static String sortNumbers(ArrayList<Integer>numList) {
+
+        String zero = "";
+        String one = "";
+        String oneandzero = "";
+
+        for (int i : numList) {
+
+
+            if (i == 0) {
+
+                zero = zero + 0;
+            } else {
+                one = one + 1;
+
+
+            }
+
+            oneandzero = zero + one;
+        }
+
+        return oneandzero;
+    }
 
     private static void ex7() {
 
@@ -250,7 +281,11 @@ public class student26 {
 
 
 
+    private static void ex10() {
 
+
+
+    }
 
 
 
