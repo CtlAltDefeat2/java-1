@@ -7,7 +7,7 @@ import java.util.random.RandomGenerator;
 public class student26 {
     public static void main(String[] args) {
 
-        ex7();
+        ex9();
 
     }
 
@@ -165,6 +165,46 @@ public class student26 {
             return result;
 
     }
+
+    private static void ex8() {
+
+
+    }
+
+    private static void ex9() {
+
+        int [] list = {1, 2, 3,};
+
+        var newlist = new ArrayList<Integer>();
+
+        for  (int i:list) {
+            newlist.add(i);
+
+
+        }
+
+
+        System.out.println(newlist);
+        //Indicates if sum is odd or even
+        oddEven(newlist);
+
+    }
+        private static void oddEven (ArrayList<Integer>arrlist) {
+
+        var sum = addNumbers(arrlist);
+
+
+        if ( sum %2 ==0) {
+            System.out.println("Even");
+        }
+            else {
+            System.out.println("Odd");
+        }
+
+
+
+        }
+
 
 
 
