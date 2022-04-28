@@ -1,6 +1,7 @@
 package com.xpanxion.assignments.groupc;
 
 import java.net.Inet4Address;
+import java.text.NumberFormat;
 import java.util.*;
 
 //4-25-22 - 4-29-22 Java Intro Assignment
@@ -15,6 +16,8 @@ public class student13 {
         ex6();
         ex7();
         ex8();
+        ex9();
+//        ex10();
     }
 
     // Ex. 1
@@ -118,7 +121,7 @@ public class student13 {
         for (int i = 0; i < numList.get(6); i++) {
             numList2.add(i + 1);
         }
-        var missingNumList = numList2.removeAll(numList);
+        numList2.removeAll(numList);
 
         return numList2;
     }
@@ -161,7 +164,7 @@ public class student13 {
 
     // Ex. 8
     private static void ex8() {
-        float[] ints = {4.99F, 10.99F};
+        float[] ints = {3F, 4F, 5F};
         var numList = new ArrayList<Float>();
         System.out.println("Ex. 8");
         System.out.println("Shopping cart total: ");
@@ -173,30 +176,65 @@ public class student13 {
 
     private static void shoppingCartTotal(ArrayList<Float> numList) {
         float sum = 0;
-
+        Locale locale = new Locale("en", "US");
+        NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance(locale);
         for (int i = 0; i < numList.size(); i++) {
             sum = sum + numList.get(i);
         }
         float sumSalesTax = sum + (sum * .1F);
         if (sumSalesTax < 10F) {
             float shipSum = sumSalesTax + 5F;
-            System.out.println(shipSum);
+            System.out.println(currencyFormatter.format(shipSum));
         } else if (sumSalesTax > 10F && sumSalesTax < 20F) {
             float shipSum = sumSalesTax + 4F;
-            System.out.println(shipSum);
+            System.out.println(currencyFormatter.format(shipSum));
         } else {
             float shipSum = sumSalesTax;
-            System.out.println(shipSum);
+            System.out.println(currencyFormatter.format(shipSum));
         }
     }
 
     // Ex. 9
     private static void ex9() {
+        int[] ints = {12, 4, 5, 23, 90, 65, 26, 76, 17};
+        var myArray = new ArrayList<Integer>();
+        for (int i= 0; i < ints.length; i++) {
+            myArray.add(ints[i]);
+        }
         System.out.println("Ex. 9");
+        var result = checkArray(myArray);
+        System.out.println("Sum of array is either odd or even: " + result);
+    }
+
+    private static String checkArray(ArrayList<Integer> myArray) {
+        int count = 0;
+        int sum = 0;
+        String evenOddNum = new String();
+        for (int i = 0; i < myArray.size(); i++) {
+            sum = sum + myArray.get(i);
+            count = count + 1;
+        }
+        if (sum % 2 == 0) {
+            evenOddNum = "even";
+        } else {
+            evenOddNum = "odd";
+        }
+        return evenOddNum;
     }
 
     // Ex. 10
-    private static void ex10() {
-        System.out.println("Ex. 10");
-    }
+//    private static void ex10() {
+//        System.out.println("Ex. 10");
+//        Scanner sc = new Scanner(System.in);
+//        String password = sc.next();
+//        var result = passwordValidator(password);
+//        System.out.println(result);
+//    }
+
+//    private static Boolean passwordValidator(String password) {
+//        int passWordCountLimit = 10;
+//        if (password.length() < 10) {
+//            System.out.println();
+//        } else if (password.)
+//    }
 }
