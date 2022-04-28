@@ -11,6 +11,7 @@ public class student10 {
         ex2();
         ex3();
         ex4();
+        ex5();
     }
 
     private static void ex1() {
@@ -68,6 +69,20 @@ public class student10 {
 
 
     private static void ex4() {
+        createList(5);
+    }
+
+    private static void createList(Integer maxNumber){
+        int count = 0;
+        var list4 = new ArrayList<Integer>();
+        for (int i = 0; i < maxNumber; i++){
+            count++;
+            list4.add(count);
+        }
+        System.out.println(list4);
+    }
+
+    private static void ex5() {
 
     }
 }
