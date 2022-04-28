@@ -17,6 +17,7 @@ public class student19 {
         //ex7();
         //ex8();
         ex9();
+        ex10();
     }
 
     private static void ex1() {
@@ -199,16 +200,38 @@ public class student19 {
     private static String evenOdd(ArrayList<Integer> numList) {
         String evenOdd = "Odd";
         int sum = addNumbers(numList);
-          if ((sum % 2) == 0) {
+        if ((sum % 2) == 0) {
 
-              evenOdd = "Even";
-          }
+            evenOdd = "Even";
+        }
 
         return evenOdd;
     }
 
-}
+    private static void ex10() {
+        String passWord = "12345678abc";
+        System.out.println(passWordValidator(passWord));
+    }
+
+    private static Boolean passWordValidator(String passWord) {
+        int count = 0;
+
+        if (passWord.length() >= 11)
+            return false;
+
+        for (int i = 0; i < passWord.length(); i++) {
+
+            if (! (Character.isLetterOrDigit(passWord.charAt(i))))
+               return false;
+            else if (Character.isLetter(passWord.charAt(i)))
+             count++;
+
+        }
+
+               if (count >= 2) return true;
+                  return false;
+
+           }
 
 
-
-
+        }
