@@ -14,7 +14,8 @@ public class student22 {
 //            ex3();
 //            ex4();
 //            ex5();
-              ex6();
+//            ex6();
+               ex7();
     }
 
     private static void ex1() {
@@ -147,6 +148,21 @@ public class student22 {
         }
 //        zerosAndOnes = myZeros + myOnes;
         return zerosAndOnes;
+    }
+    private static void ex7() {
+        int[] ints = {1,2,5,7,8,99,24,56,89,67};
+        var myArray = new ArrayList<Integer>();
+        for(int i : ints){
+            myArray.add(i);
+
+        }
+        System.out.println(randomNumber(myArray));
+    }
+
+
+    private static int randomNumber(ArrayList<Integer> numList){
+        int rnd = new Random().nextInt(numList.toArray().length);
+        return rnd;
     }
 }
 
