@@ -1,12 +1,14 @@
 package com.xpanxion.assignments.groupb;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.*;
 
 import static java.lang.Math.round;
 
 public class student8 {
     public static void main(String[] args) {
-        ex9();
+        ex7();
 
     }
 
@@ -133,28 +135,38 @@ public class student8 {
     private static void ex6() {
 
         int[] ints = {0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0};
+        var result = sort(ints);
+        System.out.println(result);
+
+    }
+
+    private static String sort(int[] ints) {
         Arrays.sort(ints);
-        String sortedArray = Arrays.toString(ints);
         String[] strings = new String[ints.length];
         for (int i = 0; i < ints.length; i++) {
             strings[i] = String.valueOf(ints[i]);
         }
         String joinedArray = String.join("", strings);
-        System.out.println(joinedArray);
-
+        return joinedArray;
     }
 
     // EX 7
     private static void ex7() {
         var list = new int[5];
+        var result = randomNum(list);
+        System.out.println(Arrays.toString(list));
+        System.out.println(result);
+
+    }
+
+    private static Integer randomNum(int[] list) {
         Random random = new Random();
         var array = new ArrayList<Integer>(5);
         for (int i = 0; i < list.length; i++) {
             list[i] = random.nextInt(1, 20);
             array.add(list[i]);
         }
-        System.out.println(array);
-        System.out.println(array.get(random.nextInt(array.size())));
+        return array.get(random.nextInt(array.size()));
     }
 
     //EX 8
