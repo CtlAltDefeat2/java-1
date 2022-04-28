@@ -12,15 +12,15 @@ public class student12 {
 
     public static void main(String[] args) {
 
-//        ex1();
-//        ex2();
-//        ex3();
-//        ex4();
-//        ex5();
-//        ex6();
-//        ex7();
-//        ex8();
-//        ex9();
+        ex1();
+        ex2();
+        ex3();
+        ex4();
+        ex5();
+        ex6();
+        ex7();
+        ex8();
+        ex9();
         ex10();
 
 
@@ -222,11 +222,12 @@ public class student12 {
         System.out.println("Ex. 9");
         Random rand = new Random();
         var list9 = new ArrayList<Integer>();
-        int listLength = rand.nextInt(10);
+        int listLength = rand.nextInt(1,10);
         for (int i = 0; i < listLength; i++){
             list9.add(i + 1);
         }
         System.out.println("Array \'list9\': " + list9);
+        System.out.println("The sum of this Array is: " + addNumbers(list9));
         var result = checkArray(list9);
         System.out.println("This Array is: " + result);
 
@@ -234,8 +235,8 @@ public class student12 {
 
     private static String checkArray(ArrayList<Integer> list9){
         var num = list9.size();
-
-        if ( num % 2 == 0){
+        var sum = addNumbers(list9);
+        if ( sum % 2 == 0){
             String odd = "Even";
             return odd;
         }
@@ -244,53 +245,51 @@ public class student12 {
             return even;
         }
     }
-    private static void ex10() {
+
+    private static void ex10(){
         System.out.println("Ex. 10");
+        System.out.println("Password Rules: \n" +
+                "1.) A password must have at least ten characters\n"+
+                "2.) A password consists of only letters and digits\n"+
+                "3.) A password must contain at least two digits");
+        System.out.print("Please enter a password: ");
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Please enter a new password: ");
         var password = scanner.nextLine();
-        if (passVerify(password)) {
+        var st1 = new StringTokenizer(password);
+        if (verifyPassword(password)){
             System.out.println("Password is valid");
         }
-        else {
-            System.out.println("Password is not valid");
+        else{
+            System.out.println("Password is invalid");
         }
 
     }
-
-    private  static boolean passVerify(String password) {
-        if (password.length() < 10) {
+    private static boolean verifyPassword(String password){
+        if (password.length() < 10){
             return false;
         }
-        var charCount = 0;
-        var numCount = 0;
+        var countNums = 0;
+        var countChars = 0;
         for (int i = 0; i < password.length(); i++) {
-            char charAtI = password.charAt(i);
-            if (areNums(charAtI)) {
-                numCount++;
+            var charI = password.charAt(i);
+            if (checkNums(charI)) {
+                countNums++;
             }
-            else if (areLetters(charAtI)) {
-                charCount++;
+            else if (checkChars(charI)) {
+                countChars++;
             }
-            else return false;
-
+            else {return false;}
         }
-        return (charCount >= 2 && numCount >= 2);
-        //returns if both charCount and numCount are greater than 2
-    }
-    private static boolean areNums(char ch) {
-        ch = Character.toUpperCase(ch);
-        return (ch >= 'A' && ch <= 'Z');
-    }
-    public static boolean areLetters (char ch) {
-        return (ch >=  0 && ch <= 9);
-
+        return (countChars >= 2 && countNums >= 2);
     }
 
+    private static  boolean checkChars(char ch){
+        return (Character.isLetter(ch));
+    }
 
-
-
-
+    private static boolean checkNums (char ch){
+        return (Character.isDigit(ch));
+    }
 }
 
 
