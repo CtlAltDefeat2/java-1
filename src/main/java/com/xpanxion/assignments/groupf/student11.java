@@ -61,7 +61,8 @@ public class student11 {
         System.out.println(r);
 
     }
-//function withing our function. initializing aveNumber function. sending the arraylist inside the aveNumber function and returning the value as a float.
+
+    //function withing our function. initializing aveNumber function. sending the arraylist inside the aveNumber function and returning the value as a float.
     private static Float avgNumbers(ArrayList<Integer> numList) {
         //initializing a variable called sum and assigning the return value of the addNumbers function from ex 1 by passing the numList to arrayList.
         var sum = addNumbers(numList);
@@ -76,34 +77,40 @@ public class student11 {
 
     private static void ex3() {
         ArrayList<Integer> numList = new ArrayList<>(); //declare new array list
-        //convert int to integer
-        int[] ints = {1, 2, 3, 4};
+        //convert int to integer. defining an array of integers.the index is 0, 1, 2 the value is 1, 2, 3.
+        int[] ints = {1, 2, 3};
         //add the number to the numList
         for (int i : ints) {
+            // adding each value that belongs in index i
             numList.add(i);
         }
+        //calling the function doubleNumbers. asking numList to go to the doubleNumbers function
         doubleNumbers(numList);
     }
 
+    //defining the type of variable that can go through that function. doubleNumbers function. void means we dont have a return value from that function.
     private static void doubleNumbers(ArrayList<Integer> numList) {
-
+//starting at index 0 and incrementing by 1. stay within the limit. size of the array should be less than 3. shouldn't go up to 3.
         for (int i = 0; i < numList.size(); i++) {
-
-            int temp = numList.get(i);
-
-            numList.set(i, (temp * 2));
+//initializing a new variable called temp and getting a value that belongs to the index i and assigning that value to temp. we are multiplying the value by 2.
+            int temp = numList.get(i) * 2;
+//temp=temperary value. copying the values in ints array into temp variable. setting the new value to the original value where the index is pointing to. basically locking in the new values.
+            numList.set(i, temp);
         }
         System.out.println(numList); //print list
     }
 
     private static void ex4() {
+        //declaring a variable called list. we are assigning a return value from the create list function.
         var list = createList(5);
         System.out.println(list);
     }
 
+    //the definition of the create list function. was given to us in the question.
     private static ArrayList<Integer> createList(Integer maxNumber) {
-
-        ArrayList<Integer> numList = new ArrayList<>();
+//we are defining an arrayList called numList
+        ArrayList<Integer> numList = new ArrayList<Integer>();
+        //we are looping through the maxNumber is the arrayList.starts at 1
         for (int i = 1; i <= maxNumber; ++i) {
             numList.add(i);
         }
@@ -113,19 +120,25 @@ public class student11 {
     private static <Integers> void ex5() {
         int[] ints = {1, 2, 3, 5, 6, 9, 11};
         ArrayList<Integer> numList = new ArrayList<>();
+        //
         for (int i = 0; i < ints.length; i++) {
             numList.add(ints[i]);
         }
         System.out.println(findMissingNumbers(numList));
     }
 
+    //the type of variable that you pass through this function. left side ArrayList is the type of return value we will get.
     private static ArrayList<Integer> findMissingNumbers(ArrayList<Integer> numList) {
+        //defining missing numbers as new arrayList.
         var missingNumbers = new ArrayList<Integer>();
         // identify first number and last number
         int firstNumber = numList.get(0);
+        //going 1 below the max number
         int lastNumber = numList.get(numList.size() - 1);
         for (int i = firstNumber; i < lastNumber; i++) {
+            //!=not if the number list contains that i value in the numList ignore it
             if (!numList.contains(i)) {
+                //if the numList doesnt contain i value then add it to the missing numbers value
                 missingNumbers.add(i);
             }
         }
@@ -133,33 +146,37 @@ public class student11 {
     }
 
 
-
     private static void ex6() {
         //ints array
-        int[] ints = {0,1,1,1,0,0,1,0,0,1,0,0,0};
-        //initializing string a
-        String A = "";
+        int[] ints = {0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0};
+        System.out.println(organizeZerosAndOnes(ints));
+    }
+
+    private static String organizeZerosAndOnes(int[] ints) {
+        //initializing string result
+        String result = "";
         //initializing left string
-        String Left = "";
+        String leftZeros = "";
         //initializing right string
-        String Right = "";
-//for loop because we are iterating through every element of ints array
+        String rightOnes = "";
+        //for loop because we are iterating through every element of ints array
         for (int i = 0; i < ints.length; i++) {
-            if(ints[i] == 0) {
-                //we are calling the object integer to convert an array element to string element
-                Left = Left + Integer.toString(ints[i]);
-            }
-            else {
-                Right = Right + Integer.toString(ints[i]);
+            if (ints[i] == 0) {
+                //we are calling the object integer to convert an array element to string element.
+                leftZeros += Integer.toString(ints[i]);
+            } else {
+                rightOnes += Integer.toString(ints[i]);
             }
 
         }
-        A = Left + Right;
-        System.out.println(A);
+        {
+            result = leftZeros + rightOnes;
+            return result;
 
-
+        }
     }
 }
+
 
 
 
