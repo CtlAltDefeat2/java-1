@@ -1,10 +1,6 @@
 package com.xpanxion.assignments.groupb;
 
-import org.w3c.dom.ls.LSOutput;
-
-import java.math.BigDecimal;
 import java.util.*;
-import java.util.stream.IntStream;
 
 import static java.lang.Math.round;
 
@@ -107,15 +103,30 @@ public class student8 {
     // EX 5 - NOT DONE
     private static void ex5() {
         int[] ints = {1, 2, 3, 5, 6, 9, 11};
-        findMissingNumbers(ints);
-
+        var missingNumbers = findMissingNumbers(ints);
+        System.out.println(missingNumbers);
 
     }
 
-    private static void findMissingNumbers(int[] ints) {
-        for (int i = 0; i < ints.length; i++) {
-
+    private static ArrayList<Integer> findMissingNumbers(int[] ints) {
+        int[] allInts = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
+        var missingNums = new ArrayList<Integer>();
+        boolean contains = false;
+        for (int i = 0; i < allInts.length; i++) {
+            for (int j = 0; j < ints.length; j++) {
+                if (allInts[i] == ints[j]) {
+                    contains = true;
+                    break;
+                }
+            }
+            if (!contains) {
+                missingNums.add(allInts[i]);
+            }
+            else {
+                contains = false;
+            }
         }
+        return missingNums;
     }
 
 
