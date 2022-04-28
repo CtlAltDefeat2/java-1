@@ -87,14 +87,14 @@ public class student17 {
     private static void ex5(){
         System.out.println("Ex. 5");
         int[] arr = {1, 2, 3, 5, 6, 9, 11};
-        int N = arr.length;
-        var missingNumbers = findMissingNumbers(arr, N);
+        int length = arr.length;
+        var missingNumbers = findMissingNumbers(arr, length);
         System.out.println("This are the missing numbers: " + missingNumbers);
     }
-    private static ArrayList<Integer> findMissingNumbers(int[] arr, int N){
+    private static ArrayList<Integer> findMissingNumbers(int[] arr, int length){
         var list = new ArrayList<Integer>();
         int diff = arr[0];
-        for (int i = 0; i < N; i++){
+        for (int i = 0; i < length; i++){
             if(arr[i] - i != diff)
                 while (diff < arr[i] - i){
                     list.add(i + diff);
@@ -109,7 +109,6 @@ public class student17 {
          sort(ints);
     }
     private static int sort(int[] ints){
-        int arr[] = new int[0];
         Arrays.sort(ints);
         System.out.println("The sorted array is: " + Arrays.toString(ints));
         return 0;
@@ -120,8 +119,8 @@ public class student17 {
     }
     private static void randomNumber(){
         ArrayList<Integer> list = new ArrayList<>(Arrays.asList(1,2,3,4,5,6));
-        Random r = new Random();
-        System.out.println("Random Number is: " + list.get(r.nextInt(list.size())));
+        Random rand = new Random();
+        System.out.println("Random Number is: " + list.get(rand.nextInt(list.size())));
     }
     private static void ex8(){
         System.out.println("Ex. 8");
@@ -173,12 +172,9 @@ public class student17 {
             System.out.println("The sum of the array is Odd");
     }
     private static int evenOrOdd(){
-        ArrayList<Integer> list = new ArrayList<>(Arrays.asList(1,2,3,4,5));
-        int result = 0;
-        for (Integer integer : list) {
-            result += integer;
-        }
-        return result;
+        ArrayList<Integer> list = new ArrayList<>(Arrays.asList(1,2,3,4,5,6,7,8,9,10));
+       addNumbers(list);
+        return 0;
     }
     private static void ex10(){
         System.out.println("Ex. 10");
@@ -187,10 +183,10 @@ public class student17 {
     private static void passwordCk(){
         Scanner input = new Scanner(System.in);
         System.out.println("""
-                        1. A password must have at least ten characters.
-                        2. A password consists of only letters and digits.
-                        3. A password must contain at least two digits\s
-                        Input a password: \s""");
+                1. A password must have at least ten characterrs.
+                2. A password consists of only letters and digits.
+                3. A password must contain at least two digits\s
+                Input a password: \s""");
         String string = input.nextLine();
         if (isValid(string)){
             System.out.println("Password is valid: " + string);
@@ -199,7 +195,8 @@ public class student17 {
             System.out.println("Not a valid password: " + string);
     }
     public static boolean isValid(String password){
-        if (password.length() < 10) return false;
+        if (password.length() < 10)
+            return false;
         int charCount = 0;
         int numCount = 0;
         for (int i = 0; i < password.length(); i++){
