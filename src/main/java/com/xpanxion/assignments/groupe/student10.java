@@ -3,6 +3,7 @@ package com.xpanxion.assignments.groupe;
 import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 import java.util.stream.IntStream;
 
 public class student10 {
@@ -12,8 +13,9 @@ public class student10 {
         ex2();
         ex3();
         ex4();
-//        ex5();
+//      ex5();
         ex6();
+        ex7();
     }
 
     private static void ex1() {
@@ -126,5 +128,19 @@ public class student10 {
         list6All.addAll(list6zero);
         list6All.addAll(list6one);
         System.out.println("Here are the sorted numbers: " + list6All);
+    }
+
+    private static void ex7() {
+        var list7 = new ArrayList<Integer>();
+        Random rando = new Random();
+        var listSize = rando.nextInt(1000);
+        for (int i = 0; i < listSize; i++) {
+            list7.add(i+1);
+        }
+        randomNumber(list7);
+    }
+
+    private static void randomNumber(ArrayList<Integer>list7){
+
     }
 }
