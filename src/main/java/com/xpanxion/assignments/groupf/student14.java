@@ -1,7 +1,8 @@
 package com.xpanxion.assignments.groupf;
 
-import java.lang.reflect.Array;
 import java.util.*;
+
+import static java.lang.System.*;
 
 public class student14 {
     public static void main(String[] args) {
@@ -11,7 +12,8 @@ public class student14 {
 //      ex4();
 //      ex5();
 //      ex6();
-        ex7();
+//      ex7();
+        ex8();
     }
 
     //vars, loops, ifs, functions
@@ -25,7 +27,7 @@ public class student14 {
         } // map
 
         var sum = addNumbers(numList);
-        System.out.println("The sum is " + sum);
+        out.println("The sum is " + sum);
     }
 
     private static Integer addNumbers(ArrayList<Integer> numList) {
@@ -49,7 +51,7 @@ public class student14 {
         //take sum of list
         var r = avgNumbers(numList);
 
-        System.out.println(r);
+        out.println(r);
     }
 
     private static Float avgNumbers(ArrayList<Integer> numList) {
@@ -70,7 +72,7 @@ public class student14 {
             numList.add(i);
         }
         doubleNumbers(numList);
-        System.out.println(numList);//print list
+        out.println(numList);//print list
     }
 
     private static void doubleNumbers(ArrayList<Integer> numList) {
@@ -82,7 +84,7 @@ public class student14 {
 
     private static void ex4() {
         var list = createList(5);
-        System.out.println(list);
+        out.println(list);
     }
 
     private static ArrayList<Integer> createList(Integer maxNumber) {
@@ -101,7 +103,7 @@ public class student14 {
         for (int i = 0; i < ints.length; i++) {
             numList.add(ints[i]);
         }
-        System.out.println(findMissingNumbers(numList));
+        out.println(findMissingNumbers(numList));
     }
 
     private static ArrayList<Integer> findMissingNumbers(ArrayList<Integer> numList) {
@@ -134,7 +136,7 @@ public class student14 {
         //ints array
         int[] ints = {0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0};
         //initializing string a
-        System.out.println(organizeZerosAndOnes(ints));
+        out.println(organizeZerosAndOnes(ints));
     }
 
     private static String organizeZerosAndOnes(int[] ints) {
@@ -163,7 +165,7 @@ public class student14 {
         for (int i : ints) {
             numList.add(i);
         }
-        System.out.println(randomNumber(numList));
+        out.println(randomNumber(numList));
     }
     private static Integer randomNumber(ArrayList<Integer> numList) {
         //var random = 0;
@@ -175,6 +177,52 @@ public class student14 {
         int firstNumber = numList.get(0);
         return firstNumber;
     }
+/* Write a function that calculates the total cost of a shopping cart. The items in the shopping cart are contained in an ArrayList of type Float.
+
+The total cost is calculated by the following:
+
+Sum the cost of all the items in the ArrayList
+Apply 10% sales tax
+Apply shipping and handling fees:
+Add $5.00 for orders under $10.00
+Add $4.00 for orders > $10.00 and < $20.00
+Free shipping and handling for orders > $20.00 */
+    private static void ex8() {
+        //int items =
+        float[] itemPrice = {2.00F,2.00F};
+        var itemList = new ArrayList<Float>();//declare new array list
+        float withShippingAndHandling = 0;
+        //var sumPrices = 0.00F;
+        //sum array list done in previous exercise function
+        for (float i : itemPrice) {
+            itemList.add(i);
+        }
+        //Implement function
+        float itemsTotal = addPrices(itemList);
+        System.out.println(itemsTotal);
+/////Apply 10% sales tax to itemsTotal
+        float salesTax = itemsTotal *.1F ;
+        float total = salesTax + itemsTotal;
+        //itemsTotal+salesTax=total;
+/////Apply shipping and handling fees
+        if (total < 10) {
+            withShippingAndHandling = total + 5;
+        } else if (total >= 10 && total < 20) {
+            withShippingAndHandling = total + 4;
+        }
+        else  {
+            withShippingAndHandling = total;
+        }
+        //print total cost = itemsTotal + shipping and handling fees
+        System.out.println(withShippingAndHandling);
+    }
+    private static Float addPrices(ArrayList<Float> itemList) {
+        //float [] itemPrice = { };
+            float sum = 0;
+            for (int i = 0; i < itemList.size(); i++) {
+                sum += itemList.get(i);
+            }
+            return sum;
+    }
+
 }
-
-
