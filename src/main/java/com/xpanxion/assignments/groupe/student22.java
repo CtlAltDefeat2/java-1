@@ -15,7 +15,8 @@ public class student22 {
 //            ex4();
 //            ex5();
 //            ex6();
-               ex7();
+//               ex7();
+        ex9();
     }
 
     private static void ex1() {
@@ -114,16 +115,15 @@ public class student22 {
 
     private static void missingNumber(ArrayList<Integer> numList) {
         var myArrayList = new ArrayList<Integer>();
-
-        //    for(int i : numList) {
-        for (int i : numList) {
-            for (int j = 0; j != i; j++) {
-                myArrayList.add(j);
-            }
+           for(int i : numList) {
+        //for (int i : numList) {
+        for (int j = 0; j != i; j++) {
+            myArrayList.add(j);
         }
-            System.out.println(myArrayList);
-
     }
+            System.out.println(myArrayList);
+}
+
     private static void ex6() {
         int[] ints = {0,1,1,1,0,0,1,0,0,1,0,0,0};
         var myArray = new ArrayList<Integer>();
@@ -164,6 +164,27 @@ public class student22 {
         int rnd = new Random().nextInt(numList.toArray().length);
         return rnd;
     }
+    private static void ex9() {
+        int[] ints = {1,2,3,1};
+        var myArray = new ArrayList<Integer>();
+        for(int i : ints){
+            myArray.add(i);
+
+        }
+        checkArray(myArray);
+    }
+
+
+    private static void checkArray(ArrayList<Integer> numList){
+        int arraySum = (addNumbers(numList));
+        if (arraySum % 2 == 0){
+            System.out.println("this array is even.");
+        }
+        else
+            System.out.println("this array is odd.");
+    }
+
+
 }
 
 
