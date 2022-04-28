@@ -8,7 +8,7 @@ import static java.lang.Math.round;
 
 public class student8 {
     public static void main(String[] args) {
-        ex7();
+        ex10();
 
     }
 
@@ -271,9 +271,9 @@ public class student8 {
 
         if (!valid) {
             System.out.println("False");
-            System.out.println("Please enter a valid password (must have at least" +
-                    "10 characters, two digits, and not" +
-                    "containing any non digit or letter characters.");
+            System.out.println("Please enter a valid password \n(must have at least" +
+                    "10 characters, two digits, and not \n" +
+                    "containing any non digit or letter characters.)");
 
         }
         if (valid) {
