@@ -100,12 +100,11 @@ public class student8 {
         return numList;
     }
 
-    // EX 5 - NOT DONE
+    // EX 5
     private static void ex5() {
         int[] ints = {1, 2, 3, 5, 6, 9, 11};
         var missingNumbers = findMissingNumbers(ints);
         System.out.println(missingNumbers);
-
     }
 
     private static ArrayList<Integer> findMissingNumbers(int[] ints) {
