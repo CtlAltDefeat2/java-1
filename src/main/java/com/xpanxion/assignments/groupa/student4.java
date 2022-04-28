@@ -1,14 +1,14 @@
 package com.xpanxion.assignments.groupa;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class student4 {
     public static void main(String[] args) {
-        ex1();
-        ex2();
-        ex3();
-        ex4();
+       // ex1();
+       // ex2();
+     //   ex3();
+    //    ex4();
+        ex6();
 
 
     }
@@ -85,6 +85,34 @@ public class student4 {
         System.out.println("Max number is: " + Createlist);
 }
 
+
+
+private static void ex6(){
+    int[] ints = {0,1,1,1,0,0,1,0,0,1,0,0,0};
+    var newList = new ArrayList<Integer>();
+    for (int i : ints) { //for each integer inside ints
+        newList.add(i);
+    }
+    System.out.println(zeroleftoneright(newList));
 }
+
+private static String zeroleftoneright(ArrayList<Integer>numlist){
+        String left = "";
+        String right = "";
+        String both = "";
+    for (int i : numlist){
+        if (i == 0)
+            left += "0";
+        else
+                right += "1";
+
+    }
+    both = left + right;
+    return both;
+
+
+}
+}
+
 
 
