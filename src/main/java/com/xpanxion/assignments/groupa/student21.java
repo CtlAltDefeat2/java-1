@@ -1,6 +1,5 @@
 package com.xpanxion.assignments.groupa;
 
-import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,7 +19,8 @@ public class student21 {
 //        ex5();
 //        ex6();
 //        ex7();
-          ex8();
+//        ex8();
+          ex9();
     }
 
     private static void ex1() {
@@ -117,10 +117,17 @@ public class student21 {
         var endTotal = shippingAndHandling(afterSales);
 
         System.out.println("Your total cost after taxes plus shipping and handling is $" +df.format(endTotal));
+    }
 
-
-
-
+    public static void ex9(){
+        var myArray = new ArrayList<Integer>();
+        myArray.add(48);
+        myArray.add(62);
+        myArray.add(16);
+        myArray.add(35);
+        myArray.add(78);
+        var total = addNumbers(myArray);
+        System.out.println(checkArray(total));
     }
 
     private static String convertArray(int[] ints) { // Helper functions
@@ -234,6 +241,24 @@ public class student21 {
             finalTotal=finalTotal;
         }
         return finalTotal;
+    }
+
+    public static int addArray(ArrayList<Integer>myArray){
+        int total = 0;
+        for (int number: myArray){
+            total +=number;
+        }
+        return total;
+    }
+
+    public static String checkArray(int total){
+        String result = "placeholder";
+        if(total % 2 ==0){
+            result ="The array total is even";
+        }else{
+            result ="The array total is odd";
+        }
+        return result;
     }
 
 }
