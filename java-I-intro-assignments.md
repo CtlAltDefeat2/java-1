@@ -91,7 +91,7 @@ Consider the following array:
 int[] ints = {0,1,1,1,0,0,1,0,0,1,0,0,0};
 ```
 
-Write a Java function that returs a `String` with all the zeros on the left side and all the ones on the right side:
+Write a Java function that returns a `String` with all the zeros on the left side and all the ones on the right side:
 
 Example:
 ```java

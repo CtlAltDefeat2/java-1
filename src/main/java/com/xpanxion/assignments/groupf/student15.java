@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
+import static com.sun.tools.javac.comp.ConstFold.floatValue;
+
 public class student15 {
     public static void main(String[] args) {
         ex1();
@@ -12,6 +14,8 @@ public class student15 {
         ex4();
         ex5();
         ex6();
+        ex7();
+        ex8();
     }
 
     private static void ex1() {
@@ -115,6 +119,7 @@ public class student15 {
     }
 
     private static void ex6() {
+        //ints array
         int[] ints = {0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0};
         System.out.println(organizeZerosOnes(ints));
 }
@@ -127,13 +132,68 @@ public class student15 {
         // for loop because we are iterating through every element of ints array
         for (int i=0; i<ints.length;i++) {
             if (ints[i] == 0) {
-                //we are calling the obect integet to convert an array element to string element
+                //we are calling the object integer to convert an array element to string element
                 Left = Left + Integer.toString(ints[i]);
             } else {
                 Right = Right + Integer.toString(ints[i]);
             }
         }
         A = Left + Right;
-
          return A;
+        }
+
+     private static void ex7() {
+         // Write a Java function that returns a random number from 'ArrayList' of type integer.
+         int[] ints = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+         var numList = new ArrayList<Integer>(ints.length);
+         for (int i : ints) {
+             numList.add(i);
+         }
+         System.out.println(randomNumber(numList));
+     }
+     private static Integer randomNumber(ArrayList<Integer> numList){
+        for(int i=0; i<numList.size(); i++) {
+            if (numList.contains(i)) {
+                Collections.shuffle(numList);
+            }
+        }
+        int firstNumber=numList.get(0);
+        return firstNumber;
         }}
+
+     // Write a function that calculates the total cost of a shopping cart. The items in the shopping cart are contained in an ArrayList of type Float.
+//The total cost is calculated by the following:
+//Sum the cost of all the items in the ArrayList
+//Apply 10% sales tax    float sales tax = 0.1F
+//Apply shipping and handling fees: float S&H = 3.0F
+//Add $5.00 for orders under $10.00
+//Add $4.00 for orders > $10.00 and < $20.00
+//Free shipping and handling for orders > $20.00
+//
+//   // private static void ex8() {
+//        // Write a Java function that returns a random number from 'ArrayList' of type integer.
+//        float[] items = {15.2f,20.30f,17.8f,14.70f};
+//        var numList = new ArrayList<Float>(items.length);
+//        for (float i : items) {
+//            numList.add(i);
+//        }
+//        System.out.println(totalCost(numList));
+//    }
+//    public static Float totalCost(ArrayList<Float> numList){
+//        Float sum = 0f;
+//        Float i = 0f;
+//        for (i=0f;i < numList.size(); i++) {
+//            sum += numList.get(floatValue(i));
+//        }
+//        float salesTax = 0.1F;
+//        float shipHandle = 3.0F;
+//        if(sum < 10.0f){
+//            sum = sum + 5.0f;
+//            else (sum>10.0f && sum<20.0f);{
+//                sum = sum + 4.0f;
+//            else(sum == sum)
+//
+//        }
+//        return sum;
+//
+//    }}}
