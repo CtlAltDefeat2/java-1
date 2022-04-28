@@ -68,7 +68,7 @@ public class student17 {
         multiply(list);
     }
     private static void multiply(ArrayList<Integer> list) {
-        list.replaceAll(integer -> integer * 2);
+        list.replaceAll((Integer integer) -> integer * 2);
         System.out.println("This is the doubled Array: " + list);
     }
     private static void ex4() {
@@ -91,8 +91,8 @@ public class student17 {
         var missingNumbers = findMissingNumbers(arr, N);
         System.out.println("This are the missing numbers: " + missingNumbers);
     }
-    private static ArrayList<Object> findMissingNumbers(int[] arr, int N){
-        var list = new ArrayList<>();
+    private static ArrayList<Integer> findMissingNumbers(int[] arr, int N){
+        var list = new ArrayList<Integer>();
         int diff = arr[0];
         for (int i = 0; i < N; i++){
             if(arr[i] - i != diff)
@@ -175,8 +175,7 @@ public class student17 {
     private static int evenOrOdd(){
         ArrayList<Integer> list = new ArrayList<>(Arrays.asList(1,2,3,4,5));
         int result = 0;
-        for (int i = 0; i < list.size(); i++) {
-            Integer integer = list.get(i);
+        for (Integer integer : list) {
             result += integer;
         }
         return result;
@@ -187,11 +186,11 @@ public class student17 {
     }
     private static void passwordCk(){
         Scanner input = new Scanner(System.in);
-        System.out.println(
-                        "1. A password must have at least ten characters.\n" +
-                        "2. A password consists of only letters and digits.\n" +
-                        "3. A password must contain at least two digits \n" +
-                        "Input a password (You are agreeing to the above Terms and Conditions.): ");
+        System.out.println("""
+                        1. A password must have at least ten characters.
+                        2. A password consists of only letters and digits.
+                        3. A password must contain at least two digits\s
+                        Input a password: \s""");
         String string = input.nextLine();
         if (isValid(string)){
             System.out.println("Password is valid: " + string);
