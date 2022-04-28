@@ -1,5 +1,11 @@
 package com.xpanxion.assignments.groupa;
+import org.w3c.dom.ls.LSOutput;
 
+import java.math.BigDecimal;
+import java.util.*;
+import java.util.stream.IntStream;
+
+import static java.lang.Math.round;
 import java.util.ArrayList;
 
 import static com.xpanxion.assignments.groupa.student20.main;
@@ -62,6 +68,25 @@ public class student20 {
             list.set(i, list.get(1) *2);
         }
         System.out.println("This is the doubled Array: " + list);
+    }
+
+    // EX4
+    private static void ex4() {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the max numbers you'd like in an array: ");
+        var maxNumber = scanner.nextLine();
+
+        var result = createList(Integer.valueOf(maxNumber));
+        System.out.println(result);
+
+    }
+    private static ArrayList<Integer> createList(Integer maxNumber) {
+        var numList = new ArrayList<Integer>(maxNumber);
+        for (int i = 0; i < maxNumber; i++) {
+            numList.add(i + 1);
+        }
+        return numList;
     }
     }
 
