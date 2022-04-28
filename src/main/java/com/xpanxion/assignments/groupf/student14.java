@@ -5,12 +5,13 @@ import java.util.*;
 
 public class student14 {
     public static void main(String[] args) {
-//        ex1();
- //       ex2();
- //      ex3();
- //      ex4();
-//        ex5();
-       ex6();
+//      ex1();
+//      ex2();
+//      ex3();
+//      ex4();
+//      ex5();
+//      ex6();
+        ex7();
     }
 
     //vars, loops, ifs, functions
@@ -135,7 +136,8 @@ public class student14 {
         //initializing string a
         System.out.println(organizeZerosAndOnes(ints));
     }
-     private static String organizeZerosAndOnes(int[] ints) {
+
+    private static String organizeZerosAndOnes(int[] ints) {
         String result = "";
         //initializing left string
         String leftZeros = "";
@@ -143,11 +145,10 @@ public class student14 {
         String rightOnes = "";
         //for loop because we are iterating through every element of ints array
         for (int i = 0; i < ints.length; i++) {
-            if(ints[i] == 0) {
+            if (ints[i] == 0) {
                 //we are calling the object integer to convert an array element to string element
                 leftZeros += Integer.toString(ints[i]);
-            }
-            else {
+            } else {
                 rightOnes += Integer.toString(ints[i]);
             }
         }
@@ -155,6 +156,25 @@ public class student14 {
         return result;
     }
 
+    //Write a Java function that retuns a random number from ArrayList of type Integer.
+    private static void ex7() {
+        int[] ints = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        var numList = new ArrayList<Integer>(ints.length);
+        for (int i : ints) {
+            numList.add(i);
+        }
+        System.out.println(randomNumber(numList));
+    }
+    private static Integer randomNumber(ArrayList<Integer> numList) {
+        //var random = 0;
+        for (int i = 0; i < numList.size(); i++) {
+            if (numList.contains(i)) {
+                Collections.shuffle(numList);
+            }
+        }
+        int firstNumber = numList.get(0);
+        return firstNumber;
+    }
 }
 
 
