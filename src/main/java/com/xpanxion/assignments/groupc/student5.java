@@ -6,15 +6,16 @@ import java.util.*;
 
 public class student5 {
     public static void main(String[] args) {
-        ex1();
-        ex2();
-        ex3();
-        ex4();
+//        ex1();
+//        ex2();
+//        ex3();
+//        ex4();
         ex5();
-        ex6();
-        ex7();
-        ex8();
-        ex9();
+//        ex6();
+//        ex7();
+//        ex8();
+//        ex9();
+//        ex10();
     }
     public static void ex1() {
         int[] ints1 = {1, 2, 3};
@@ -129,7 +130,7 @@ public class student5 {
         var randomNumber = new Random();
         var maxCartItems = 8;
         for (int i = 0; i < maxCartItems; i++) {
-            Integer randomPrice = randomNumber.nextInt(1,5);
+            Integer randomPrice = randomNumber.nextInt(1,8);
             array8.add(randomPrice);
         }
         var totalPrice = calculateFinalCart(array8);
@@ -171,10 +172,9 @@ public class student5 {
         System.out.print(array9);
         System.out.print("    " + result);
     }
-    static int randomNumbers() {
+    public static int randomNumbers() {
         Random r = new Random();
-        int randNum = r.nextInt(1, 100) + 1;
-        return randNum;
+        return r.nextInt(1, 100) + 1;
     }
     public static String checkArray(ArrayList<Integer> arraySumEval) {
         var arraySum = addNumbers(arraySumEval);
@@ -185,6 +185,51 @@ public class student5 {
         } return "";
     }
     public static void ex10() {
-        System.out.print("Ex. 10   ");
+        System.out.println("Ex. 10   Please enter a new password");
+        var password = getUserPassword();
+
+        if (passwordAuthenticator(password)) {
+            System.out.println("Password is valid:  " + password);
+        }
+//        else if (!passwordAuthenticator(password)) {
+//            System.out.println("Password is not valid:  " + password);
+//        }
+        else System.out.println("Password is not valid:  " + password);
+
+//        Write a Java function to determine if a password is valid using the following validation rules:
+//        The function returns a Boolean true if the password is valid, otherwise false
+    }
+    public static String getUserPassword() {
+        var scanner = new Scanner(System.in);
+        System.out.println("Passwords must have at least ten characters in total.");
+        System.out.println("Passwords must consist of only letters and digits, no spaces or special characters.");
+        System.out.println("Passwords must contain at least two digits");
+        return scanner.nextLine();
+    }
+    public static boolean passwordAuthenticator(String password) {
+        if (password.length() < 10) {
+            return false;
+        }
+        int letterCount = 0;
+        int numberCount = 0;
+        int characterCount = 0;
+        for (int i = 0; i < password.length(); i++) {
+            char character = password.charAt(i);
+            if (hasNumber(character)) {
+                numberCount++;
+                characterCount++;
+            } else if (hasLetter(character)) {
+                letterCount++;
+                characterCount++;
+            } else return false;
+        }
+        return (letterCount >= 2 && numberCount >= 2 && characterCount >= 10);
+    }
+    public static boolean hasNumber(char number) {
+        return (number >= '0' && number <= '9');
+    }
+    public static boolean hasLetter(char letter) {
+        letter = Character.toUpperCase(letter);
+        return (letter >= 'A' && letter <= 'Z');
     }
 }
