@@ -1,13 +1,16 @@
 package com.xpanxion.assignments.groupe;
 
+import javax.print.attribute.standard.PresentationDirection;
 import java.lang.reflect.Array;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.*;
 import java.util.random.RandomGenerator;
 
 public class student26 {
     public static void main(String[] args) {
 
-        ex9();
+        ex8();
 
     }
 
@@ -168,6 +171,46 @@ public class student26 {
 
     private static void ex8() {
 
+
+
+        float [] list = {3.0F,2.0F, 7.0F,9.0F };
+        ArrayList<Float> shopping = new ArrayList<Float>();
+        for ( float i : list) {
+            shopping.add(i);
+        }
+
+       shoppingcart(shopping);
+
+
+    }
+
+    private static void shoppingcart(ArrayList<Float>numlist) {
+
+        Float listsum= 0.0F;
+
+        for (Float i : numlist) {
+            listsum = listsum + i;
+        }
+        System.out.println("Cost before tax: " + listsum);
+
+        float taxwork= listsum * 10F/100F;
+        float salestax = listsum + taxwork;
+        System.out.println("Cost after 10% tax: " + salestax);
+
+        // Shipping and handling
+        if (listsum < 10.00F) {
+            float cost = listsum +5.00F + taxwork;
+            System.out.println("Total cost with shipping and handling is:  " + cost);
+        }
+            else if (listsum > 10.00F && listsum < 20.00F){
+                float cost = listsum+ 4.00F + taxwork;
+            System.out.println("Total cost with shipping and handling is: " + cost);
+
+        }
+            else if  (listsum > 20.00F) {
+                float cost = listsum + taxwork;
+            System.out.println("Free Shipping and handling total cost is: " + cost);
+        }
 
     }
 
