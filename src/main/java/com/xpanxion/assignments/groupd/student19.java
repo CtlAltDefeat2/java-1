@@ -1,8 +1,10 @@
 package com.xpanxion.assignments.groupd;
 import javax.swing.*;
 import java.sql.Array;
+import java.text.NumberFormat;
 import java.util.*;
 import java.util.random.RandomGenerator;
+import  java.util.Scanner;
 public class student19 {
 
     public static void main(String[] args) {
@@ -12,7 +14,8 @@ public class student19 {
         //ex4();
         //ex5();
         //ex6();
-        ex7();
+        //ex7();
+        ex8();
     }
 
 
@@ -139,7 +142,7 @@ public class student19 {
 
     private static void ex7() {
         //  Write a Java function that retuns a random number from `ArrayList` of type `Integer`.
-        int[] ints = {35,40,100, 200};
+        int[] ints = {35, 40, 100, 200};
         ArrayList<Integer> numList = new ArrayList<Integer>();
         for (int i : ints) {
             numList.add(i);
@@ -151,6 +154,38 @@ public class student19 {
         Random random = new Random();
 
         return numList.get(random.nextInt(numList.size()));
+    }
+
+    private static void ex8() {
+        float[] shoppingCart = {8.90f, 12.90f, 23.93f};
+        var floatList = new ArrayList<Float>();
+        for (float i : shoppingCart) {
+            floatList.add(i);
+
+        }
+        NumberFormat format = NumberFormat.getCompactNumberInstance();
+        System.out.println(shoppingCart(floatList));
+    }
+
+    private static float shoppingCart(ArrayList<Float> list) {
+        //need to add all the number in list
+        float shoppingCart = 0;
+        for (float i : list) {
+            shoppingCart += i;
+        }
+        shoppingCart *= 1.1;
+        if (shoppingCart < 10.00)
+            shoppingCart += 5;
+
+        else if (shoppingCart < 20.00)
+            shoppingCart += 4;
+
+        else if (shoppingCart > 20.00)
+            System.out.println("free shipping");
+
+
+        return shoppingCart;
+
     }
 }
 
