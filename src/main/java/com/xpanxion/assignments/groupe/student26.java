@@ -1,15 +1,13 @@
 package com.xpanxion.assignments.groupe;
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
+import java.util.random.RandomGenerator;
 
 public class student26 {
     public static void main(String[] args) {
 
-        ex4();
+        ex7();
 
     }
 
@@ -131,4 +129,50 @@ public class student26 {
 
     }
 
+
+    private static void ex6() {
+
+
+    }
+
+
+    private static void ex7() {
+
+      var newList= new ArrayList<Integer>();
+
+      newList.add(5);
+      newList.add(20);
+      newList.add(30);
+      newList.add(11);
+      newList.add(12);
+      newList.add(25);
+
+
+
+      //randomnumber(newList);
+        System.out.println(randomNumber(newList));
+
+
+        }
+
+        private static Integer randomNumber (ArrayList<Integer>randnum) {
+
+
+        Random rand = new Random();
+
+            int result = randnum.get(rand.nextInt(randnum.size()));
+
+            return result;
+
+    }
+
+
+
+
+
+
+
 }
+
+
+
