@@ -150,7 +150,21 @@ public class student25 {
 
     private static void ex7() {
         //  Write a Java function that retuns a random number from `ArrayList` of type `Integer`.
-
+        int[] ints = {1, 2, 3, 4, 5, 6, 7, 8, 9}; // declare ints array
+        var numList = new ArrayList<Integer>(ints.length);
+        for (int i : ints) {
+            numList.add(i);
+        }
+        System.out.println(randomNumber(numList));
+    }
+    private static Integer randomNumber(ArrayList<Integer> numList) {
+        for (int i = 0; i < numList.size(); i++) {
+            if (numList.contains(i)){
+                Collections.shuffle(numList);
+            }
+        }
+        int firstNumber = numList.get(0);
+        return firstNumber;
     }
 }
 
