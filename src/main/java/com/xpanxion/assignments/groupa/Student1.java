@@ -3,6 +3,7 @@ package com.xpanxion.assignments.groupa;
 import org.apache.log4j.helpers.SyslogQuietWriter;
 
 import javax.swing.text.html.HTMLDocument;
+import java.lang.reflect.Array;
 import java.util.*;
 import java.util.random.RandomGenerator;
 import java.util.stream.Collectors;
@@ -16,20 +17,20 @@ public class Student1 {
 //        ex3();
 //        ex4();
 //        ex6();
-        ex7();
+//        ex7();
 
     }
 
     public static void ex1() {
         System.out.println("EX. 1");
-        int[] ints = {1, 2, 3};// integer array
-        ArrayList<Integer> numList = (ArrayList<Integer>) Arrays.stream(ints).boxed().collect(Collectors.toList());//convert integer array to ArrayList using stream
-        var result=addNumbers(numList);//call addNumbers to get result
+        int[] ints = {1, 2, 3};
+        ArrayList<Integer> numList = (ArrayList<Integer>) Arrays.stream(ints).boxed().collect(Collectors.toList());//Array.stream provides the elements of ints as a stream, boxed returns a stream with each element as an integer, and collect puts the elements from the stream into an ArrayList
+        var result=addNumbers(numList);
         System.out.println("The sum of the ArrayList is: "+result);
     }
     private static Integer addNumbers(ArrayList<Integer> numList) {
-        Integer sum=0;//declare variable sum outside of following for loop block
-        for (int i:numList) {//enhanced for loop to get sum of ArrayList
+        Integer sum=0;
+        for (int i:numList) {
             sum+=i;
         }
         return sum;
@@ -37,61 +38,64 @@ public class Student1 {
 
     public static void ex2() {
         System.out.println("Ex. 2");
-        int[] intArray={1, 2, 3};//declare the int array outside of function
-        ArrayList<Integer> intArrayList = (ArrayList<Integer>) Arrays.stream(intArray).boxed().collect(Collectors.toList());//convert the intArray to intArrayList using stream
-        var resultAvg=avgNumbers(intArrayList);//call avgNumbers to get resultAvg
+        int[] intArray={1, 2, 3,4,5,6};
+        ArrayList<Integer> numList = (ArrayList<Integer>) Arrays.stream(intArray).boxed().collect(Collectors.toList());//intArray provides the stream of elements with Arrays.stream, boxed returns a stream with each element as an integer, and collect puts the stream into an ArrayList
+        var resultAvg=avgNumbers(numList);
         System.out.println("The Average is: "+resultAvg);
 
     }
     private static Float avgNumbers(ArrayList<Integer> numList) {
-        float average = (float) numList.stream().mapToInt(value -> value).average().orElse(0.0);//convert get average of previously declared numList using stream; stream provides the arrayStream, map will collect each element from the stream as integers which I then take the average of, orElse returns the value(or else returns the other, which is 0.0
+//        float average = (float) numList.stream().mapToInt(value -> value).average().orElse(0.0);//numList provides the stream, map will collect each element from the stream as integers which I then take the average of, orElse either returns the value of the average or 0.0 if there is no average
+//        return average;
+        float sum=0;
+        for (float i : numList) {
+            sum+=i;
+            System.out.println(sum);
+        }
+        float average=sum/numList.size();
         return average;
     }
 
-    public static void ex3() {//intsArray.stream() provides the stream, map collects each element from the stream and doubles its value, and then collect the data in an array using toArray method
+    public static void ex3() {
         System.out.println("Ex. 3");
-        doubleArrayList(new ArrayList<>());
+//        doubleArrayList(new ArrayList<>());
+        var numList = new ArrayList<Integer>();                 //create an ArrayList called numList and add elements to it
+        numList.add(1);
+        numList.add(2);
+        numList.add(3);
+        doubleArrayList(numList);                               //call method doubleArrayList using numList
     }
-    private static void doubleArrayList(ArrayList<Integer> numList){
-        List<Integer> intsArray=Arrays.asList(1,2,3);
-        List<Integer> doubleNumList= intsArray.stream().map(i -> i * 2).toList();
-        System.out.println("Double values of numList: "+doubleNumList);
-//        var numList = new ArrayList<Integer>();
-//        numList.add(1);
-//        numList.add(2);
-//        numList.add(3);
-//        doubleArrayList(numList);
-//        System.out.println(numList);
-//    }
 //    private static void doubleArrayList(ArrayList<Integer> numList){
-//
-//        numList.get(0); // getter
-//        numList.set(0, 5150); // updater
-//
-//        for (Integer i : numList) {
-//            System.out.println(i);
-//        }
-//
+//        List<Integer> intsArray=Arrays.asList(1,2,3);
+//        List<Integer> doubleNumList= intsArray.stream().map(i -> i * 2).toList();//intsArray.stream() provides the stream, map collects each element from the stream and doubles its value, and then collect the data in an unmodifiable List using the toList method
+//        System.out.println("Double values of numList: "+doubleNumList);
+//    }
+    private static void doubleArrayList(ArrayList<Integer> numList){
+        var intsArray=new ArrayList<Integer>();                 //create new ArrayList to hold new elements
+        for (Integer integer : numList) {
+            intsArray.add(integer * 2);                   //iterate through numList multiplying each element by 2 and adding it to intsArrayList
+        }
+            System.out.println(intsArray.toString());           //print intsArrayList here to show the new ArrayList since i don't return anything
     }
     public static void ex4(){
         Scanner myKeyBoard=new Scanner(System.in);
         System.out.println("Ex. 4");
-        System.out.println("Enter the maximum value of integers in the array?");
+        System.out.println("Enter the maximum value of integers in the array?");//user specifies array capacity
         var maxNumber=myKeyBoard.nextInt();
-        createList(maxNumber);
+        createList(maxNumber);                                                  //call createList
     }
     private static void createList(Integer maxNumber){
         Scanner myKeyBoard=new Scanner(System.in);
         System.out.println("Enter the capacity of the array");
         var arrayCapacity=myKeyBoard.nextInt();
-        Random randNum=new Random();
+        Random randNum=new Random();                                            //initialize random method
         randNum.setSeed(System.currentTimeMillis());
         List myArray=new ArrayList<>(arrayCapacity);
         for (int i = 0; i < arrayCapacity; i++) {
             Integer randArray= randNum.nextInt(0,maxNumber+1);
-            myArray.add(randArray);
+            myArray.add(randArray);                                             //generate random numbers and add them to the array
         }
-        System.out.println(myArray);
+        System.out.println(myArray);                                            //print out array to ensure that it worked
     }
     private static void ex5(){
 
@@ -99,7 +103,7 @@ public class Student1 {
     private static void ex6(){
         System.out.println("Ex. 6");
         int[] ints = {0,1,1,1,0,0,1,0,0,1,0,0,0};
-        Arrays.sort(ints);
+        Arrays.sort(ints);                              //default of the sort method is to list the elements in ascending order
         System.out.println(Arrays.toString(ints));
     }
     private static void ex7(){
@@ -107,8 +111,6 @@ public class Student1 {
         Scanner myKeyBoard=new Scanner(System.in);
         var myArrayList=new ArrayList<Integer>();
         int i=0;
-//        Random randNum=new Random();
-//        randNum.setSeed(System.currentTimeMillis());
         System.out.println("Enter the capacity of the array");
         var arrayCapcity=myKeyBoard.nextInt();
         while (i<arrayCapcity){
@@ -116,20 +118,18 @@ public class Student1 {
             myArrayList.add(myKeyBoard.nextInt());
             i++;
         }
-//        int myIndex= randNum.nextInt(myArrayList.size());
+        var randomElement=pickRandomElement(myArrayList);
         System.out.println(myArrayList.toString());
-        pickRandomElement(myArrayList);
-//        System.out.println("Random selection from the array is: "+myArrayList.get(myIndex));
+        System.out.println("Random selection from the array is: "+randomElement);
     }
-    private static void pickRandomElement(ArrayList<Integer> myArrayList){
+    private static Integer pickRandomElement(ArrayList<Integer> myArrayList){
         Random randNum=new Random();
         randNum.setSeed(System.currentTimeMillis());
-        int myIndex= randNum.nextInt(myArrayList.size());
-        System.out.println("Random selection from the array is: "+myArrayList.get(myIndex));
-
+        int myIndex= randNum.nextInt(myArrayList.size());       //generate random number between 0 and array capacity
+        return myArrayList.get(myIndex);                        //get the element at the index position indicated by the random number and return it
     }
-
-
-
+    private static void ex8(){
+        System.out.println("Ex. 8");
+    }
 }
 
