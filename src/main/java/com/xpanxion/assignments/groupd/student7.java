@@ -86,16 +86,15 @@ public class student7 {
     private static void ex5(){
         System.out.println("Ex. 5");
         int[] ints = {1, 2, 3, 5, 6, 9, 11};
-        var missing_arrayL = new ArrayList<Integer>();
+        var missingArrayL = new ArrayList<Integer>();
         for (int i = 0; i < ints.length; i++)
-            missing_arrayL.add(ints[i]);
-        var missingNumbers = missingNum(missing_arrayL);
+            missingArrayL.add(ints[i]);
+        var missingNumbers = missingNum(missingArrayL);
         System.out.println("number of missing number: "+ missingNumbers);
     }
     private static ArrayList<Integer> missingNum(ArrayList<Integer> list){//find the missing number in a list
         var missingNum = new ArrayList<Integer>();
-        int max = Collections.max(list); //get max size
-        for(int i = 1; i <= max; i++){
+        for(int i = 1; i <= Collections.max(list); i++){
             if(!list.contains(i))//check if list.contains is false
                 missingNum.add(i);
         }
@@ -177,30 +176,30 @@ public class student7 {
         System.out.println(PasswordCheck(pass));
     }
     //check if a password has more then two number and more then 10 characters and that there's no special characters
-    public static boolean PasswordCheck(String pass){
-        int char_count = 0;
-        int int_count = 0;
-        int special_count = 0;
+    public static Boolean PasswordCheck(String pass){
+        int charCount = 0;
+        int intCount = 0;
+        int specialCount = 0;
         boolean flag = true;
         for (int i = 0; i < pass.length(); i++) {
-            boolean num_check = Character.isDigit(pass.charAt(i));
-            boolean char_check = Character.isLetter(pass.charAt(i));
-            if(!num_check && !char_check) //check for special characters, need to be first argument
-                special_count++;
-            else if(char_check)
-                char_count++;
-            else if(num_check)
-                int_count++;
+            boolean numCheck = Character.isDigit(pass.charAt(i));
+            boolean charCheck = Character.isLetter(pass.charAt(i));
+            if(!numCheck && !charCheck) //check for special characters, need to be first argument
+                specialCount++;
+            else if(charCheck)
+                charCount++;
+            else if(numCheck)
+                intCount++;
         }
-        if(char_count < 10 || (int_count < 2) ){
+        if(charCount < 10 || (intCount < 2) ){
             System.out.println("need ten characters or 2 numbers");
             flag = false;
         }
-        else if (special_count > 0) {// won't work for some reason
+        else if (specialCount > 0) {// won't work for some reason
             System.out.println("No special characters permitted");
             flag = false;
         }
-        else if (char_count >= 10 && int_count >= 2){//must be final argument
+        else if (charCount >= 10 && intCount >= 2){//must be final argument
             System.out.println("Password accepted");
             flag = true;
         }
