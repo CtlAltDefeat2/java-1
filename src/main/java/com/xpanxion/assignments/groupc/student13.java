@@ -17,7 +17,7 @@ public class student13 {
         ex7();
         ex8();
         ex9();
-//        ex10();
+        ex10();
     }
 
     // Ex. 1
@@ -118,7 +118,7 @@ public class student13 {
             numList.add(ints[i]);
         }
 
-        for (int i = 0; i < numList.get(6); i++) {
+        for (int i = 0; i < numList.get(ints.length - 1); i++) {
             numList2.add(i + 1);
         }
         numList2.removeAll(numList);
@@ -223,18 +223,40 @@ public class student13 {
     }
 
     // Ex. 10
-//    private static void ex10() {
-//        System.out.println("Ex. 10");
-//        Scanner sc = new Scanner(System.in);
-//        String password = sc.next();
-//        var result = passwordValidator(password);
-//        System.out.println(result);
-//    }
+    private static void ex10() {
+        System.out.println("Ex. 10");
+        System.out.println("Enter Password: ");
+        Scanner sc = new Scanner(System.in);
+        String password = sc.next();
+        var result = passwordValidator(password);
+        System.out.println(result);
+    }
 
-//    private static Boolean passwordValidator(String password) {
-//        int passWordCountLimit = 10;
-//        if (password.length() < 10) {
-//            System.out.println();
-//        } else if (password.)
-//    }
+    private static Boolean passwordValidator(String password) {
+        int passWordCountLimit = 10;
+
+        if (password.length() < passWordCountLimit) {
+            return false;
+        }
+        int letterCt = 0;
+        int numberCt = 0;
+        int characterCt = 0;
+        for (int i = 0; i < password.length(); i++) {
+            char character = password.charAt(i);
+            if (hasNumber(character)) {
+                numberCt++;
+                characterCt++;
+            } else if (hasLetter(character)) {
+                letterCt++;
+                characterCt++;
+            } else return false;
+        } return (letterCt >= 2 && numberCt >= 2 && characterCt >= 10);
+    }
+    public static boolean hasNumber(char number) {
+        return (number >= '0' && number <= '9');
+    }
+    public static boolean hasLetter(char letter) {
+        letter = Character.toUpperCase(letter);
+        return (letter >= 'A' && letter <= 'Z');
+    }
 }
