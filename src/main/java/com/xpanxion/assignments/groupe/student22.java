@@ -16,7 +16,8 @@ public class student22 {
 //            ex5();
 //            ex6();
 //               ex7();
-        ex9();
+              ex8();
+//              ex9();
     }
 
     private static void ex1() {
@@ -158,7 +159,42 @@ public class student22 {
         }
         System.out.println(randomNumber(myArray));
     }
+    private static void ex8() {
+        float[] ints = {10,20,30};
+        var myArray = new ArrayList<Float>();
+        for(float i : ints){
+            myArray.add(i);
 
+        }
+        System.out.println(shoppingCart(myArray));
+    }
+
+
+    private static Float shoppingCart(ArrayList<Float> numList) {
+        float totalCost = 0;
+        float totalPrice1 = 0;
+        float totalPrice2 = 0;
+        float totalPrice3 = 0;
+        float shopTax = 1.10f;
+        for (float i : numList) {
+            if (i <= 10) {
+                totalPrice1 = (i * shopTax) + 5;
+            }
+            for (float j : numList) {
+                if (j > 10 && j <= 20) {
+                    totalPrice2 = (j * shopTax) + 4;
+                }
+            }
+            for (float a : numList) {
+                if (a > 20) {
+                    totalPrice3 = a * shopTax;
+                }
+            }
+
+        }
+        totalCost = totalPrice1+ totalPrice2 + totalPrice3;
+        return totalCost;
+    }
 
     private static int randomNumber(ArrayList<Integer> numList){
         int rnd = new Random().nextInt(numList.toArray().length);
