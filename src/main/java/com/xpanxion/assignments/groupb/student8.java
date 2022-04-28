@@ -6,7 +6,7 @@ import static java.lang.Math.round;
 
 public class student8 {
     public static void main(String[] args) {
-        ex5();
+        ex9();
 
     }
 
@@ -209,24 +209,30 @@ public class student8 {
 
     // EX 9
     private static void ex9() {
+        var ints = new ArrayList<Integer>();
+        var result = checkArray(ints);
+        System.out.println(ints);
+        System.out.println(result);
 
-        var list = new ArrayList<Integer>();
+    }
+
+    private static String checkArray(ArrayList<Integer> ints) {
         Random random = new Random();
-        var listSize = 10;
-        for (int i = 0; i < listSize; i++) {
-            list.add(random.nextInt(1, 100));
-        }
-
-        for (int i = 0; i < list.size(); i++) {
-            if ((list.get(i) % 2) == 0) {
-                System.out.println(list.get(i) + " Even");
-            }
-            if ((list.get(i) % 2) == 1) {
-                System.out.println(list.get(i) + " Odd");
+        var arraySize = 10;
+        var sum = 0;
+        for (int i = 0; i < arraySize; i ++) {
+            ints.add((random.nextInt(1, 100)));
+            for (int j = 0; j < ints.size(); j++) {
+                sum += ints.get(i);
             }
         }
-        //System.out.println(list);
-
+        if (sum % 2 == 0) {
+            return sum + " Even";
+        }
+        if (sum % 2 == 1) {
+            return sum + " Odd";
+        }
+        return null;
     }
 
     // EX 10
