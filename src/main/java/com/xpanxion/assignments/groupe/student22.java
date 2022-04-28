@@ -14,9 +14,9 @@ public class student22 {
 //            ex3();
 //            ex4();
 //            ex5();
-//            ex6();
+            ex6();
 //               ex7();
-              ex8();
+//              ex8();
 //              ex9();
     }
 
@@ -141,9 +141,9 @@ public class student22 {
         String zerosAndOnes = "";
         for (int i : numList) {
             if (i == 0) {
-                myZeros += "0";
+                myZeros += numList.get(i);
             } else {
-                myOnes += "1";
+                myOnes += numList.get(i);
             }
             zerosAndOnes = myZeros+myOnes;
         }
@@ -187,7 +187,7 @@ public class student22 {
             }
             for (float a : numList) {
                 if (a > 20) {
-                    totalPrice3 = a * shopTax;
+                    totalPrice3 += a * shopTax;
                 }
             }
 
