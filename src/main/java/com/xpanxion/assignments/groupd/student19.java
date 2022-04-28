@@ -15,9 +15,9 @@ public class student19 {
         //ex5();
         //ex6();
         //ex7();
-        ex8();
+        //ex8();
+        ex9();
     }
-
 
     private static void ex1() {
         int[] ints = {1, 2, 3};
@@ -161,7 +161,6 @@ public class student19 {
         var floatList = new ArrayList<Float>();
         for (float i : shoppingCart) {
             floatList.add(i);
-
         }
         NumberFormat format = NumberFormat.getCompactNumberInstance();
         System.out.println(shoppingCart(floatList));
@@ -183,13 +182,32 @@ public class student19 {
         else if (shoppingCart > 20.00)
             System.out.println("free shipping");
 
-
         return shoppingCart;
-
     }
+
+    //Write a function that returns a `String` if an `ArrayList` of type `Integer` is even or odd.
+    private static void ex9() {
+        int[] ints = {10, 20, 40, 50, 98};
+        var numList = new ArrayList<Integer>();
+        //checking if an element is even or odd
+        for (int i : ints) {
+            numList.add(i);
+        }
+        System.out.println(evenOdd(numList));
+    }
+
+    private static String evenOdd(ArrayList<Integer> numList) {
+        String evenOdd = "Odd";
+        int sum = addNumbers(numList);
+          if ((sum % 2) == 0) {
+
+              evenOdd = "Even";
+          }
+
+        return evenOdd;
+    }
+
 }
-
-
 
 
 
