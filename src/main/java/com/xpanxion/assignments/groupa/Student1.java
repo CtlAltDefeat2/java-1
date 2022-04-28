@@ -4,6 +4,7 @@ import org.apache.log4j.helpers.SyslogQuietWriter;
 
 import javax.swing.text.html.HTMLDocument;
 import java.lang.reflect.Array;
+import java.text.NumberFormat;
 import java.util.*;
 import java.util.random.RandomGenerator;
 import java.util.stream.Collectors;
@@ -18,6 +19,10 @@ public class Student1 {
 //        ex4();
 //        ex6();
 //        ex7();
+//        ex8();
+//        ex9();
+        ex10();
+
 
     }
 
@@ -88,6 +93,7 @@ public class Student1 {
         Scanner myKeyBoard=new Scanner(System.in);
         System.out.println("Enter the capacity of the array");
         var arrayCapacity=myKeyBoard.nextInt();
+        myKeyBoard.close();
         Random randNum=new Random();                                            //initialize random method
         randNum.setSeed(System.currentTimeMillis());
         List myArray=new ArrayList<>(arrayCapacity);
@@ -118,6 +124,7 @@ public class Student1 {
             myArrayList.add(myKeyBoard.nextInt());
             i++;
         }
+        myKeyBoard.close();
         var randomElement=pickRandomElement(myArrayList);
         System.out.println(myArrayList.toString());
         System.out.println("Random selection from the array is: "+randomElement);
@@ -130,6 +137,63 @@ public class Student1 {
     }
     private static void ex8(){
         System.out.println("Ex. 8");
+        Scanner myKeyBoard=new Scanner(System.in);
+        ArrayList<Double> priceList=new ArrayList<Double>();
+        System.out.println("How many items are in your cart?");
+        var arrayCapacity=myKeyBoard.nextDouble();
+        int i=0;
+        while (i<arrayCapacity){
+            System.out.println("Enter the price of the item");
+            priceList.add((double) myKeyBoard.nextDouble());
+            i++;
+        }
+        myKeyBoard.close();
+        double totalCost=costOfShopping(priceList);
+        NumberFormat defaultFormat=NumberFormat.getCurrencyInstance();              //May need to set locale if this doesn't work
+        System.out.println("Your total cost is: "+defaultFormat.format(totalCost));
+    }
+    private static Double costOfShopping(ArrayList<Double>priceList) {
+        double sum = 0;
+        for (Double i : priceList) {
+            sum += i;
+        }
+        Double afterTaxSum = sum * 1.1;                                             //determining shipping and handling
+        if (afterTaxSum < 10) {
+            afterTaxSum += 5;
+        } else if (afterTaxSum < 20) {
+            afterTaxSum += 4;
+        }
+        return afterTaxSum;
+    }
+    private static void ex9(){
+        ArrayList<Integer> numList=new ArrayList<Integer>();
+        Scanner myKeyBoard=new Scanner(System.in);
+        System.out.println("How many numbers are in the array?");
+        int arrayCapacity= myKeyBoard.nextInt();
+        int i=0;
+        while (i<arrayCapacity){
+            System.out.println("Enter a number to add to the array");
+            numList.add(myKeyBoard.nextInt());
+            i++;
+        }
+        var result=evenOrOddChecker(numList);
+        myKeyBoard.close();
+        if (result == true) {
+            System.out.println("The array is even");
+        }else System.out.println("The array is odd");
+
+    }
+    private static boolean evenOrOddChecker(ArrayList<Integer> numList){
+        int sum=0;
+        for (Integer i:numList) {
+            sum+=i;
+        }
+        if ((sum % 2) == 0){
+            return true;
+        }else return false;
+    }
+    private static void ex10(){
+
     }
 }
 
