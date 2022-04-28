@@ -11,22 +11,35 @@ public class student11 {
         //ex2();
         //ex3();
         //ex4();
-        ex5();
+        //ex5();
+        ex6();
     }
 
     private static void ex1() {
+        //declare ints array
         int[] ints = {1, 2, 3};
         var numList = new ArrayList<Integer>(ints.length);
+        //enhanced for loop. for each i in ints array, we are adding each i element to the numList.
+        //this is how we convert ints array to an arrayList.
         for (int i : ints) {
+            //we are joining each element to numList array.
             numList.add(i);
         }
+        //calling the add numbers function. sending the numList to the addNumbers function.
         var sum = addNumbers(numList);
+        //we want to return the value to the sum of all the elements in the array.
         System.out.println("The sum is" + sum);
     }
 
+
+    //initializing the addNumbers function. private = we can use function only inside this class.
+    //integer type of return value for this function. asking the numList to come in addNumbers function.
     private static Integer addNumbers(ArrayList<Integer> numList) {
+        //introducing variable called sum
         int sum = 0;
+        //we are getting the length of the arrayList by calling the size function and for loop to stay within the limit.
         for (int i = 0; i < numList.size(); i++) {
+            //variable sum. calling the "get" function inside the numlist because we are getting each value from the array and adding it to the sum.
             sum += numList.get(i);
         }
         return sum;
@@ -35,26 +48,28 @@ public class student11 {
 
     private static void ex2() {
         ArrayList<Integer> numList = new ArrayList<>(); //declare new array list
-        //convert int to integer
         int[] ints = {1, 2, 3, 4};
         //var newList = new ArrayList<Integer>();
+        //for each i in ints. we are converting ints to array list.
         for (int i : ints) {
+            //adding every integer in the array to the numList
             numList.add(i);
         }
-        //take sum of list
+        // initializing variable r. r = result. return type is float. Taking the average of the numList.
         var r = avgNumbers(numList);
-
+        //printing out the result.
         System.out.println(r);
 
     }
-
+//function withing our function. initializing aveNumber function. sending the arraylist inside the aveNumber function and returning the value as a float.
     private static Float avgNumbers(ArrayList<Integer> numList) {
-        Float retVal = 0F;
+        //initializing a variable called sum and assigning the return value of the addNumbers function from ex 1 by passing the numList to arrayList.
         var sum = addNumbers(numList);
+        //initializing giving the size of the numList.
         float Length = numList.size();
-
+//initializing giving the average of the numList.
         float average = sum / Length;
-
+//returning the average value back to where its being called
         return average;
     }
 
@@ -117,7 +132,35 @@ public class student11 {
         return missingNumbers;
     }
 
+
+
+    private static void ex6() {
+        //ints array
+        int[] ints = {0,1,1,1,0,0,1,0,0,1,0,0,0};
+        //initializing string a
+        String A = "";
+        //initializing left string
+        String Left = "";
+        //initializing right string
+        String Right = "";
+//for loop because we are iterating through every element of ints array
+        for (int i = 0; i < ints.length; i++) {
+            if(ints[i] == 0) {
+                //we are calling the object integer to convert an array element to string element
+                Left = Left + Integer.toString(ints[i]);
+            }
+            else {
+                Right = Right + Integer.toString(ints[i]);
+            }
+
+        }
+        A = Left + Right;
+        System.out.println(A);
+
+
+    }
 }
+
 
 
 
