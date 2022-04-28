@@ -2,19 +2,23 @@ package com.xpanxion.assignments.groupb;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 public class student24 {
     public static void main(String[] args) {
 
-        ex1();
+        /*ex1();
         ex2();
         ex3();
         ex4();
         //ex5();
         ex6();
         ex7();
+        ex8();
         ex9();
-
+        ex10();*/
+        ex8();
+        ex10();
     }
     //EXERCISE NUMBER 1
     private static void ex1() {
@@ -138,6 +142,37 @@ public class student24 {
         System.out.println("Random Number " + randomNumber);
     }
 
+    //EXERCISE NUMBER 8
+    private static void ex8(){
+        float[] Float = {1.00F,3.50F,14.00F};
+        var list = new ArrayList<Float>();
+        for(int i=0;i< Float.length;i++){
+            list.add(Float[i]);
+        }
+        var total = shoppingTotal(list);
+        System.out.println("Total cost after tax is: " + total);
+    }
+
+    private static float shoppingTotal(ArrayList<Float> list){
+        float sum=0;
+        for(int i=0; i<list.size();i++){
+            sum = sum + list.get(i);
+        }
+        sum =  (sum*1.10F);
+        if(sum <10.00){
+            sum = sum+5.00F;
+            System.out.println("$ 5.00 for shipping and handling fees is included.");
+        }
+        else if(sum>10.00F && sum <20.00F){
+            sum = sum + 4.00F;
+            System.out.println("$4.00 for shipping and handling fees is included.");
+        }
+        else{
+            System.out.println("Free Shipping");
+        }
+        return sum;
+    }
+
     //EXERCISE NUMBER 9
     private static void ex9(){
         evenOrOdd();
@@ -150,8 +185,42 @@ public class student24 {
                 System.out.println("Array is even");
             }
             else{
-                System.out.println(" Array is odd");
+                System.out.println("Array is odd");
             }
     }
+    //EXERCISE NUMBER 10 NOT DONE YET
+
+    private static void ex10(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("1. Password must have at least ten characters \n"+
+                "2. Password consists of only letters and digits \n" +
+                "3. Password must contain at least two digits");
+        System.out.println("Please enter the password");
+        var password = scanner.next();
+        //passwordCheck(password);
+        if(passwordCheck(password) == true){
+            System.out.println("Valid password");
+        }else{
+            System.out.println("Invalid Password");
+        }
+    }
+    private static boolean passwordCheck(String password){
+        boolean isValid = true;
+        Integer digit = 0;
+            if (password.length() < 10) {
+                isValid = false;
+                System.out.println("Password must be more than 10 characters length");
+            }
+            if (password.contains(".") || password.contains("@") || password.contains("/") ||password.contains("!")) {
+                isValid = false;
+                System.out.println("Password must not contain special characters");
+            }
+           /*if (digit.intValue() < 2) {
+                    isValid = false;
+                    System.out.println("Password must have more than 2 digits");
+            }*/
+            return isValid;
+    }
+
 }
 
