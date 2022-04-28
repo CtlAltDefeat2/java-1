@@ -2,6 +2,7 @@ package com.xpanxion.assignments.groupe;
 
 import java.sql.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.stream.IntStream;
 
 public class student10 {
@@ -11,7 +12,8 @@ public class student10 {
         ex2();
         ex3();
         ex4();
-        ex5();
+//        ex5();
+        ex6();
     }
 
     private static void ex1() {
@@ -82,7 +84,47 @@ public class student10 {
         System.out.println(list4);
     }
 
-    private static void ex5() {
+//    private static void ex5() {
+//       int[] ints = {1, 2, 3, 5, 6, 9, 11};
+//       var missingNumbers = findMissingNumbers(ints);
+//        System.out.println(findMissingNumbers(ints););
+//    }
+//
+//    private static void findMissingNumbers(int ints[]){
+//       var intList = Arrays.stream(ints).boxed().toList();
+//       var missingNumbers = new ArrayList<Integer>();
+//       for (int i = 1; i < ints[ints.length - 1]; i++) {
+//           if (!intList.contains(i)) {
+//               missingNumbers.add(i);
+//           }
+//       }
+//       System.out.println(missingNumbers);
+//
+//    }
 
+
+
+    private static void ex6() {
+        int[] ints = {0,1,1,1,0,0,1,0,0,1,0,0,0};
+        sorting(ints);
+    }
+
+    private static void sorting(int ints[]){
+        var list6zero = new ArrayList<>();
+        var list6one = new ArrayList<>();
+        for (int i = 0; i < ints.length; i++){
+            if (ints[i] == 0){
+            list6zero.add(0);
+            }
+
+            else if (ints[i] == 1){
+            list6one.add(1);
+            }
+        }
+
+        var list6All = new ArrayList<>();
+        list6All.addAll(list6zero);
+        list6All.addAll(list6one);
+        System.out.println("Here are the sorted numbers: " + list6All);
     }
 }
