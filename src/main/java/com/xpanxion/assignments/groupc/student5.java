@@ -1,21 +1,20 @@
 package com.xpanxion.assignments.groupc;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
+import java.math.*;
 import java.util.*;
 
 public class student5 {
     public static void main(String[] args) {
-//        ex1();
-//        ex2();
-//        ex3();
-//        ex4();
+        ex1();
+        ex2();
+        ex3();
+        ex4();
         ex5();
-//        ex6();
-//        ex7();
-//        ex8();
-//        ex9();
-//        ex10();
+        ex6();
+        ex7();
+        ex8();
+        ex9();
+        ex10();
     }
     public static void ex1() {
         int[] ints1 = {1, 2, 3};
@@ -31,8 +30,7 @@ public class student5 {
         Integer returnValue = 0;
         for (Integer i: numList) {
             returnValue += i;
-        }
-        return returnValue;
+        } return returnValue;
     }
     public static void ex2() {
         int[] ints2 = {1, 2, 3};
@@ -65,8 +63,7 @@ public class student5 {
     private static ArrayList<Integer> dblNumbers(ArrayList<Integer> dblArray) {
         for (int i = 0; i < dblArray.size(); i++) {
             dblArray.set(i, dblArray.get(i) * 2);
-        }
-        return dblArray;
+        } return dblArray;
     }
     public static void ex4() {
         System.out.print("Ex. 4    ");
@@ -81,28 +78,24 @@ public class student5 {
         System.out.println(array4);
     }
     public static void ex5() {
-//        int[] ints5 = {1, 2, 3, 5, 6, 9, 11};
-//        Integer missingInts = 0;
-//        int maxNumber = 11;
-//        var missingNumbers = findMissingNumbers(ints5, maxNumber);
-        System.out.println("Ex. 5    (In progress)");
-//        System.out.println(missingNumbers);
+        int[] ints5 = {1, 2, 3, 5, 6, 9, 11};
+        int intEntities = ints5.length;
+        System.out.print("Ex. 5    ");
+        findMissingNumbers(ints5, intEntities);
     }
-//    private static Integer findMissingNumbers(int[] ints5, Integer maxNumber) {
-//
-//        int xorArray = ints5[0];
-//        //XOR of elements of the array
-//        for(int i=1; i<=maxNumber-1; i++) {
-//            xorArray = xorArray ^ i;
-//        }
-//        int xorAll = ints5[0];
-//        //XOR of elements of the array
-//        for(int i=1; i<=maxNumber+1; i++) {
-//            xorAll = xorAll ^ i;
-//        }
-//        int missingInts = xorArray ^ xorAll;
-//        return missingInts;
-//    }
+    private static void findMissingNumbers(int ints5[], int intEntities) {
+        int arrayDifference = 1;
+        var array5 = new ArrayList<>();
+        for (int i = 0; i < intEntities; i++) {
+            if (ints5[i] - i != 0) {
+                while (arrayDifference < ints5[i] - i) {
+                    array5.add(i + arrayDifference);
+                    arrayDifference++;
+                }
+            }
+        }
+        System.out.println("The missing numbers from the array are:  " + array5);
+    }
     public static void ex6() {
         int[] ints6 = {0,1,1,1,0,0,1,0,0,1,0,0,0};
         System.out.print("Ex. 6    ");
@@ -138,7 +131,7 @@ public class student5 {
         System.out.println("    Cart Total Price  =  $ " + totalPrice.setScale(2, RoundingMode.HALF_UP));
     }
     public static BigDecimal calculateFinalCart(ArrayList<Integer> cartPrices) {
-        double cartSubtotal = 0;
+        double cartSubtotal;
         final double SALES_TAX = 1.10;
         final double SHIP_N_HAND_UNDER_10 = 5.00;
         final double SHIP_N_HAND_10_TO_20 = 4.00;
@@ -150,17 +143,14 @@ public class student5 {
             BigDecimal shipNHand = new BigDecimal(SHIP_N_HAND_UNDER_10);
             BigDecimal total = postTaxSubtotal.add(shipNHand);
             return total;
-        }
-        else if (postTaxSubtotal.doubleValue() > 10.00 && postTaxSubtotal.doubleValue() <= 20.00) {
+        } else if (postTaxSubtotal.doubleValue() > 10.00 && postTaxSubtotal.doubleValue() <= 20.00) {
             BigDecimal shipNHand = new BigDecimal(SHIP_N_HAND_10_TO_20);
             BigDecimal total = postTaxSubtotal.add(shipNHand);
             return total;
-        }
-        else if (postTaxSubtotal.doubleValue() > 20.00) {
+        } else if (postTaxSubtotal.doubleValue() > 20.00) {
             BigDecimal total = postTaxSubtotal;
             return total;
-        }
-        return postTaxSubtotal;
+        } return postTaxSubtotal;
     }
     public static void ex9() {
         var array9 = new ArrayList<Integer>();
@@ -170,7 +160,7 @@ public class student5 {
         System.out.print("Ex. 9    ");
         var result = checkArray(array9);
         System.out.print(array9);
-        System.out.print("    " + result);
+        System.out.println("    " + result);
     }
     public static int randomNumbers() {
         Random r = new Random();
@@ -187,23 +177,15 @@ public class student5 {
     public static void ex10() {
         System.out.println("Ex. 10   Please enter a new password");
         var password = getUserPassword();
-
         if (passwordAuthenticator(password)) {
             System.out.println("Password is valid:  " + password);
-        }
-//        else if (!passwordAuthenticator(password)) {
-//            System.out.println("Password is not valid:  " + password);
-//        }
-        else System.out.println("Password is not valid:  " + password);
-
-//        Write a Java function to determine if a password is valid using the following validation rules:
-//        The function returns a Boolean true if the password is valid, otherwise false
+        } else System.out.println("Password is not valid:  " + password);
     }
     public static String getUserPassword() {
         var scanner = new Scanner(System.in);
-        System.out.println("Passwords must have at least ten characters in total.");
-        System.out.println("Passwords must consist of only letters and digits, no spaces or special characters.");
-        System.out.println("Passwords must contain at least two digits");
+        System.out.println("I)    Passwords must have at least ten characters in total.");
+        System.out.println("II)   Passwords must consist of only letters and digits, no spaces or special characters.");
+        System.out.println("III)  Passwords must contain at least two digits");
         return scanner.nextLine();
     }
     public static boolean passwordAuthenticator(String password) {
@@ -222,8 +204,7 @@ public class student5 {
                 letterCount++;
                 characterCount++;
             } else return false;
-        }
-        return (letterCount >= 2 && numberCount >= 2 && characterCount >= 10);
+        } return (letterCount >= 2 && numberCount >= 2 && characterCount >= 10);
     }
     public static boolean hasNumber(char number) {
         return (number >= '0' && number <= '9');
