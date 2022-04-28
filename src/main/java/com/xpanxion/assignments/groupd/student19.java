@@ -1,11 +1,8 @@
 package com.xpanxion.assignments.groupd;
 import javax.swing.*;
 import java.sql.Array;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Scanner;
-import java.util.Arrays;
+import java.util.*;
+import java.util.random.RandomGenerator;
 public class student19 {
 
     public static void main(String[] args) {
@@ -14,7 +11,8 @@ public class student19 {
         // ex3();
         //ex4();
         //ex5();
-        ex6();
+        //ex6();
+        ex7();
     }
 
 
@@ -135,13 +133,26 @@ public class student19 {
         var SortOrder = new ArrayList<Integer>();
         String str;
         Collections.sort(numList);
-
         str = numList.toString();
         return str;
     }
 
-}
+    private static void ex7() {
+        //  Write a Java function that retuns a random number from `ArrayList` of type `Integer`.
+        int[] ints = {35,40,100, 200};
+        ArrayList<Integer> numList = new ArrayList<Integer>();
+        for (int i : ints) {
+            numList.add(i);
+        }
+        System.out.println(randomNumber(numList));
+    }
 
+    private static int randomNumber(ArrayList<Integer> numList) {
+        Random random = new Random();
+
+        return numList.get(random.nextInt(numList.size()));
+    }
+}
 
 
 
