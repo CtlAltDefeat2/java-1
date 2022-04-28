@@ -90,7 +90,7 @@ Consider the following array:
 int[] ints = {0,1,1,1,0,0,1,0,0,1,0,0,0};
 ```
 
-Write a Java function that returs a `String` with all the zeros on the left side and all the ones on the right side:
+Write a Java function that returns a `String` with all the zeros on the left side and all the ones on the right side:
 
 Example:
 ```java
@@ -102,7 +102,7 @@ Write a Java function that retuns a random number from `ArrayList` of type `Inte
 
 # Ex. 8
 Write a function that calculates the total cost of a shopping cart.  The items
-in the shopping cart are contained in an `ArrayList` of type `BigDecimal`.
+in the shopping cart are contained in an `ArrayList` of type `float`.
 
 The total cost is calculated by the following:
 - Sum the cost of all the items in the `ArrayList`
