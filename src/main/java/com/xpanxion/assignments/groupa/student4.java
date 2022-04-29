@@ -4,11 +4,12 @@ import java.util.ArrayList;
 
 public class student4 {
     public static void main(String[] args) {
-       // ex1();
-       // ex2();
-     //   ex3();
-    //    ex4();
+        ex1();
+        ex2();
+        ex3();
+        ex4();
         ex6();
+
 
 
     }
@@ -43,8 +44,8 @@ public class student4 {
 
     private static void ex2() {
         int[] ints = {1, 2, 3, 4};
-        var newList = new ArrayList<Float>();
-        for (float i : ints) {
+        var newList = new ArrayList<Float>(); // convert the array into a Arraylist
+        for (float i : ints) {  // for each float inside the array ints do the following
             newList.add(i);
         }
 
@@ -54,20 +55,20 @@ public class student4 {
     }
     private static void doubleNumber(ArrayList<Integer> numList){
         var retveal = 0;
-        var Doublenum = new ArrayList<Integer>();
-        for (int i : numList){
-             retveal = i *2;
-             Doublenum.add(retveal);
+        var doubleNum = new ArrayList<Integer>();
+        for (int i : numList){  // for each integer(i) in this numlist do the following
+             retveal = i *2; // the variable retveal is equal to the integer (i) in the numlist multiply by 2
+             doubleNum.add(retveal);
         }
-        System.out.println(Doublenum);
+        System.out.println(doubleNum);
 
 
     }
     private static void ex3() {
         int[] ints = {1, 2, 3, 4};
         var newList = new ArrayList<Integer>();
-        for (int i : ints) { //for each integer inside ints
-            newList.add(i);
+        for (int i : ints) { //for each integer inside ints do the following
+            newList.add(i); // add integer i inside the Arraylist newlist
         }
         doubleNumber(newList);
     }
@@ -77,12 +78,12 @@ public class student4 {
     }
 
     private static void createList(Integer maxNumber){
-        var Createlist = new ArrayList<Integer>();
+        var recreateList = new ArrayList<Integer>(); // /we have an Arraylist which is variable called recreatelist
         for(int i = 0; i<=maxNumber;i++){
-            Createlist.add(i);
+            recreateList.add(i);
 
         }
-        System.out.println("Max number is: " + Createlist);
+        System.out.println("Max number is: " + recreateList);
 }
 
 
@@ -100,10 +101,10 @@ private static String zeroleftoneright(ArrayList<Integer>numlist){
         String left = "";
         String right = "";
         String both = "";
-    for (int i : numlist){
-        if (i == 0)
-            left += "0";
-        else
+    for (int i : numlist){ // for each integer (i) in the numlist check if :
+        if (i == 0)        // if the inger is equal to zero
+            left += "0";  // print string 0
+        else              // if it is not equal to zero then
                 right += "1";
 
     }
@@ -112,6 +113,8 @@ private static String zeroleftoneright(ArrayList<Integer>numlist){
 
 
 }
+
+
 }
 
 
