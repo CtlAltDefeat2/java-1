@@ -1,21 +1,20 @@
 package com.xpanxion.assignments.groupf;
 
-import org.w3c.dom.ls.LSOutput;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 
 public class student25 {
     public static void main(String[] args) {
 
-//        ex1();
-        //       ex2();
+        //      ex1();
+        //ex2();
 //        ex3();
 //        ex4();
 //        ex5();
 //        ex6();
-        ex7();
+        //ex7();
+//        ex8();
+        ex9();
     }
 
     private static void ex1() {
@@ -114,7 +113,7 @@ public class student25 {
         var missingNumbers = new ArrayList<Integer>();
         int firstNumber = numList.get(0);
         int lastNumber = numList.get(numList.size() - 1);
-        for (int i = firstNumber; i < lastNumber; i++) {
+        for (int i = firstNumber; i < lastNumber; ++i) {
             if (!numList.contains(i)) {
                 missingNumbers.add(i);
             }
@@ -130,22 +129,22 @@ public class student25 {
     }
 
     private static String organizeZerosOnes(int[] ints) {
-        String A = "";
+        String result = "";
         //initializing left string
-        String Left = "";
+        String zerosLeft = "";
         //initializing right string
-        String Right = "";
-//for loop because we are iterating through every element of ints array
+        String onesRight = "";
+        //for loop because we are iterating through every element of ints array
         for (int i = 0; i < ints.length; i++) {
             if (ints[i] == 0) {
                 //we are calling the object integer to convert an array element to string element
-                Left = Left + Integer.toString(ints[i]);
+                zerosLeft = zerosLeft + Integer.toString(ints[i]);
             } else {
-                Right = Right + Integer.toString(ints[i]);
+                onesRight = onesRight + Integer.toString(ints[i]);
             }
         }
-        A = Left + Right;
-        return A;
+        result = zerosLeft + onesRight;
+        return result;
     }
 
     private static void ex7() {
@@ -157,16 +156,72 @@ public class student25 {
         }
         System.out.println(randomNumber(numList));
     }
+
     private static Integer randomNumber(ArrayList<Integer> numList) {
         for (int i = 0; i < numList.size(); i++) {
-            if (numList.contains(i)){
+            if (numList.contains(i)) {
                 Collections.shuffle(numList);
             }
         }
         int firstNumber = numList.get(0);
         return firstNumber;
     }
+
+    // Write a function that calculates the total cost of a shopping cart.  The items
+    //  in the shopping cart are contained in an `ArrayList` of type `float`.
+    private static void ex8() {
+        float[] prices = {1.00f, 2.00f, 8.00f, 10.00f};
+        var itemList = new ArrayList<Float>();
+        for (float f : prices) {
+            itemList.add(f);
+//        - Sum the cost of all the items in the `ArrayList`
+        }
+        var sum = sumOfItems(itemList);
+        if (sum < 10.00f)  //- Add $5.00 for orders under $10.00
+            sum += 5.00f;
+        if (sum > 10.00f && sum < 20.00f) //  - Add $4.00 for orders > $10.00 and < $20.00
+            sum += 4.00f;
+        else if (sum > 20.00f) { //- Free shipping and handling for orders > $20.00
+            sum = sum;
+        }
+        System.out.println("The sum price of all the items is: " + sum);
+//        - Apply 10% sales tax
+        float salesTax = (float) (sum * 0.1);
+        float pricesAfterTax = salesTax + sum;
+        System.out.println("Prices after tax " + pricesAfterTax);
+    }
+
+    private static Float sumOfItems(ArrayList<Float> itemList) {
+        float sum = 0;
+        for (int i = 0; i < itemList.size(); i++) {
+            sum += itemList.get(i);
+        }
+        return sum;
+    }
+
+    private static void ex9() {
+        //   Write a function that returns a `String` if an `ArrayList` of type `Integer` is even or odd.
+        int[] list = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+        var numList = new ArrayList<Integer>();
+        for (int i : list) {
+            numList.add(i);
+
+//            Example:
+//            var result = checkArray(numList);
+//            System.out.println(result);
+//
+//            Output:
+//            Odd
+
+        }
+    }
+
+    private static String checkArray(ArrayList<Integer> numList) {
+        return null;
+    }
 }
+
+
 
 
 
