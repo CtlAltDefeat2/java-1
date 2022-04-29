@@ -1,5 +1,6 @@
 package com.xpanxion.assignments.groupf;
 
+import javax.swing.*;
 import java.util.*;
 
 import static java.lang.System.*;
@@ -13,7 +14,8 @@ public class student14 {
 //      ex5();
 //      ex6();
 //      ex7();
-        ex8();
+//  ex8();
+      ex9();
     }
 
     //vars, loops, ifs, functions
@@ -177,17 +179,9 @@ public class student14 {
         int firstNumber = numList.get(0);
         return firstNumber;
     }
-/* Write a function that calculates the total cost of a shopping cart. The items in the shopping cart are contained in an ArrayList of type Float.
 
-The total cost is calculated by the following:
-
-Sum the cost of all the items in the ArrayList
-Apply 10% sales tax
-Apply shipping and handling fees:
-Add $5.00 for orders under $10.00
-Add $4.00 for orders > $10.00 and < $20.00
-Free shipping and handling for orders > $20.00 */
     private static void ex8() {
+
         //int items =
         float[] itemPrice = {2.00F,2.00F};
         var itemList = new ArrayList<Float>();//declare new array list
@@ -200,11 +194,10 @@ Free shipping and handling for orders > $20.00 */
         //Implement function
         float itemsTotal = addPrices(itemList);
         System.out.println(itemsTotal);
-/////Apply 10% sales tax to itemsTotal
+        ////Apply 10% sales tax to itemsTotal
         float salesTax = itemsTotal *.1F ;
         float total = salesTax + itemsTotal;
-        //itemsTotal+salesTax=total;
-/////Apply shipping and handling fees
+        //itemsTotal+salesTax=total;/////Apply shipping and handling fees
         if (total < 10) {
             withShippingAndHandling = total + 5;
         } else if (total >= 10 && total < 20) {
@@ -225,4 +218,21 @@ Free shipping and handling for orders > $20.00 */
             return sum;
     }
 
+  private static void ex9() {
+
+          int a[]={1,2,5,6,3,2};
+          System.out.println("Odd Numbers:");
+
+          for(int i=0;i<a.length;i++){
+              if(a[i]%2!=0){
+                  System.out.println(a[i]);
+              }
+          }
+          System.out.println("Even Numbers:");
+          for(int i=0;i<a.length;i++){
+              if(a[i]%2==0){
+                  System.out.println(a[i]);
+              }
+          }
+      }
 }
